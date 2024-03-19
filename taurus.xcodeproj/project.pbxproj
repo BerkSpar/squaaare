@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F7BE72972BA8F611005BDEDA /* taurusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72962BA8F611005BDEDA /* taurusApp.swift */; };
+		F7BE72992BA8F611005BDEDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72982BA8F611005BDEDA /* ContentView.swift */; };
+		F7BE729B2BA8F612005BDEDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7BE729A2BA8F612005BDEDA /* Assets.xcassets */; };
+		F7BE729E2BA8F612005BDEDA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7BE729D2BA8F612005BDEDA /* Preview Assets.xcassets */; };
+		F7BE72A62BA8F63C005BDEDA /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72A52BA8F63C005BDEDA /* HapticService.swift */; };
+		F7BE72A82BA8F680005BDEDA /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72A72BA8F680005BDEDA /* GameService.swift */; };
+		F7BE72AA2BA8F6AC005BDEDA /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72A92BA8F6AC005BDEDA /* AudioService.swift */; };
+		F7BE72AF2BA8F6F8005BDEDA /* IntersticalAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72AC2BA8F6F8005BDEDA /* IntersticalAdView.swift */; };
+		F7BE72B02BA8F6F8005BDEDA /* RewardedAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72AD2BA8F6F8005BDEDA /* RewardedAdView.swift */; };
+		F7BE72B12BA8F6F8005BDEDA /* BannerAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72AE2BA8F6F8005BDEDA /* BannerAdView.swift */; };
+		F7BE72B32BA8F781005BDEDA /* RouterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72B22BA8F781005BDEDA /* RouterService.swift */; };
+		F7BE72B62BA8F87D005BDEDA /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72B52BA8F87D005BDEDA /* StartView.swift */; };
+		F7BE72B82BA8F8A9005BDEDA /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72B72BA8F8A9005BDEDA /* GameView.swift */; };
+		F7BE72C92BA8FAB6005BDEDA /* Array+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72BB2BA8FAB6005BDEDA /* Array+Ext.swift */; };
+		F7BE72CB2BA8FAB6005BDEDA /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72BD2BA8FAB6005BDEDA /* Color+Ext.swift */; };
+		F7BE72D02BA8FAB6005BDEDA /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72C22BA8FAB6005BDEDA /* String+Ext.swift */; };
+		F7BE72D12BA8FAB6005BDEDA /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72C32BA8FAB6005BDEDA /* View+Ext.swift */; };
+		F7BE72D22BA8FAB6005BDEDA /* FullscreenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72C52BA8FAB6005BDEDA /* FullscreenModifier.swift */; };
+		F7BE72D32BA8FAB6005BDEDA /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72C72BA8FAB6005BDEDA /* Duration.swift */; };
+		F7BE72D62BA8FAFA005BDEDA /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = F7BE72D52BA8FAFA005BDEDA /* GoogleMobileAds */; };
+		F7BE72DA2BA90533005BDEDA /* AdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72D92BA90533005BDEDA /* AdService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F7BE72932BA8F611005BDEDA /* taurus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taurus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7BE72962BA8F611005BDEDA /* taurusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taurusApp.swift; sourceTree = "<group>"; };
+		F7BE72982BA8F611005BDEDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		F7BE729A2BA8F612005BDEDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F7BE729D2BA8F612005BDEDA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F7BE72A52BA8F63C005BDEDA /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
+		F7BE72A72BA8F680005BDEDA /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
+		F7BE72A92BA8F6AC005BDEDA /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
+		F7BE72AC2BA8F6F8005BDEDA /* IntersticalAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntersticalAdView.swift; sourceTree = "<group>"; };
+		F7BE72AD2BA8F6F8005BDEDA /* RewardedAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RewardedAdView.swift; sourceTree = "<group>"; };
+		F7BE72AE2BA8F6F8005BDEDA /* BannerAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BannerAdView.swift; sourceTree = "<group>"; };
+		F7BE72B22BA8F781005BDEDA /* RouterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterService.swift; sourceTree = "<group>"; };
+		F7BE72B52BA8F87D005BDEDA /* StartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartView.swift; sourceTree = "<group>"; };
+		F7BE72B72BA8F8A9005BDEDA /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		F7BE72BB2BA8FAB6005BDEDA /* Array+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Ext.swift"; sourceTree = "<group>"; };
+		F7BE72BD2BA8FAB6005BDEDA /* Color+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
+		F7BE72C22BA8FAB6005BDEDA /* String+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		F7BE72C32BA8FAB6005BDEDA /* View+Ext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
+		F7BE72C52BA8FAB6005BDEDA /* FullscreenModifier.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullscreenModifier.swift; sourceTree = "<group>"; };
+		F7BE72C72BA8FAB6005BDEDA /* Duration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
+		F7BE72D72BA8FD98005BDEDA /* taurus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = taurus.entitlements; sourceTree = "<group>"; };
+		F7BE72D82BA8FDD3005BDEDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F7BE72D92BA90533005BDEDA /* AdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F7BE72902BA8F611005BDEDA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7BE72D62BA8FAFA005BDEDA /* GoogleMobileAds in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F7BE728A2BA8F611005BDEDA = {
+			isa = PBXGroup;
+			children = (
+				F7BE72952BA8F611005BDEDA /* taurus */,
+				F7BE72942BA8F611005BDEDA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F7BE72942BA8F611005BDEDA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F7BE72932BA8F611005BDEDA /* taurus.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F7BE72952BA8F611005BDEDA /* taurus */ = {
+			isa = PBXGroup;
+			children = (
+				F7BE72D82BA8FDD3005BDEDA /* Info.plist */,
+				F7BE72D72BA8FD98005BDEDA /* taurus.entitlements */,
+				F7BE72C82BA8FAB6005BDEDA /* Utils */,
+				F7BE72AB2BA8F6E7005BDEDA /* Views */,
+				F7BE72A42BA8F62E005BDEDA /* Services */,
+				F7BE72962BA8F611005BDEDA /* taurusApp.swift */,
+				F7BE72982BA8F611005BDEDA /* ContentView.swift */,
+				F7BE729A2BA8F612005BDEDA /* Assets.xcassets */,
+				F7BE729C2BA8F612005BDEDA /* Preview Content */,
+			);
+			path = taurus;
+			sourceTree = "<group>";
+		};
+		F7BE729C2BA8F612005BDEDA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				F7BE729D2BA8F612005BDEDA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F7BE72A42BA8F62E005BDEDA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				F7BE72B22BA8F781005BDEDA /* RouterService.swift */,
+				F7BE72A52BA8F63C005BDEDA /* HapticService.swift */,
+				F7BE72A72BA8F680005BDEDA /* GameService.swift */,
+				F7BE72A92BA8F6AC005BDEDA /* AudioService.swift */,
+				F7BE72D92BA90533005BDEDA /* AdService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		F7BE72AB2BA8F6E7005BDEDA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F7BE72B42BA8F867005BDEDA /* Ad */,
+				F7BE72B52BA8F87D005BDEDA /* StartView.swift */,
+				F7BE72B72BA8F8A9005BDEDA /* GameView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F7BE72B42BA8F867005BDEDA /* Ad */ = {
+			isa = PBXGroup;
+			children = (
+				F7BE72AE2BA8F6F8005BDEDA /* BannerAdView.swift */,
+				F7BE72AC2BA8F6F8005BDEDA /* IntersticalAdView.swift */,
+				F7BE72AD2BA8F6F8005BDEDA /* RewardedAdView.swift */,
+			);
+			path = Ad;
+			sourceTree = "<group>";
+		};
+		F7BE72C42BA8FAB6005BDEDA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F7BE72BB2BA8FAB6005BDEDA /* Array+Ext.swift */,
+				F7BE72BD2BA8FAB6005BDEDA /* Color+Ext.swift */,
+				F7BE72C22BA8FAB6005BDEDA /* String+Ext.swift */,
+				F7BE72C32BA8FAB6005BDEDA /* View+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		F7BE72C62BA8FAB6005BDEDA /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				F7BE72C52BA8FAB6005BDEDA /* FullscreenModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		F7BE72C82BA8FAB6005BDEDA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				F7BE72C42BA8FAB6005BDEDA /* Extensions */,
+				F7BE72C62BA8FAB6005BDEDA /* Modifiers */,
+				F7BE72C72BA8FAB6005BDEDA /* Duration.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F7BE72922BA8F611005BDEDA /* taurus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7BE72A12BA8F612005BDEDA /* Build configuration list for PBXNativeTarget "taurus" */;
+			buildPhases = (
+				F7BE728F2BA8F611005BDEDA /* Sources */,
+				F7BE72902BA8F611005BDEDA /* Frameworks */,
+				F7BE72912BA8F611005BDEDA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = taurus;
+			packageProductDependencies = (
+				F7BE72D52BA8FAFA005BDEDA /* GoogleMobileAds */,
+			);
+			productName = taurus;
+			productReference = F7BE72932BA8F611005BDEDA /* taurus.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F7BE728B2BA8F611005BDEDA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1530;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					F7BE72922BA8F611005BDEDA = {
+						CreatedOnToolsVersion = 15.3;
+					};
+				};
+			};
+			buildConfigurationList = F7BE728E2BA8F611005BDEDA /* Build configuration list for PBXProject "taurus" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F7BE728A2BA8F611005BDEDA;
+			packageReferences = (
+				F7BE72D42BA8FAFA005BDEDA /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
+			productRefGroup = F7BE72942BA8F611005BDEDA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F7BE72922BA8F611005BDEDA /* taurus */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F7BE72912BA8F611005BDEDA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7BE729E2BA8F612005BDEDA /* Preview Assets.xcassets in Resources */,
+				F7BE729B2BA8F612005BDEDA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F7BE728F2BA8F611005BDEDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7BE72AA2BA8F6AC005BDEDA /* AudioService.swift in Sources */,
+				F7BE72D22BA8FAB6005BDEDA /* FullscreenModifier.swift in Sources */,
+				F7BE72C92BA8FAB6005BDEDA /* Array+Ext.swift in Sources */,
+				F7BE72992BA8F611005BDEDA /* ContentView.swift in Sources */,
+				F7BE72DA2BA90533005BDEDA /* AdService.swift in Sources */,
+				F7BE72B62BA8F87D005BDEDA /* StartView.swift in Sources */,
+				F7BE72B32BA8F781005BDEDA /* RouterService.swift in Sources */,
+				F7BE72D32BA8FAB6005BDEDA /* Duration.swift in Sources */,
+				F7BE72AF2BA8F6F8005BDEDA /* IntersticalAdView.swift in Sources */,
+				F7BE72B82BA8F8A9005BDEDA /* GameView.swift in Sources */,
+				F7BE72B12BA8F6F8005BDEDA /* BannerAdView.swift in Sources */,
+				F7BE72B02BA8F6F8005BDEDA /* RewardedAdView.swift in Sources */,
+				F7BE72D12BA8FAB6005BDEDA /* View+Ext.swift in Sources */,
+				F7BE72972BA8F611005BDEDA /* taurusApp.swift in Sources */,
+				F7BE72A62BA8F63C005BDEDA /* HapticService.swift in Sources */,
+				F7BE72A82BA8F680005BDEDA /* GameService.swift in Sources */,
+				F7BE72CB2BA8FAB6005BDEDA /* Color+Ext.swift in Sources */,
+				F7BE72D02BA8FAB6005BDEDA /* String+Ext.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		F7BE729F2BA8F612005BDEDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F7BE72A02BA8F612005BDEDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F7BE72A22BA8F612005BDEDA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = taurus/taurus.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = "\"taurus/Preview Content\"";
+				DEVELOPMENT_TEAM = R9V648Y475;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = taurus/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.berkspar.taurus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F7BE72A32BA8F612005BDEDA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = taurus/taurus.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_ASSET_PATHS = "\"taurus/Preview Content\"";
+				DEVELOPMENT_TEAM = R9V648Y475;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = taurus/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.berkspar.taurus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F7BE728E2BA8F611005BDEDA /* Build configuration list for PBXProject "taurus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7BE729F2BA8F612005BDEDA /* Debug */,
+				F7BE72A02BA8F612005BDEDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F7BE72A12BA8F612005BDEDA /* Build configuration list for PBXNativeTarget "taurus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F7BE72A22BA8F612005BDEDA /* Debug */,
+				F7BE72A32BA8F612005BDEDA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F7BE72D42BA8FAFA005BDEDA /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F7BE72D52BA8FAFA005BDEDA /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7BE72D42BA8FAFA005BDEDA /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = F7BE728B2BA8F611005BDEDA /* Project object */;
+}
