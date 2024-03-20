@@ -16,6 +16,12 @@ struct StartView: View {
                 RouterService.shared.navigate(.game)
             }
         }
+        .onAppear {
+            GameService.shared.showAccessPoint()
+        }
+        .onDisappear {
+            GameService.shared.hideAccessPoint()
+        }
     }
 }
 

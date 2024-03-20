@@ -11,6 +11,7 @@ import GoogleMobileAds
 enum Screen {
     case start
     case game
+    case endGame
 }
 
 struct ContentView: View {
@@ -32,6 +33,7 @@ struct ContentView: View {
             switch(router.screen) {
             case .start: StartView()
             case .game: GameView()
+            case .endGame: EndGameView()
             }
         }
         .alert(isPresented: $router.isAlertPresented) {

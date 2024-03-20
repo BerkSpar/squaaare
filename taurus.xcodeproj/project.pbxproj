@@ -7,11 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F7A908652BAA349F003E40AE /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908642BAA349F003E40AE /* GameScene.swift */; };
+		F7A908702BAB63B8003E40AE /* CharacterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A9086F2BAB63B8003E40AE /* CharacterNode.swift */; };
+		F7A908722BAB7325003E40AE /* EndGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908712BAB7325003E40AE /* EndGameView.swift */; };
+		F7A908742BAB8304003E40AE /* ItemNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908732BAB8304003E40AE /* ItemNode.swift */; };
+		F7A908772BAB8378003E40AE /* CoinNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908762BAB8378003E40AE /* CoinNode.swift */; };
+		F7A908792BAB9697003E40AE /* EnemyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908782BAB9697003E40AE /* EnemyNode.swift */; };
+		F7A9087B2BABA1C7003E40AE /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A9087A2BABA1C7003E40AE /* PhysicsCategory.swift */; };
+		F7A9087E2BABA2AC003E40AE /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A9087D2BABA2AC003E40AE /* GameController.swift */; };
 		F7BE72972BA8F611005BDEDA /* taurusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72962BA8F611005BDEDA /* taurusApp.swift */; };
 		F7BE72992BA8F611005BDEDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72982BA8F611005BDEDA /* ContentView.swift */; };
 		F7BE729B2BA8F612005BDEDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7BE729A2BA8F612005BDEDA /* Assets.xcassets */; };
 		F7BE729E2BA8F612005BDEDA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7BE729D2BA8F612005BDEDA /* Preview Assets.xcassets */; };
-		F7BE72A62BA8F63C005BDEDA /* HapticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72A52BA8F63C005BDEDA /* HapticService.swift */; };
+		F7BE72A62BA8F63C005BDEDA /* HapticsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72A52BA8F63C005BDEDA /* HapticsService.swift */; };
 		F7BE72A82BA8F680005BDEDA /* GameService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72A72BA8F680005BDEDA /* GameService.swift */; };
 		F7BE72AA2BA8F6AC005BDEDA /* AudioService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72A92BA8F6AC005BDEDA /* AudioService.swift */; };
 		F7BE72AF2BA8F6F8005BDEDA /* IntersticalAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72AC2BA8F6F8005BDEDA /* IntersticalAdView.swift */; };
@@ -31,12 +39,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F7A908642BAA349F003E40AE /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		F7A9086F2BAB63B8003E40AE /* CharacterNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterNode.swift; sourceTree = "<group>"; };
+		F7A908712BAB7325003E40AE /* EndGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameView.swift; sourceTree = "<group>"; };
+		F7A908732BAB8304003E40AE /* ItemNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNode.swift; sourceTree = "<group>"; };
+		F7A908762BAB8378003E40AE /* CoinNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinNode.swift; sourceTree = "<group>"; };
+		F7A908782BAB9697003E40AE /* EnemyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyNode.swift; sourceTree = "<group>"; };
+		F7A9087A2BABA1C7003E40AE /* PhysicsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
+		F7A9087D2BABA2AC003E40AE /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		F7BE72932BA8F611005BDEDA /* taurus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taurus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7BE72962BA8F611005BDEDA /* taurusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taurusApp.swift; sourceTree = "<group>"; };
 		F7BE72982BA8F611005BDEDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		F7BE729A2BA8F612005BDEDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7BE729D2BA8F612005BDEDA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		F7BE72A52BA8F63C005BDEDA /* HapticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticService.swift; sourceTree = "<group>"; };
+		F7BE72A52BA8F63C005BDEDA /* HapticsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticsService.swift; sourceTree = "<group>"; };
 		F7BE72A72BA8F680005BDEDA /* GameService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameService.swift; sourceTree = "<group>"; };
 		F7BE72A92BA8F6AC005BDEDA /* AudioService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioService.swift; sourceTree = "<group>"; };
 		F7BE72AC2BA8F6F8005BDEDA /* IntersticalAdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntersticalAdView.swift; sourceTree = "<group>"; };
@@ -68,6 +84,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F7A908612BAA344C003E40AE /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F7A908642BAA349F003E40AE /* GameScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F7A9086E2BAB63AA003E40AE /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				F7A908752BAB8369003E40AE /* Items */,
+				F7A9086F2BAB63B8003E40AE /* CharacterNode.swift */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+		F7A908752BAB8369003E40AE /* Items */ = {
+			isa = PBXGroup;
+			children = (
+				F7A908732BAB8304003E40AE /* ItemNode.swift */,
+				F7A908762BAB8378003E40AE /* CoinNode.swift */,
+				F7A908782BAB9697003E40AE /* EnemyNode.swift */,
+			);
+			path = Items;
+			sourceTree = "<group>";
+		};
+		F7A9087C2BABA29F003E40AE /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F7A9087D2BABA2AC003E40AE /* GameController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
 		F7BE728A2BA8F611005BDEDA = {
 			isa = PBXGroup;
 			children = (
@@ -89,7 +140,10 @@
 			children = (
 				F7BE72D82BA8FDD3005BDEDA /* Info.plist */,
 				F7BE72D72BA8FD98005BDEDA /* taurus.entitlements */,
+				F7A9087C2BABA29F003E40AE /* Controllers */,
 				F7BE72C82BA8FAB6005BDEDA /* Utils */,
+				F7A9086E2BAB63AA003E40AE /* Nodes */,
+				F7A908612BAA344C003E40AE /* Scenes */,
 				F7BE72AB2BA8F6E7005BDEDA /* Views */,
 				F7BE72A42BA8F62E005BDEDA /* Services */,
 				F7BE72962BA8F611005BDEDA /* taurusApp.swift */,
@@ -112,7 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				F7BE72B22BA8F781005BDEDA /* RouterService.swift */,
-				F7BE72A52BA8F63C005BDEDA /* HapticService.swift */,
+				F7BE72A52BA8F63C005BDEDA /* HapticsService.swift */,
 				F7BE72A72BA8F680005BDEDA /* GameService.swift */,
 				F7BE72A92BA8F6AC005BDEDA /* AudioService.swift */,
 				F7BE72D92BA90533005BDEDA /* AdService.swift */,
@@ -126,6 +180,7 @@
 				F7BE72B42BA8F867005BDEDA /* Ad */,
 				F7BE72B52BA8F87D005BDEDA /* StartView.swift */,
 				F7BE72B72BA8F8A9005BDEDA /* GameView.swift */,
+				F7A908712BAB7325003E40AE /* EndGameView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,6 +220,7 @@
 				F7BE72C42BA8FAB6005BDEDA /* Extensions */,
 				F7BE72C62BA8FAB6005BDEDA /* Modifiers */,
 				F7BE72C72BA8FAB6005BDEDA /* Duration.swift */,
+				F7A9087A2BABA1C7003E40AE /* PhysicsCategory.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -246,9 +302,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7BE72AA2BA8F6AC005BDEDA /* AudioService.swift in Sources */,
+				F7A908652BAA349F003E40AE /* GameScene.swift in Sources */,
+				F7A9087B2BABA1C7003E40AE /* PhysicsCategory.swift in Sources */,
+				F7A908742BAB8304003E40AE /* ItemNode.swift in Sources */,
 				F7BE72D22BA8FAB6005BDEDA /* FullscreenModifier.swift in Sources */,
 				F7BE72C92BA8FAB6005BDEDA /* Array+Ext.swift in Sources */,
 				F7BE72992BA8F611005BDEDA /* ContentView.swift in Sources */,
+				F7A908702BAB63B8003E40AE /* CharacterNode.swift in Sources */,
 				F7BE72DA2BA90533005BDEDA /* AdService.swift in Sources */,
 				F7BE72B62BA8F87D005BDEDA /* StartView.swift in Sources */,
 				F7BE72B32BA8F781005BDEDA /* RouterService.swift in Sources */,
@@ -256,13 +316,17 @@
 				F7BE72AF2BA8F6F8005BDEDA /* IntersticalAdView.swift in Sources */,
 				F7BE72B82BA8F8A9005BDEDA /* GameView.swift in Sources */,
 				F7BE72B12BA8F6F8005BDEDA /* BannerAdView.swift in Sources */,
+				F7A908722BAB7325003E40AE /* EndGameView.swift in Sources */,
+				F7A908772BAB8378003E40AE /* CoinNode.swift in Sources */,
 				F7BE72B02BA8F6F8005BDEDA /* RewardedAdView.swift in Sources */,
 				F7BE72D12BA8FAB6005BDEDA /* View+Ext.swift in Sources */,
 				F7BE72972BA8F611005BDEDA /* taurusApp.swift in Sources */,
-				F7BE72A62BA8F63C005BDEDA /* HapticService.swift in Sources */,
+				F7BE72A62BA8F63C005BDEDA /* HapticsService.swift in Sources */,
 				F7BE72A82BA8F680005BDEDA /* GameService.swift in Sources */,
 				F7BE72CB2BA8FAB6005BDEDA /* Color+Ext.swift in Sources */,
+				F7A908792BAB9697003E40AE /* EnemyNode.swift in Sources */,
 				F7BE72D02BA8FAB6005BDEDA /* String+Ext.swift in Sources */,
+				F7A9087E2BABA2AC003E40AE /* GameController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,6 +465,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = taurus/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Taurus;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -437,6 +503,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = taurus/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Taurus;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

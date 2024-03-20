@@ -7,13 +7,11 @@
 
 import SwiftUI
 import GoogleMobileAds
+import SpriteKit
 
 struct GameView: View {
     @State var height: CGFloat = 0 //Height of ad
     @State var width: CGFloat = 0 //Width of ad
-    
-    @State var showRewardedAd: Bool = false
-    @State var showInterstitialAd: Bool = false
     
     func setFrame() {
         //Get the frame of the safe area
@@ -28,44 +26,37 @@ struct GameView: View {
         self.height = adSize.size.height
     }
     
+    var scene: SKScene {
+        let scene = GameScene()
+                
+        scene.size = CGSize(
+            width: UIScreen.main.bounds.width,
+            height: UIScreen.main.bounds.height
+        )
+        
+        scene.scaleMode = .aspectFit
+                
+        return scene
+    }
+    
     var body: some View {
-        VStack {
-            Spacer()
+        ZStack {
+            SpriteView(scene: self.scene)
+                .ignoresSafeArea()
             
-            Text("GameView")
-            
-            Button("Power Up") {
-                HapticsService.shared.play(.heavy)
+            VStack {
+                Spacer()
                 
-                showRewardedAd.toggle()
+                BannerAd(adUnitId: AdService.gameView)
+                    .frame(width: width, height: height, alignment: .center)
+                    .onAppear {
+                        setFrame()
+                    }
+                    .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+                        setFrame()
+                    }
             }
-            
-            Button("End Game") {
-                HapticsService.shared.play(.heavy)
-                
-                showInterstitialAd.toggle()
-                
-                RouterService.shared.navigate(.start)
-            }
-            
-            Spacer()
-            
-            BannerAd(adUnitId: AdService.gameView)
-                .frame(width: width, height: height, alignment: .center)
-                .onAppear {
-                    setFrame()
-                }
-                .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
-                    setFrame()
-                }
         }
-        .presentRewardedAd(
-            isPresented: $showRewardedAd,
-            adUnitId: AdService.rewardedId
-        ) {
-            // do things
-        }
-        .presentInterstitialAd(isPresented: $showInterstitialAd, adUnitId: AdService.intersticalId)
     }
 }
 
