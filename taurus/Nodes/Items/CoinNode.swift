@@ -23,9 +23,26 @@ class CoinNode: ItemNode {
         super.configureCollision()
     }
     
-    override func didContact(_ scene: GameScene) {
-        removeFromParent()
-        GameController.shared.points += 1
+    override func didContact(_ scene: GameScene, _ contact: SKPhysicsContact) {
+        let points = Int.random(in: 1...3)
+        
+        let label = SKLabelNode(text: "+\(points)")
+        label.position = contact.contactPoint
+        scene.addChild(label)
+        
+        label.run(.sequence([
+            .group([
+                .fadeOut(withDuration: 1),
+                .move(by: CGVector(dx: 0, dy: 20), duration: 1)
+            ]),
+            .removeFromParent()
+        ]))
+        
+        GameController.shared.points += points
         scene.updatePoints()
+        
+        HapticsService.shared.play(.soft)
+        
+        removeFromParent()
     }
 }

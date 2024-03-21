@@ -118,4 +118,17 @@ class GameService {
             print("Acessou os achievements")
         }
     }
+    
+    func submitScore(_ score: Int, ids: [String], completion: @escaping () -> Void?) {
+        Task {
+            try? await GKLeaderboard.submitScore(
+                score,
+                context: 0,
+                player: player,
+                leaderboardIDs: ids
+            )
+            
+            completion()
+        }
+    }
 }

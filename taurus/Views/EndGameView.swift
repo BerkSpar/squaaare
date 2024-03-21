@@ -24,7 +24,7 @@ struct EndGameView: View {
             Button("End Game") {
                 HapticsService.shared.play(.heavy)
                 
-                GameController.shared.reset()
+                GameController.shared.save()
                 
                 showInterstitialAd.toggle()
                 

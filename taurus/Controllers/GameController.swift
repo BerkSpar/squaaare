@@ -17,6 +17,8 @@ class GameController: ObservableObject {
     }
     
     func save() {
-        
+        GameService.shared.submitScore(points, ids: ["global", "daily"]) {
+            GameController.shared.reset()
+        }
     }
 }

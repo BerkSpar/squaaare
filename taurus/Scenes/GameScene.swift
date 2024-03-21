@@ -47,8 +47,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         guard let nodeA = contact.bodyA.node else { return }
         guard let nodeB = contact.bodyB.node else { return }
         
-        if (nodeA is ItemNode) { (nodeA as! ItemNode).didContact(self) }
-        if (nodeB is ItemNode) { (nodeB as! ItemNode).didContact(self) }
+        if (nodeA is ItemNode) { (nodeA as! ItemNode).didContact(self, contact) }
+        if (nodeB is ItemNode) { (nodeB as! ItemNode).didContact(self, contact) }
     }
     
     override func update(_ currentTime: TimeInterval) {

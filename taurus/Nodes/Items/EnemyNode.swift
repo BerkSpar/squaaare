@@ -23,7 +23,7 @@ class EnemyNode: ItemNode {
         super.configureCollision()
     }
     
-    override func didContact(_ scene: SKScene) {
+    override func didContact(_ scene: SKScene, _ contact: SKPhysicsContact) {
         HapticsService.shared.notify(.error)
         RouterService.shared.navigate(.endGame)
     }

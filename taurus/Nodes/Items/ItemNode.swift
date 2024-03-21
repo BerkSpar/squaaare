@@ -8,13 +8,14 @@
 import SpriteKit
 
 class ItemNode: SKNode {
-    func didContact(_ scene: GameScene) { }
+    func didContact(_ scene: GameScene, _ contact: SKPhysicsContact) { }
     
     func draw() { }
     
     func configureCollision() {
         physicsBody?.contactTestBitMask = PhysicsCategory.character
         physicsBody?.affectedByGravity = false
+        physicsBody?.allowsRotation = false
     }
     
     func spawn(_ scene: GameScene) {
