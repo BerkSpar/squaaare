@@ -45,6 +45,7 @@ struct ContentView: View {
         .task {
             initializeApp()
         }
+        .preferredColorScheme(.light)
     }
 }
 

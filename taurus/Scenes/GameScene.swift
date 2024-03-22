@@ -19,16 +19,52 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         addChild(character)
         
         startSpawner()
+        
+        configureSwipe(view)
+    }
+    
+    func configureSwipe(_ view: SKView) {
+        let swipeRightGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeRight))
+        swipeRightGesture.direction = .right
+        view.addGestureRecognizer(swipeRightGesture)
+        
+        let swipeLeftGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeLeft))
+        swipeLeftGesture.direction = .left
+        view.addGestureRecognizer(swipeLeftGesture)
+        
+        let swipeUpGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeUp))
+        swipeUpGesture.direction = .up
+        view.addGestureRecognizer(swipeUpGesture)
+        
+        let swipeDownGesture = UISwipeGestureRecognizer(target: self, action: #selector(swipeDown))
+        swipeDownGesture.direction = .down
+        view.addGestureRecognizer(swipeDownGesture)
+    }
+    
+    @objc func swipeRight(sender: UISwipeGestureRecognizer) {
+        character.rotate(.right)
+    }
+    
+    @objc func swipeLeft(sender: UISwipeGestureRecognizer) {
+        character.rotate(.left)
+    }
+    
+    @objc func swipeUp(sender: UISwipeGestureRecognizer) {
+        character.rotate(.up)
+    }
+    
+    @objc func swipeDown(sender: UISwipeGestureRecognizer) {
+        character.rotate(.down)
     }
     
     func startSpawner() {
-        run(.repeatForever(.sequence([
-            .wait(forDuration: Double.random(in: 1...5)),
-            .run {
-                let enemy = EnemyNode()
-                enemy.spawn(self)
-            }
-        ])))
+//        run(.repeatForever(.sequence([
+//            .wait(forDuration: Double.random(in: 1...5)),
+//            .run {
+//                let enemy = EnemyNode()
+//                enemy.spawn(self)
+//            }
+//        ])))
         
         run(.repeatForever(.sequence([
             .wait(forDuration: Double.random(in: 2...3)),
@@ -55,18 +91,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         character.move()
     }
     
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else { return }
-        let touchPosition = touch.location(in: self)
-        
-        HapticsService.shared.play(.medium)
-        
-        if touchPosition.x < 0 {
-            character.rotate()
-        } else {
-            character.rotate(true)
-        }
-    
-        updatePoints()
-    }
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        guard let touch = touches.first else { return }
+//        let touchPosition = touch.location(in: self)
+//        
+//        HapticsService.shared.play(.medium)
+//        
+//        if touchPosition.x < 0 {
+//            character.rotate()
+//        } else {
+//            character.rotate(true)
+//        }
+//    
+//        updatePoints()
+//    }
 }

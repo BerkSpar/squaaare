@@ -8,6 +8,8 @@
 import SpriteKit
 
 class ItemNode: SKNode {
+    func getVelocity() -> Double { Double.random(in: 4...8) }
+    
     func didContact(_ scene: GameScene, _ contact: SKPhysicsContact) { }
     
     func draw() { }
@@ -19,7 +21,6 @@ class ItemNode: SKNode {
     }
     
     func spawn(_ scene: GameScene) {
-        let velocity = Double.random(in: 4...8)
         let xPosition = Double.random(in: -scene.frame.width/2 ... scene.frame.width/2)
         let yPosition = (scene.frame.height / 2)
         
@@ -28,7 +29,7 @@ class ItemNode: SKNode {
         
         scene.addChild(self)
         
-        run(.move(to: CGPoint(x: position.x, y: -500), duration: velocity))
+        run(.move(to: CGPoint(x: position.x, y: -500), duration: getVelocity()))
     }
     
     required init?(coder aDecoder: NSCoder) {

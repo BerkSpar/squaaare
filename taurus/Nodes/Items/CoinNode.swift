@@ -9,15 +9,14 @@ import SpriteKit
 
 class CoinNode: ItemNode {
     override func draw() {
-        let node = SKShapeNode(rectOf: CGSize(width: 10, height: 10))
-        node.fillColor = .yellow
-        node.strokeColor = .yellow
+        let node = SKSpriteNode(imageNamed: "star")
+        node.size = CGSize(width: 20, height: 20)
         
         addChild(node)
     }
     
     override func configureCollision() {
-        physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 10, height: 10))
+        physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 20, height: 20))
         physicsBody?.categoryBitMask = PhysicsCategory.coin
         
         super.configureCollision()

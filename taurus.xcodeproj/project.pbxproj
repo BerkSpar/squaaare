@@ -15,6 +15,8 @@
 		F7A908792BAB9697003E40AE /* EnemyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908782BAB9697003E40AE /* EnemyNode.swift */; };
 		F7A9087B2BABA1C7003E40AE /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A9087A2BABA1C7003E40AE /* PhysicsCategory.swift */; };
 		F7A9087E2BABA2AC003E40AE /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A9087D2BABA2AC003E40AE /* GameController.swift */; };
+		F7A908862BACC837003E40AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7A908842BACC837003E40AE /* Assets.xcassets */; };
+		F7A908882BACFB81003E40AE /* SpriteSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908872BACFB81003E40AE /* SpriteSheet.swift */; };
 		F7BE72972BA8F611005BDEDA /* taurusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72962BA8F611005BDEDA /* taurusApp.swift */; };
 		F7BE72992BA8F611005BDEDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72982BA8F611005BDEDA /* ContentView.swift */; };
 		F7BE729B2BA8F612005BDEDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7BE729A2BA8F612005BDEDA /* Assets.xcassets */; };
@@ -47,6 +49,8 @@
 		F7A908782BAB9697003E40AE /* EnemyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyNode.swift; sourceTree = "<group>"; };
 		F7A9087A2BABA1C7003E40AE /* PhysicsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
 		F7A9087D2BABA2AC003E40AE /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
+		F7A908842BACC837003E40AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F7A908872BACFB81003E40AE /* SpriteSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteSheet.swift; sourceTree = "<group>"; };
 		F7BE72932BA8F611005BDEDA /* taurus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taurus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7BE72962BA8F611005BDEDA /* taurusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taurusApp.swift; sourceTree = "<group>"; };
 		F7BE72982BA8F611005BDEDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 		F7BE728A2BA8F611005BDEDA = {
 			isa = PBXGroup;
 			children = (
+				F7A908842BACC837003E40AE /* Assets.xcassets */,
 				F7BE72952BA8F611005BDEDA /* taurus */,
 				F7BE72942BA8F611005BDEDA /* Products */,
 			);
@@ -221,6 +226,7 @@
 				F7BE72C62BA8FAB6005BDEDA /* Modifiers */,
 				F7BE72C72BA8FAB6005BDEDA /* Duration.swift */,
 				F7A9087A2BABA1C7003E40AE /* PhysicsCategory.swift */,
+				F7A908872BACFB81003E40AE /* SpriteSheet.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -290,6 +296,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7BE729E2BA8F612005BDEDA /* Preview Assets.xcassets in Resources */,
+				F7A908862BACC837003E40AE /* Assets.xcassets in Resources */,
 				F7BE729B2BA8F612005BDEDA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +325,7 @@
 				F7BE72B12BA8F6F8005BDEDA /* BannerAdView.swift in Sources */,
 				F7A908722BAB7325003E40AE /* EndGameView.swift in Sources */,
 				F7A908772BAB8378003E40AE /* CoinNode.swift in Sources */,
+				F7A908882BACFB81003E40AE /* SpriteSheet.swift in Sources */,
 				F7BE72B02BA8F6F8005BDEDA /* RewardedAdView.swift in Sources */,
 				F7BE72D12BA8FAB6005BDEDA /* View+Ext.swift in Sources */,
 				F7BE72972BA8F611005BDEDA /* taurusApp.swift in Sources */,

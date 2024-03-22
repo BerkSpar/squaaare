@@ -119,6 +119,12 @@ class GameService {
         }
     }
     
+    func showLeaderboard() {
+        GKAccessPoint.shared.trigger(state: .leaderboards) {
+            print("Acessou os leaderboard")
+        }
+    }
+    
     func submitScore(_ score: Int, ids: [String], completion: @escaping () -> Void?) {
         Task {
             try? await GKLeaderboard.submitScore(
