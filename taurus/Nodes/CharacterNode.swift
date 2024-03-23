@@ -24,16 +24,15 @@ class CharacterNode: SKNode {
     }
     
     func draw() {
-        let node = SKShapeNode(rectOf: CGSize(width: 40, height: 40), cornerRadius: 8)
-        node.fillColor = .blue
-        node.strokeColor = .blue
+        let node = SKSpriteNode(imageNamed: "character")
+        node.size = CGSize(width: 40, height: 40)
         node.zPosition = 10
-        
         
         node.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 40, height: 40))
        
         node.physicsBody?.categoryBitMask = PhysicsCategory.character
         node.physicsBody?.contactTestBitMask = PhysicsCategory.coin | PhysicsCategory.enemy
+        node.physicsBody?.collisionBitMask = 0;
         node.physicsBody?.affectedByGravity = false
         node.physicsBody?.allowsRotation = false
         
@@ -47,10 +46,8 @@ class CharacterNode: SKNode {
         
         let dx = playerSpeed * cos(direction)
         let dy = playerSpeed * sin(direction)
-        print(dx)
-        print(dy)
         
-         position.x += dx
+        position.x += dx
         position.y += dy
         
         if position.x > scene!.frame.width / 2 {

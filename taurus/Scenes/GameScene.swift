@@ -9,18 +9,34 @@ import SpriteKit
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     let character = CharacterNode()
-    let pointsNode = SKLabelNode(text: GameController.shared.points.formatted())
+    let pointsNode = SKLabelNode()
     
     override func didMove(to view: SKView) {
+        configureScene()
+        configureSwipe(view)
+        configurePoints()
+        configureCharacter()
+        
+        updatePoints()
+        startSpawner()
+    }
+    
+    func configureScene() {
         physicsWorld.contactDelegate = self
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        backgroundColor = .background
+    }
+    
+    func configureCharacter() {
+        addChild(character)
+    }
+    
+    func configurePoints() {
+        pointsNode.fontSize = 64
+        pointsNode.fontColor = .secondary
+        pointsNode.fontName = "Modak"
         
         addChild(pointsNode)
-        addChild(character)
-        
-        startSpawner()
-        
-        configureSwipe(view)
     }
     
     func configureSwipe(_ view: SKView) {
@@ -58,16 +74,16 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func startSpawner() {
-//        run(.repeatForever(.sequence([
-//            .wait(forDuration: Double.random(in: 1...5)),
-//            .run {
-//                let enemy = EnemyNode()
-//                enemy.spawn(self)
-//            }
-//        ])))
+        run(.repeatForever(.sequence([
+            .wait(forDuration: Double.random(in: 1...5)),
+            .run {
+                let enemy = EnemyNode()
+                enemy.spawn(self)
+            }
+        ])))
         
         run(.repeatForever(.sequence([
-            .wait(forDuration: Double.random(in: 2...3)),
+            .wait(forDuration: Double.random(in: 2...4)),
             .run {
                 let coin = CoinNode()
                 coin.spawn(self)

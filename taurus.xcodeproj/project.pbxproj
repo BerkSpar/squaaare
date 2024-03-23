@@ -15,8 +15,11 @@
 		F7A908792BAB9697003E40AE /* EnemyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908782BAB9697003E40AE /* EnemyNode.swift */; };
 		F7A9087B2BABA1C7003E40AE /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A9087A2BABA1C7003E40AE /* PhysicsCategory.swift */; };
 		F7A9087E2BABA2AC003E40AE /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A9087D2BABA2AC003E40AE /* GameController.swift */; };
-		F7A908862BACC837003E40AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7A908842BACC837003E40AE /* Assets.xcassets */; };
 		F7A908882BACFB81003E40AE /* SpriteSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908872BACFB81003E40AE /* SpriteSheet.swift */; };
+		F7A9088A2BAEF75D003E40AE /* StartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908892BAEF75D003E40AE /* StartScene.swift */; };
+		F7A9088C2BAEFA75003E40AE /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A9088B2BAEFA75003E40AE /* ButtonNode.swift */; };
+		F7A9088F2BAEFFE4003E40AE /* Modak-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7A9088E2BAEFFE4003E40AE /* Modak-Regular.ttf */; };
+		F7A908912BAF6651003E40AE /* EndGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908902BAF6651003E40AE /* EndGameScene.swift */; };
 		F7BE72972BA8F611005BDEDA /* taurusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72962BA8F611005BDEDA /* taurusApp.swift */; };
 		F7BE72992BA8F611005BDEDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72982BA8F611005BDEDA /* ContentView.swift */; };
 		F7BE729B2BA8F612005BDEDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7BE729A2BA8F612005BDEDA /* Assets.xcassets */; };
@@ -49,8 +52,11 @@
 		F7A908782BAB9697003E40AE /* EnemyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyNode.swift; sourceTree = "<group>"; };
 		F7A9087A2BABA1C7003E40AE /* PhysicsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
 		F7A9087D2BABA2AC003E40AE /* GameController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
-		F7A908842BACC837003E40AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F7A908872BACFB81003E40AE /* SpriteSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteSheet.swift; sourceTree = "<group>"; };
+		F7A908892BAEF75D003E40AE /* StartScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScene.swift; sourceTree = "<group>"; };
+		F7A9088B2BAEFA75003E40AE /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
+		F7A9088E2BAEFFE4003E40AE /* Modak-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Modak-Regular.ttf"; sourceTree = "<group>"; };
+		F7A908902BAF6651003E40AE /* EndGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameScene.swift; sourceTree = "<group>"; };
 		F7BE72932BA8F611005BDEDA /* taurus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taurus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7BE72962BA8F611005BDEDA /* taurusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taurusApp.swift; sourceTree = "<group>"; };
 		F7BE72982BA8F611005BDEDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +98,8 @@
 			isa = PBXGroup;
 			children = (
 				F7A908642BAA349F003E40AE /* GameScene.swift */,
+				F7A908892BAEF75D003E40AE /* StartScene.swift */,
+				F7A908902BAF6651003E40AE /* EndGameScene.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -101,6 +109,7 @@
 			children = (
 				F7A908752BAB8369003E40AE /* Items */,
 				F7A9086F2BAB63B8003E40AE /* CharacterNode.swift */,
+				F7A9088B2BAEFA75003E40AE /* ButtonNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -123,10 +132,17 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		F7A9088D2BAEFFC9003E40AE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F7A9088E2BAEFFE4003E40AE /* Modak-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		F7BE728A2BA8F611005BDEDA = {
 			isa = PBXGroup;
 			children = (
-				F7A908842BACC837003E40AE /* Assets.xcassets */,
 				F7BE72952BA8F611005BDEDA /* taurus */,
 				F7BE72942BA8F611005BDEDA /* Products */,
 			);
@@ -147,6 +163,7 @@
 				F7BE72D72BA8FD98005BDEDA /* taurus.entitlements */,
 				F7A9087C2BABA29F003E40AE /* Controllers */,
 				F7BE72C82BA8FAB6005BDEDA /* Utils */,
+				F7A9088D2BAEFFC9003E40AE /* Fonts */,
 				F7A9086E2BAB63AA003E40AE /* Nodes */,
 				F7A908612BAA344C003E40AE /* Scenes */,
 				F7BE72AB2BA8F6E7005BDEDA /* Views */,
@@ -296,7 +313,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F7BE729E2BA8F612005BDEDA /* Preview Assets.xcassets in Resources */,
-				F7A908862BACC837003E40AE /* Assets.xcassets in Resources */,
+				F7A9088F2BAEFFE4003E40AE /* Modak-Regular.ttf in Resources */,
 				F7BE729B2BA8F612005BDEDA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,8 +329,10 @@
 				F7A908652BAA349F003E40AE /* GameScene.swift in Sources */,
 				F7A9087B2BABA1C7003E40AE /* PhysicsCategory.swift in Sources */,
 				F7A908742BAB8304003E40AE /* ItemNode.swift in Sources */,
+				F7A908912BAF6651003E40AE /* EndGameScene.swift in Sources */,
 				F7BE72D22BA8FAB6005BDEDA /* FullscreenModifier.swift in Sources */,
 				F7BE72C92BA8FAB6005BDEDA /* Array+Ext.swift in Sources */,
+				F7A9088C2BAEFA75003E40AE /* ButtonNode.swift in Sources */,
 				F7BE72992BA8F611005BDEDA /* ContentView.swift in Sources */,
 				F7A908702BAB63B8003E40AE /* CharacterNode.swift in Sources */,
 				F7BE72DA2BA90533005BDEDA /* AdService.swift in Sources */,
@@ -323,6 +342,7 @@
 				F7BE72AF2BA8F6F8005BDEDA /* IntersticalAdView.swift in Sources */,
 				F7BE72B82BA8F8A9005BDEDA /* GameView.swift in Sources */,
 				F7BE72B12BA8F6F8005BDEDA /* BannerAdView.swift in Sources */,
+				F7A9088A2BAEF75D003E40AE /* StartScene.swift in Sources */,
 				F7A908722BAB7325003E40AE /* EndGameView.swift in Sources */,
 				F7A908772BAB8378003E40AE /* CoinNode.swift in Sources */,
 				F7A908882BACFB81003E40AE /* SpriteSheet.swift in Sources */,
@@ -467,17 +487,18 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = taurus/taurus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"taurus/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = taurus/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Taurus;
+				INFOPLIST_KEY_CFBundleDisplayName = Squaaare;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -485,7 +506,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.berkspar.taurus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -505,17 +526,18 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = taurus/taurus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"taurus/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = taurus/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Taurus;
+				INFOPLIST_KEY_CFBundleDisplayName = Squaaare;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -523,7 +545,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.berkspar.taurus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

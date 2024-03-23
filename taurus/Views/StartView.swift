@@ -6,78 +6,27 @@
 //
 
 import SwiftUI
+import SpriteKit
 
 struct StartView: View {
-    var body: some View {
-        VStack {
-            Spacer()
-            
-            Image("Item4")
-                .resizable()
-                .scaledToFit()
-                .padding()
-            
-            ZStack {
-                Image("Item3")
-                    .resizable()
-                    .scaledToFit()
-                    .padding()
+    var scene: SKScene {
+        let scene = StartScene()
                 
-                VStack {
-                    Button {
-                        RouterService.shared.navigate(.game)
-                    } label: {
-                        ZStack {
-                            Image("Item5")
-                                .resizable()
-                                .scaledToFit()
-                                .padding(.horizontal, 48)
-                            
-                            Text("PLAY")
-                                .bold()
-                                .foregroundStyle(.white)
-                        }
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                    
-                    Button {
-                        GameService.shared.showAchievements()
-                    } label: {
-                        ZStack {
-                            Image("Item5")
-                                .resizable()
-                                .scaledToFit()
-                                .padding(.horizontal, 48)
-                            
-                            Text("ACHIEVEMENTS")
-                                .bold()
-                                .foregroundStyle(.white)
-                        }
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                    
-                    Button {
-                        GameService.shared.showAchievements()
-                    } label: {
-                        ZStack {
-                            Image("Item5")
-                                .resizable()
-                                .scaledToFit()
-                                .padding(.horizontal, 48)
-                            
-                            Text("LEADERBOARD")
-                                .bold()
-                                .foregroundStyle(.white)
-                        }
-                    }
-                    .buttonStyle(PlainButtonStyle())
-                }
-
-            }
-            
-            Spacer()
+        scene.size = CGSize(
+            width: UIScreen.main.bounds.width,
+            height: UIScreen.main.bounds.height
+        )
+        
+        scene.scaleMode = .aspectFit
+                
+        return scene
+    }
+    
+    var body: some View {
+        ZStack {
+            SpriteView(scene: self.scene)
+                .ignoresSafeArea()
         }
-        .background(.white)
         .onAppear {
             GameService.shared.showAccessPoint()
         }

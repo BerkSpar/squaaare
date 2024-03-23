@@ -18,6 +18,7 @@ class ItemNode: SKNode {
         physicsBody?.contactTestBitMask = PhysicsCategory.character
         physicsBody?.affectedByGravity = false
         physicsBody?.allowsRotation = false
+        physicsBody?.collisionBitMask = 0;
     }
     
     func spawn(_ scene: GameScene) {
@@ -29,7 +30,10 @@ class ItemNode: SKNode {
         
         scene.addChild(self)
         
-        run(.move(to: CGPoint(x: position.x, y: -500), duration: getVelocity()))
+        run(.sequence([
+            .move(to: CGPoint(x: position.x, y: -500), duration: getVelocity()),
+            .removeFromParent()
+        ]))
     }
     
     required init?(coder aDecoder: NSCoder) {
