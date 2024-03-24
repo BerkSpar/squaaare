@@ -20,7 +20,20 @@ class StartScene: SKScene {
     }
     
     func share() {
-        
+        let postText: String = "Check out my score on Squaaare! Can you beat it?"
+        let activityItems = [postText]
+        let activityController = UIActivityViewController(
+            activityItems: activityItems,
+            applicationActivities: nil
+        )
+
+        let controller: UIViewController = scene!.view!.window!.rootViewController!
+
+        controller.present(
+            activityController,
+            animated: true,
+            completion: nil
+        )
     }
     
     func showLeaderboard() {
