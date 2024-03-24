@@ -24,7 +24,7 @@ class EndGameScene: SKScene {
         HapticsService.shared.play(.heavy)
         
         if let ad = RewardedAd.shared.rewardedAd {
-            ad.present(fromRootViewController: self.view?.window?.rootViewController) {
+            ad.present(fromRootViewController: nil) {
                 self.gameController.oneMoreChance = false
                 RouterService.shared.navigate(.game)
             }

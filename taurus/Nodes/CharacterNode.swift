@@ -41,6 +41,7 @@ class CharacterNode: SKNode {
     
     func move() {
         if isRotating { return }
+        
         let playerSpeed: CGFloat = 2.0
         let direction = zRotation + CGFloat.pi / 2
         
@@ -67,10 +68,13 @@ class CharacterNode: SKNode {
         }
     }
     
+    var lastRotation: RotateType = .up
     func rotate(_ type: RotateType) {
+        if type == lastRotation { return }
         if isRotating { return }
         
         isRotating = true
+        lastRotation = type
         var angle = 0.0
         
         switch type {
