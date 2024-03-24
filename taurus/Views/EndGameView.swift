@@ -15,11 +15,13 @@ class AdSettings: ObservableObject {
 
 struct EndGameView: View {
     @ObservedObject var adSettings = AdSettings()
+    @ObservedObject var gameController = GameController.shared
     
-    var scene: SKScene {
+    var scene: EndGameScene {
         let scene = EndGameScene()
         
         scene.adSettings = adSettings
+        scene.gameController = gameController
                 
         scene.size = CGSize(
             width: UIScreen.main.bounds.width,
@@ -27,51 +29,15 @@ struct EndGameView: View {
         )
         
         scene.scaleMode = .aspectFit
-                
+        
         return scene
     }
     
     var body: some View {
-//        VStack {
-//            Spacer()
-//            
-//            Button("Watch an Ad to return") {
-//                HapticsService.shared.play(.heavy)
-//                
-//                showRewardedAd.toggle()
-//            }
-//            
-//            Button("End Game") {
-//                HapticsService.shared.play(.heavy)
-//                
-//                GameController.shared.save()
-//                
-//                showInterstitialAd.toggle()
-//                
-//                RouterService.shared.navigate(.start)
-//            }
-//            
-//            Button("Restart Game") {
-//                HapticsService.shared.play(.heavy)
-//                
-//                GameController.shared.save()
-//                
-//                RouterService.shared.navigate(.game)
-//            }
-//            
-//            Spacer()
-//        }
         ZStack {
             SpriteView(scene: self.scene)
                 .ignoresSafeArea()
         }
-        .presentRewardedAd(
-            isPresented: $adSettings.showRewardedAd,
-            adUnitId: AdService.rewardedId
-        ) {
-            RouterService.shared.navigate(.game)
-        }
-        .presentInterstitialAd(isPresented: $adSettings.showInterstitialAd, adUnitId: AdService.intersticalId)
     }
 }
 

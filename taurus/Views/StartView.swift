@@ -18,7 +18,7 @@ struct StartView: View {
         )
         
         scene.scaleMode = .aspectFit
-                
+        
         return scene
     }
     

@@ -11,14 +11,18 @@ class GameController: ObservableObject {
     static let shared = GameController()
     
     @Published var points: Int = 0
+    @Published var oneMoreChance: Bool = true
     
     func reset() {
         points = 0
+        oneMoreChance = true
     }
     
     func save() {
         GameService.shared.submitScore(points, ids: ["global", "daily"]) {
-            GameController.shared.reset()
+ 
         }
+        
+        GameController.shared.reset()
     }
 }

@@ -7,9 +7,11 @@
 
 import SpriteKit
 import SwiftUI
+import GoogleMobileAds
 
 class EndGameScene: SKScene {
     var adSettings: AdSettings!
+    var gameController: GameController!
     
     override func didMove(to view: SKView) {
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -20,31 +22,58 @@ class EndGameScene: SKScene {
     
     func oneMoreChange() {
         HapticsService.shared.play(.heavy)
-        self.adSettings.showRewardedAd.toggle()
+        
+        if let ad = RewardedAd.shared.rewardedAd {
+            ad.present(fromRootViewController: self.view?.window?.rootViewController) {
+                self.gameController.oneMoreChance = false
+                RouterService.shared.navigate(.game)
+            }
+        }
     }
     
     func tryAgain() {
         HapticsService.shared.play(.heavy)
-        GameController.shared.save()
+        gameController.save()
         RouterService.shared.navigate(.game)
     }
     
+    func goToMenu() {
+        HapticsService.shared.play(.heavy)
+        gameController.save()
+        RouterService.shared.navigate(.start)
+    }
+    
     func draw() {
-        let startButton = ButtonNode(imageNamed: "one_more_chance") {
+        let adButton = ButtonNode(imageNamed: "one_more_chance") {
             self.oneMoreChange()
         }
-        startButton.size = CGSize(width: 260, height: 60)
-        addChild(startButton)
+        adButton.size = CGSize(width: 260, height: 60)
+        addChild(adButton)
+        
+        let ad = SKSpriteNode(imageNamed: "ad_button")
+        ad.size = CGSize(width: 50, height: 50)
+        ad.position = CGPoint(
+            x: adButton.size.width / 2,
+            y: adButton.size.height / 2
+        )
+        adButton.addChild(ad)
         
         let tryAgain = ButtonNode(imageNamed: "try_again") {
             self.tryAgain()
         }
         tryAgain.size = CGSize(width: 260, height: 60)
-        tryAgain.position.y = startButton.position.y - 80
+        tryAgain.position.y = adButton.position.y - 80
         addChild(tryAgain)
         
-        let title = SKLabelNode(text: "\(GameController.shared.points.formatted()) pts")
-        title.position.y = startButton.position.y + 100
+        let menu = ButtonNode(imageNamed: "menu_button") {
+            self.goToMenu()
+        }
+        menu.size = CGSize(width: 260, height: 60)
+        menu.position.y = tryAgain.position.y - 80
+        addChild(menu)
+        
+        let title = SKLabelNode(text: "\(gameController.points.formatted()) pts")
+        title.position.y = adButton.position.y + 100
         title.fontColor = .primary
         title.fontName = "Modak"
         title.fontSize = 48

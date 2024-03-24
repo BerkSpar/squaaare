@@ -35,7 +35,7 @@ struct GameView: View {
         )
         
         scene.scaleMode = .aspectFit
-                
+        
         return scene
     }
     
