@@ -106,19 +106,4 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     override func update(_ currentTime: TimeInterval) {
         character.move()
     }
-    
-//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-//        guard let touch = touches.first else { return }
-//        let touchPosition = touch.location(in: self)
-//        
-//        HapticsService.shared.play(.medium)
-//        
-//        if touchPosition.x < 0 {
-//            character.rotate()
-//        } else {
-//            character.rotate(true)
-//        }
-//    
-//        updatePoints()
-//    }
 }

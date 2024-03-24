@@ -26,13 +26,18 @@ class StartScene: SKScene {
             activityItems: activityItems,
             applicationActivities: nil
         )
+        activityController.completionWithItemsHandler = { (activityType, completed:Bool, returnedItems:[Any]?, error: Error?) in
+            GameService.shared.showAccessPoint()
+         }
 
         let controller: UIViewController = scene!.view!.window!.rootViewController!
-
+        
         controller.present(
             activityController,
             animated: true,
-            completion: nil
+            completion: {
+                GameService.shared.hideAccessPoint()
+            }
         )
     }
     
