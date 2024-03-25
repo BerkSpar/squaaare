@@ -7,10 +7,38 @@
 
 import SpriteKit
 
-class CoinNode: ItemNode {
-    let points = Int.random(in: 1...3)
+class CoinNode: SKNode, Item {
+    let id = "coin"
     
-    override func draw() {
+    let spawnTimeRange: ClosedRange<TimeInterval>
+    let levelRange: ClosedRange<Int>
+    let pointsRange: ClosedRange<Int>
+    let velocityRange: ClosedRange<Double>
+    
+    let velocity: Double
+    let points: Int
+    
+    init(spawnTimeRange: ClosedRange<TimeInterval>, levelRange: ClosedRange<Int>, pointsRange: ClosedRange<Int>, velocityRange: ClosedRange<Double>) {
+        self.spawnTimeRange = spawnTimeRange
+        self.levelRange = levelRange
+        self.pointsRange = pointsRange
+        self.velocityRange = velocityRange
+        
+        self.velocity = Double.random(in: velocityRange)
+        self.points = Int.random(in: pointsRange)
+        
+        super.init()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func clone() -> any Item {
+        CoinNode(spawnTimeRange: spawnTimeRange, levelRange: levelRange, pointsRange: pointsRange, velocityRange: velocityRange)
+    }
+    
+    func draw() {
         let node = SKSpriteNode(imageNamed: "coin")
         node.size = CGSize(width: 30, height: 30)
         
@@ -26,14 +54,17 @@ class CoinNode: ItemNode {
         node.addChild(label)
     }
     
-    override func configureCollision() {
+    func configureCollision() {
         physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 30, height: 30))
         physicsBody?.categoryBitMask = PhysicsCategory.coin
         
-        super.configureCollision()
+        physicsBody?.contactTestBitMask = PhysicsCategory.character
+        physicsBody?.affectedByGravity = false
+        physicsBody?.allowsRotation = false
+        physicsBody?.collisionBitMask = 0;
     }
     
-    override func didContact(_ scene: GameScene, _ contact: SKPhysicsContact) {
+    func didContact(_ scene: GameScene, _ contact: SKPhysicsContact) {
         let label = SKLabelNode(text: "+\(points)")
         label.position = contact.contactPoint
         label.fontColor = .primary
@@ -56,5 +87,20 @@ class CoinNode: ItemNode {
         HapticsService.shared.play(.soft)
         
         removeFromParent()
+    }
+    
+    func spawn(_ scene: GameScene) {
+        let xPosition = Double.random(in: -scene.frame.width/2 ... scene.frame.width/2)
+        let yPosition = (scene.frame.height / 2)
+        
+        position.y = yPosition
+        position.x = xPosition
+        
+        scene.addChild(self)
+        
+        run(.sequence([
+            .move(to: CGPoint(x: position.x, y: -500), duration: velocity),
+            .removeFromParent()
+        ]))
     }
 }

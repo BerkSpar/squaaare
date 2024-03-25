@@ -10,6 +10,7 @@ import SpriteKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     let character = CharacterNode()
     let pointsNode = SKLabelNode()
+    let spawner = SpawnNode()
     
     override func didMove(to view: SKView) {
         configureScene()
@@ -18,7 +19,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         configureCharacter()
         
         updatePoints()
-        startSpawner()
+        spawner.start(self)
+        addChild(spawner)
     }
     
     func configureScene() {
@@ -73,24 +75,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         character.rotate(.down)
     }
     
-    func startSpawner() {
-        run(.repeatForever(.sequence([
-            .wait(forDuration: Double.random(in: 1...5)),
-            .run {
-                let enemy = EnemyNode()
-                enemy.spawn(self)
-            }
-        ])))
-        
-        run(.repeatForever(.sequence([
-            .wait(forDuration: Double.random(in: 2...4)),
-            .run {
-                let coin = CoinNode()
-                coin.spawn(self)
-            }
-        ])))
-    }
-    
     func updatePoints() {
         pointsNode.text = GameController.shared.points.formatted()
     }
@@ -99,8 +83,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         guard let nodeA = contact.bodyA.node else { return }
         guard let nodeB = contact.bodyB.node else { return }
         
-        if (nodeA is ItemNode) { (nodeA as! ItemNode).didContact(self, contact) }
-        if (nodeB is ItemNode) { (nodeB as! ItemNode).didContact(self, contact) }
+        if (nodeA is Item) { (nodeA as! Item).didContact(self, contact) }
+        if (nodeB is Item) { (nodeB as! Item).didContact(self, contact) }
     }
     
     override func update(_ currentTime: TimeInterval) {

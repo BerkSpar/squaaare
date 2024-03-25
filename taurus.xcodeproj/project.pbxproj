@@ -10,7 +10,6 @@
 		F7A908652BAA349F003E40AE /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908642BAA349F003E40AE /* GameScene.swift */; };
 		F7A908702BAB63B8003E40AE /* CharacterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A9086F2BAB63B8003E40AE /* CharacterNode.swift */; };
 		F7A908722BAB7325003E40AE /* EndGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908712BAB7325003E40AE /* EndGameView.swift */; };
-		F7A908742BAB8304003E40AE /* ItemNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908732BAB8304003E40AE /* ItemNode.swift */; };
 		F7A908772BAB8378003E40AE /* CoinNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908762BAB8378003E40AE /* CoinNode.swift */; };
 		F7A908792BAB9697003E40AE /* EnemyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908782BAB9697003E40AE /* EnemyNode.swift */; };
 		F7A9087B2BABA1C7003E40AE /* PhysicsCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A9087A2BABA1C7003E40AE /* PhysicsCategory.swift */; };
@@ -20,6 +19,8 @@
 		F7A9088C2BAEFA75003E40AE /* ButtonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A9088B2BAEFA75003E40AE /* ButtonNode.swift */; };
 		F7A9088F2BAEFFE4003E40AE /* Modak-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7A9088E2BAEFFE4003E40AE /* Modak-Regular.ttf */; };
 		F7A908912BAF6651003E40AE /* EndGameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908902BAF6651003E40AE /* EndGameScene.swift */; };
+		F7A908972BB2345A003E40AE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908962BB2345A003E40AE /* Item.swift */; };
+		F7A908992BB234A2003E40AE /* SpawnNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908982BB234A2003E40AE /* SpawnNode.swift */; };
 		F7BE72972BA8F611005BDEDA /* taurusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72962BA8F611005BDEDA /* taurusApp.swift */; };
 		F7BE72992BA8F611005BDEDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72982BA8F611005BDEDA /* ContentView.swift */; };
 		F7BE729B2BA8F612005BDEDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7BE729A2BA8F612005BDEDA /* Assets.xcassets */; };
@@ -47,7 +48,6 @@
 		F7A908642BAA349F003E40AE /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		F7A9086F2BAB63B8003E40AE /* CharacterNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterNode.swift; sourceTree = "<group>"; };
 		F7A908712BAB7325003E40AE /* EndGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameView.swift; sourceTree = "<group>"; };
-		F7A908732BAB8304003E40AE /* ItemNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemNode.swift; sourceTree = "<group>"; };
 		F7A908762BAB8378003E40AE /* CoinNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinNode.swift; sourceTree = "<group>"; };
 		F7A908782BAB9697003E40AE /* EnemyNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyNode.swift; sourceTree = "<group>"; };
 		F7A9087A2BABA1C7003E40AE /* PhysicsCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsCategory.swift; sourceTree = "<group>"; };
@@ -57,6 +57,8 @@
 		F7A9088B2BAEFA75003E40AE /* ButtonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonNode.swift; sourceTree = "<group>"; };
 		F7A9088E2BAEFFE4003E40AE /* Modak-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Modak-Regular.ttf"; sourceTree = "<group>"; };
 		F7A908902BAF6651003E40AE /* EndGameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameScene.swift; sourceTree = "<group>"; };
+		F7A908962BB2345A003E40AE /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		F7A908982BB234A2003E40AE /* SpawnNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpawnNode.swift; sourceTree = "<group>"; };
 		F7BE72932BA8F611005BDEDA /* taurus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taurus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7BE72962BA8F611005BDEDA /* taurusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taurusApp.swift; sourceTree = "<group>"; };
 		F7BE72982BA8F611005BDEDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				F7A908752BAB8369003E40AE /* Items */,
+				F7A908982BB234A2003E40AE /* SpawnNode.swift */,
 				F7A9086F2BAB63B8003E40AE /* CharacterNode.swift */,
 				F7A9088B2BAEFA75003E40AE /* ButtonNode.swift */,
 			);
@@ -117,7 +120,7 @@
 		F7A908752BAB8369003E40AE /* Items */ = {
 			isa = PBXGroup;
 			children = (
-				F7A908732BAB8304003E40AE /* ItemNode.swift */,
+				F7A908962BB2345A003E40AE /* Item.swift */,
 				F7A908762BAB8378003E40AE /* CoinNode.swift */,
 				F7A908782BAB9697003E40AE /* EnemyNode.swift */,
 			);
@@ -328,7 +331,6 @@
 				F7BE72AA2BA8F6AC005BDEDA /* AudioService.swift in Sources */,
 				F7A908652BAA349F003E40AE /* GameScene.swift in Sources */,
 				F7A9087B2BABA1C7003E40AE /* PhysicsCategory.swift in Sources */,
-				F7A908742BAB8304003E40AE /* ItemNode.swift in Sources */,
 				F7A908912BAF6651003E40AE /* EndGameScene.swift in Sources */,
 				F7BE72D22BA8FAB6005BDEDA /* FullscreenModifier.swift in Sources */,
 				F7BE72C92BA8FAB6005BDEDA /* Array+Ext.swift in Sources */,
@@ -336,6 +338,8 @@
 				F7BE72992BA8F611005BDEDA /* ContentView.swift in Sources */,
 				F7A908702BAB63B8003E40AE /* CharacterNode.swift in Sources */,
 				F7BE72DA2BA90533005BDEDA /* AdService.swift in Sources */,
+				F7A908972BB2345A003E40AE /* Item.swift in Sources */,
+				F7A908992BB234A2003E40AE /* SpawnNode.swift in Sources */,
 				F7BE72B62BA8F87D005BDEDA /* StartView.swift in Sources */,
 				F7BE72B32BA8F781005BDEDA /* RouterService.swift in Sources */,
 				F7BE72D32BA8FAB6005BDEDA /* Duration.swift in Sources */,
