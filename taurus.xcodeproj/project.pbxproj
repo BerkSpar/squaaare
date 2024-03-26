@@ -33,6 +33,7 @@
 		F7A908C72BB26BE4003E40AE /* FirebasePerformance in Frameworks */ = {isa = PBXBuildFile; productRef = F7A908C62BB26BE4003E40AE /* FirebasePerformance */; };
 		F7A908C92BB26BE4003E40AE /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = F7A908C82BB26BE4003E40AE /* FirebaseRemoteConfig */; };
 		F7A908CB2BB26BE4003E40AE /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F7A908CA2BB26BE4003E40AE /* FirebaseRemoteConfigSwift */; };
+		F7A908CD2BB32EE8003E40AE /* SKScene+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908CC2BB32EE8003E40AE /* SKScene+Ext.swift */; };
 		F7BE72972BA8F611005BDEDA /* taurusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72962BA8F611005BDEDA /* taurusApp.swift */; };
 		F7BE72992BA8F611005BDEDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72982BA8F611005BDEDA /* ContentView.swift */; };
 		F7BE729B2BA8F612005BDEDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7BE729A2BA8F612005BDEDA /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		F7A908982BB234A2003E40AE /* SpawnNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpawnNode.swift; sourceTree = "<group>"; };
 		F7A9089A2BB25AA5003E40AE /* GoogleAdsConsentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAdsConsentManager.swift; sourceTree = "<group>"; };
 		F7A908B52BB26898003E40AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F7A908CC2BB32EE8003E40AE /* SKScene+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+Ext.swift"; sourceTree = "<group>"; };
 		F7BE72932BA8F611005BDEDA /* taurus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taurus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7BE72962BA8F611005BDEDA /* taurusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taurusApp.swift; sourceTree = "<group>"; };
 		F7BE72982BA8F611005BDEDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				F7BE72BD2BA8FAB6005BDEDA /* Color+Ext.swift */,
 				F7BE72C22BA8FAB6005BDEDA /* String+Ext.swift */,
 				F7BE72C32BA8FAB6005BDEDA /* View+Ext.swift */,
+				F7A908CC2BB32EE8003E40AE /* SKScene+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -378,6 +381,7 @@
 				F7A908702BAB63B8003E40AE /* CharacterNode.swift in Sources */,
 				F7BE72DA2BA90533005BDEDA /* AdService.swift in Sources */,
 				F7A908972BB2345A003E40AE /* Item.swift in Sources */,
+				F7A908CD2BB32EE8003E40AE /* SKScene+Ext.swift in Sources */,
 				F7A908992BB234A2003E40AE /* SpawnNode.swift in Sources */,
 				F7BE72B62BA8F87D005BDEDA /* StartView.swift in Sources */,
 				F7BE72B32BA8F781005BDEDA /* RouterService.swift in Sources */,
@@ -530,7 +534,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = taurus/taurus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_ASSET_PATHS = "\"taurus/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
@@ -569,7 +573,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = taurus/taurus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 15;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_ASSET_PATHS = "\"taurus/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;

@@ -68,7 +68,7 @@ class EndGameScene: SKScene, GADFullScreenContentDelegate {
         
         var titlePosition = tryAgain.position.y + 80
         
-        if (GameController.shared.oneMoreChance) {
+        if (GameController.shared.oneMoreChance && RewardedAd.shared.rewardedAd != nil) {
             let adButton = ButtonNode(imageNamed: "one_more_chance") {
                 self.oneMoreChange()
             }
