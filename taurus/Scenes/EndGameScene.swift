@@ -8,6 +8,7 @@
 import SpriteKit
 import SwiftUI
 import GoogleMobileAds
+import FirebaseAnalytics
 
 class EndGameScene: SKScene, GADFullScreenContentDelegate {
     override func didMove(to view: SKView) {
@@ -15,6 +16,11 @@ class EndGameScene: SKScene, GADFullScreenContentDelegate {
         backgroundColor = .background
         
         draw()
+        
+        Analytics.logEvent(AnalyticsEventLevelEnd, parameters: [
+            AnalyticsParameterLevel: GameController.shared.points,
+            AnalyticsParameterLevelName: "game"
+        ])
     }
     
     func adDidDismissFullScreenContent(_ ad: any GADFullScreenPresentingAd) {

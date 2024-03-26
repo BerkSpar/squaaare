@@ -6,6 +6,7 @@
 //
 
 import SpriteKit
+import FirebaseAnalytics
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     let character = CharacterNode()
@@ -21,6 +22,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         updatePoints()
         spawner.start(self)
         addChild(spawner)
+        
+        Analytics.logEvent(AnalyticsEventLevelStart, parameters: [
+            AnalyticsParameterLevelName: "game"
+        ])
     }
     
     func configureScene() {

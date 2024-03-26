@@ -7,10 +7,46 @@
 
 import SwiftUI
 import AppTrackingTransparency
+import FirebaseCore
+import FirebaseMessaging
 import GoogleMobileAds
+
+class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate {
+    func application(_ application: UIApplication,
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        application.registerForRemoteNotifications()
+        FirebaseApp.configure()
+        Messaging.messaging().delegate = self
+        UNUserNotificationCenter.current().delegate = self
+        
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+        UNUserNotificationCenter.current().requestAuthorization(
+          options: authOptions,
+          completionHandler: { _, _ in }
+        )
+        
+        application.registerForRemoteNotifications()
+        
+        return true
+    }
+    
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        Messaging.messaging().apnsToken = deviceToken
+    }
+    
+    
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        if let fcm = Messaging.messaging().fcmToken {
+            print("Firebase: \(fcm)")
+        }
+    }
+}
 
 @main
 struct taurusApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     init() {
         if ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
             //User has not indicated their choice for app tracking

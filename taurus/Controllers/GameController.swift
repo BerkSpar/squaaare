@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalytics
 
 class GameController: ObservableObject {
     static let shared = GameController()
@@ -19,8 +20,11 @@ class GameController: ObservableObject {
     }
     
     func save() {
-        GameService.shared.submitScore(points, ids: ["global", "daily"]) {
- 
+        let savedPoints = points
+        GameService.shared.submitScore(savedPoints, ids: ["global_2", "daily_2"]) {
+            Analytics.logEvent(AnalyticsEventPostScore, parameters: [
+                AnalyticsParameterScore: savedPoints
+            ])
         }
         
         GameController.shared.reset()

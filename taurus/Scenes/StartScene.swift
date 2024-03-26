@@ -7,6 +7,7 @@
 
 import SpriteKit
 import GoogleMobileAds
+import FirebaseAnalytics
 
 class StartScene: SKScene {
     override func didMove(to view: SKView) {
@@ -21,7 +22,7 @@ class StartScene: SKScene {
     }
     
     func share() {
-        let postText: String = "Check out my score on Squaaare! Can you beat it?"
+        let postText: String = "Check out my score on Squaaare! Can you beat it?\n\nhttps://apps.apple.com/br/app/squaaare/id6479618727"
         let activityItems = [postText]
         let activityController = UIActivityViewController(
             activityItems: activityItems,
@@ -29,6 +30,8 @@ class StartScene: SKScene {
         )
         activityController.completionWithItemsHandler = { (activityType, completed:Bool, returnedItems:[Any]?, error: Error?) in
             GameService.shared.showAccessPoint()
+            
+            Analytics.logEvent(AnalyticsEventShare, parameters: nil)
          }
 
         let controller: UIViewController = scene!.view!.window!.rootViewController!
