@@ -66,6 +66,7 @@ class EnemyNode: SKNode, Item {
     
     func didContact(_ scene: GameScene, _ contact: SKPhysicsContact) {
         HapticsService.shared.notify(.error)
+        
         RouterService.shared.navigate(.endGame)
     }
 }

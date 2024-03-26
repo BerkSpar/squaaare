@@ -126,15 +126,10 @@ class GameService {
     }
     
     func submitScore(_ score: Int, ids: [String], completion: @escaping () -> Void?) {
-        Task {
-            try? await GKLeaderboard.submitScore(
-                score,
-                context: 0,
-                player: player,
-                leaderboardIDs: ids
-            )
-            
-            completion()
+        if player.isAuthenticated {
+            GKLeaderboard.submitScore(score, context: 0, player: player, leaderboardIDs: ids) { error in
+                completion()
+            }
         }
     }
 }

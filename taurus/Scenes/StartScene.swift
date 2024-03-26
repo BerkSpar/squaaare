@@ -6,6 +6,7 @@
 //
 
 import SpriteKit
+import GoogleMobileAds
 
 class StartScene: SKScene {
     override func didMove(to view: SKView) {
