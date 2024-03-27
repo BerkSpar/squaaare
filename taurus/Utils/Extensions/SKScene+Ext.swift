@@ -6,8 +6,6 @@
 //
 
 import Foundation
-
-import Foundation
 import SpriteKit
 
 extension SKScene {

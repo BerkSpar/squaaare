@@ -133,3 +133,31 @@ class GameService {
         }
     }
 }
+
+class GameInfo: Codable {
+    static var shared = GameInfo()
+    
+    var username: String = ""
+    var skin =  ""
+    var highscore = 1
+    
+    func saveGameInfo() {
+        let encoded = try! JSONEncoder().encode(GameInfo.shared)
+        
+        GameService.shared.player.saveGameData(encoded, withName: "data")
+    }
+    
+    func loadGameInfo() async {
+        let games = try? await GKLocalPlayer.local.fetchSavedGames()
+        
+        guard let data = try? await games?.first?.loadData() else {
+            return
+        }
+        
+        let decoded = try? JSONDecoder().decode(GameInfo.self, from: data)
+        
+        if decoded != nil {
+            GameInfo.shared = decoded!
+        }
+    }
+}

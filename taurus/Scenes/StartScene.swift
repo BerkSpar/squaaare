@@ -10,6 +10,8 @@ import GoogleMobileAds
 import FirebaseAnalytics
 
 class StartScene: SKScene {
+    let title = SKLabelNode(text: "SQUAAARE")
+    
     override func didMove(to view: SKView) {
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         backgroundColor = .background
@@ -70,7 +72,6 @@ class StartScene: SKScene {
         leaderboardButton.position.x = leaderboardButton.position.x + 80
         addChild(leaderboardButton)
         
-        let title = SKLabelNode(text: "SQUAAARE")
         title.position.y = startButton.position.y + 100
         title.fontColor = .primary
         title.fontName = "Modak"

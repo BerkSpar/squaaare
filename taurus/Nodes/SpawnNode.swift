@@ -9,12 +9,14 @@ import SpriteKit
 
 class SpawnNode: SKNode {
     let items: [Item] = [
-        CoinNode(spawnTimeRange: 1...2, levelRange: 0...20, pointsRange: 1...3, velocityRange: 4...6),
-        CoinNode(spawnTimeRange: 1...2, levelRange: 21...Int.max, pointsRange: 1...9, velocityRange: 2...4),
+//        CoinNode(spawnTimeRange: 1...2, levelRange: 0...20, pointsRange: 1...3, velocityRange: 4...6),
+//        CoinNode(spawnTimeRange: 1...2, levelRange: 21...Int.max, pointsRange: 1...9, velocityRange: 2...4),
+//        
+        EnemyNode(spawnTimeRange: 2...4, levelRange: 0...15, velocityRange: 8...12),
+//        EnemyNode(spawnTimeRange: 4...4, levelRange: 16...30, velocityRange: 4...8),
+//        EnemyNode(spawnTimeRange: 2...4, levelRange: 31...Int.max, velocityRange: 2...6)
         
-        EnemyNode(spawnTimeRange: 2...4, levelRange: 5...15, velocityRange: 8...12),
-        EnemyNode(spawnTimeRange: 4...4, levelRange: 16...30, velocityRange: 4...8),
-        EnemyNode(spawnTimeRange: 2...4, levelRange: 31...Int.max, velocityRange: 2...6)
+        BombNode(spawnTimeRange: 4...10, levelRange: 0...10, velocityRange: 4...6)
     ]
     
     private var refreshRate = 0.5

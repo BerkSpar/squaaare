@@ -88,6 +88,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         guard let nodeA = contact.bodyA.node else { return }
         guard let nodeB = contact.bodyB.node else { return }
         
+        if (nodeA.name == "bullet" || nodeB.name == "bullet") {
+            HapticsService.shared.notify(.error)
+            
+            RouterService.shared.navigate(.endGame)
+            return
+        }
+        
         if (nodeA is Item) { (nodeA as! Item).didContact(self, contact) }
         if (nodeB is Item) { (nodeB as! Item).didContact(self, contact) }
     }
