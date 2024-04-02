@@ -10,12 +10,20 @@ import AppTrackingTransparency
 import FirebaseCore
 import FirebaseMessaging
 import GoogleMobileAds
+import AdSupport
+import FirebaseAnalytics
 
 class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         application.registerForRemoteNotifications()
         FirebaseApp.configure()
+        
+        #if DEBUG
+        // Remover em prod
+        Analytics.setAnalyticsCollectionEnabled(false)
+        #endif
+        
         Messaging.messaging().delegate = self
         UNUserNotificationCenter.current().delegate = self
         

@@ -9,14 +9,22 @@ import SpriteKit
 
 class SpawnNode: SKNode {
     let items: [Item] = [
-//        CoinNode(spawnTimeRange: 1...2, levelRange: 0...20, pointsRange: 1...3, velocityRange: 4...6),
-//        CoinNode(spawnTimeRange: 1...2, levelRange: 21...Int.max, pointsRange: 1...9, velocityRange: 2...4),
-//        
-        EnemyNode(spawnTimeRange: 2...4, levelRange: 0...15, velocityRange: 8...12),
-//        EnemyNode(spawnTimeRange: 4...4, levelRange: 16...30, velocityRange: 4...8),
-//        EnemyNode(spawnTimeRange: 2...4, levelRange: 31...Int.max, velocityRange: 2...6)
+        CoinNode(spawnTimeRange: 1...2, levelRange: 0...100, pointsRange: 4...7, velocityRange: 4...6),
+        CoinNode(spawnTimeRange: 2...4, levelRange: 101...Int.max, pointsRange: 5...9, velocityRange: 2...4),
+
+        EnemyNode(spawnTimeRange: 4...8, levelRange: 0...50, velocityRange: 8...12),
+        EnemyNode(spawnTimeRange: 4...8, levelRange: 51...100, velocityRange: 6...10),
+        EnemyNode(spawnTimeRange: 6...8, levelRange: 101...150, velocityRange: 4...8),
+        EnemyNode(spawnTimeRange: 6...8, levelRange: 151...Int.max, velocityRange: 2...4),
         
-        BombNode(spawnTimeRange: 4...10, levelRange: 0...10, velocityRange: 4...6)
+        BombNode(spawnTimeRange: 30...50, levelRange: 100...200, velocityRange: 4...6),
+        BombNode(spawnTimeRange: 30...40, levelRange: 201...400, velocityRange: 4...6),
+        BombNode(spawnTimeRange: 20...30, levelRange: 401...600, velocityRange: 4...6),
+        BombNode(spawnTimeRange: 10...20, levelRange: 600...Int.max, velocityRange: 4...6),
+        
+        DashNode(spawnTimeRange: 15...30, levelRange: 150...350, voltar: false),
+        DashNode(spawnTimeRange: 10...20, levelRange: 351...500, voltar: false),
+        DashNode(spawnTimeRange: 15...30, levelRange: 501...Int.max, voltar: true),
     ]
     
     private var refreshRate = 0.5

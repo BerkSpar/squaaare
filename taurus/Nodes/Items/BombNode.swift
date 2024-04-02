@@ -52,7 +52,6 @@ class BombNode: SKNode, Item {
         
         self.scene?.addChild(node)
         
-        
         let dx = force * cos(angle)
         let dy = force * sin(angle)
         
@@ -94,7 +93,7 @@ class BombNode: SKNode, Item {
             },
             .removeFromParent(),
             .run {
-                for i in 1...3 {
+                for _ in 1...3 {
                     let coin = CoinNode(spawnTimeRange: 0...0, levelRange: 0...0, pointsRange: 1...5, velocityRange: 0...0)
                     coin.draw()
                     coin.configureCollision()
@@ -113,6 +112,8 @@ class BombNode: SKNode, Item {
         let node = SKSpriteNode(imageNamed: "bomb_enemy")
         node.size = CGSize(width: 70, height: 70)
         
+        physicsBody = SKPhysicsBody(texture: node.texture!, size: node.size)
+        
         addChild(node)
         
         label.fontColor = .primary
@@ -122,16 +123,9 @@ class BombNode: SKNode, Item {
         label.position.y -= 7
         
         node.addChild(label)
-        
-//        let ball = SKShapeNode(circleOfRadius: 10)
-//        ball.fillColor = .grape
-//        ball.strokeColor = .grape
-//        
-//        node.addChild(ball)
     }
     
     func configureCollision() {
-        physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 70, height: 70))
         physicsBody?.categoryBitMask = PhysicsCategory.enemy
         
         physicsBody?.contactTestBitMask = PhysicsCategory.character

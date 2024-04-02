@@ -22,7 +22,6 @@
 		F7A908972BB2345A003E40AE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908962BB2345A003E40AE /* Item.swift */; };
 		F7A908992BB234A2003E40AE /* SpawnNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908982BB234A2003E40AE /* SpawnNode.swift */; };
 		F7A9089B2BB25AA5003E40AE /* GoogleAdsConsentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A9089A2BB25AA5003E40AE /* GoogleAdsConsentManager.swift */; };
-		F7A908B62BB26899003E40AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7A908B52BB26898003E40AE /* GoogleService-Info.plist */; };
 		F7A908B92BB26BE4003E40AE /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F7A908B82BB26BE4003E40AE /* FirebaseAnalytics */; };
 		F7A908BB2BB26BE4003E40AE /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F7A908BA2BB26BE4003E40AE /* FirebaseAnalyticsSwift */; };
 		F7A908BD2BB26BE4003E40AE /* FirebaseAppDistribution-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = F7A908BC2BB26BE4003E40AE /* FirebaseAppDistribution-Beta */; };
@@ -35,6 +34,11 @@
 		F7A908CB2BB26BE4003E40AE /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F7A908CA2BB26BE4003E40AE /* FirebaseRemoteConfigSwift */; };
 		F7A908CD2BB32EE8003E40AE /* SKScene+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908CC2BB32EE8003E40AE /* SKScene+Ext.swift */; };
 		F7A908D12BB39B5B003E40AE /* BombNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908D02BB39B5B003E40AE /* BombNode.swift */; };
+		F7A908D32BB4B884003E40AE /* DashNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908D22BB4B884003E40AE /* DashNode.swift */; };
+		F7A908D72BB5F19E003E40AE /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = F7A908D62BB5F19E003E40AE /* GoogleMobileAds */; };
+		F7A908D92BB8547D003E40AE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7A908D82BB8547C003E40AE /* GoogleService-Info.plist */; };
+		F7A908DC2BB9EE92003E40AE /* ReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908DB2BB9EE92003E40AE /* ReviewService.swift */; };
+		F7A908DF2BBC7D6B003E40AE /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F7A908DE2BBC7D6B003E40AE /* FirebaseAuth */; };
 		F7BE72972BA8F611005BDEDA /* taurusApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72962BA8F611005BDEDA /* taurusApp.swift */; };
 		F7BE72992BA8F611005BDEDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72982BA8F611005BDEDA /* ContentView.swift */; };
 		F7BE729B2BA8F612005BDEDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F7BE729A2BA8F612005BDEDA /* Assets.xcassets */; };
@@ -54,7 +58,6 @@
 		F7BE72D12BA8FAB6005BDEDA /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72C32BA8FAB6005BDEDA /* View+Ext.swift */; };
 		F7BE72D22BA8FAB6005BDEDA /* FullscreenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72C52BA8FAB6005BDEDA /* FullscreenModifier.swift */; };
 		F7BE72D32BA8FAB6005BDEDA /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72C72BA8FAB6005BDEDA /* Duration.swift */; };
-		F7BE72D62BA8FAFA005BDEDA /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = F7BE72D52BA8FAFA005BDEDA /* GoogleMobileAds */; };
 		F7BE72DA2BA90533005BDEDA /* AdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72D92BA90533005BDEDA /* AdService.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,9 +77,12 @@
 		F7A908962BB2345A003E40AE /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		F7A908982BB234A2003E40AE /* SpawnNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpawnNode.swift; sourceTree = "<group>"; };
 		F7A9089A2BB25AA5003E40AE /* GoogleAdsConsentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAdsConsentManager.swift; sourceTree = "<group>"; };
-		F7A908B52BB26898003E40AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F7A908CC2BB32EE8003E40AE /* SKScene+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKScene+Ext.swift"; sourceTree = "<group>"; };
 		F7A908D02BB39B5B003E40AE /* BombNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BombNode.swift; sourceTree = "<group>"; };
+		F7A908D22BB4B884003E40AE /* DashNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashNode.swift; sourceTree = "<group>"; };
+		F7A908D82BB8547C003E40AE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F7A908DA2BB85774003E40AE /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		F7A908DB2BB9EE92003E40AE /* ReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewService.swift; sourceTree = "<group>"; };
 		F7BE72932BA8F611005BDEDA /* taurus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taurus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F7BE72962BA8F611005BDEDA /* taurusApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = taurusApp.swift; sourceTree = "<group>"; };
 		F7BE72982BA8F611005BDEDA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -112,9 +118,10 @@
 				F7A908C72BB26BE4003E40AE /* FirebasePerformance in Frameworks */,
 				F7A908C32BB26BE4003E40AE /* FirebaseInstallations in Frameworks */,
 				F7A908B92BB26BE4003E40AE /* FirebaseAnalytics in Frameworks */,
+				F7A908D72BB5F19E003E40AE /* GoogleMobileAds in Frameworks */,
 				F7A908CB2BB26BE4003E40AE /* FirebaseRemoteConfigSwift in Frameworks */,
+				F7A908DF2BBC7D6B003E40AE /* FirebaseAuth in Frameworks */,
 				F7A908BF2BB26BE4003E40AE /* FirebaseCrashlytics in Frameworks */,
-				F7BE72D62BA8FAFA005BDEDA /* GoogleMobileAds in Frameworks */,
 				F7A908BD2BB26BE4003E40AE /* FirebaseAppDistribution-Beta in Frameworks */,
 				F7A908C12BB26BE4003E40AE /* FirebaseDynamicLinks in Frameworks */,
 				F7A908C92BB26BE4003E40AE /* FirebaseRemoteConfig in Frameworks */,
@@ -152,6 +159,7 @@
 				F7A908762BAB8378003E40AE /* CoinNode.swift */,
 				F7A908782BAB9697003E40AE /* EnemyNode.swift */,
 				F7A908D02BB39B5B003E40AE /* BombNode.swift */,
+				F7A908D22BB4B884003E40AE /* DashNode.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -172,11 +180,19 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		F7A908DD2BBC7D6B003E40AE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F7BE728A2BA8F611005BDEDA = {
 			isa = PBXGroup;
 			children = (
 				F7BE72952BA8F611005BDEDA /* taurus */,
 				F7BE72942BA8F611005BDEDA /* Products */,
+				F7A908DD2BBC7D6B003E40AE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -191,9 +207,10 @@
 		F7BE72952BA8F611005BDEDA /* taurus */ = {
 			isa = PBXGroup;
 			children = (
-				F7A908B52BB26898003E40AE /* GoogleService-Info.plist */,
 				F7BE72D82BA8FDD3005BDEDA /* Info.plist */,
+				F7A908D82BB8547C003E40AE /* GoogleService-Info.plist */,
 				F7BE72D72BA8FD98005BDEDA /* taurus.entitlements */,
+				F7A908DA2BB85774003E40AE /* PrivacyInfo.xcprivacy */,
 				F7A9087C2BABA29F003E40AE /* Controllers */,
 				F7BE72C82BA8FAB6005BDEDA /* Utils */,
 				F7A9088D2BAEFFC9003E40AE /* Fonts */,
@@ -225,6 +242,7 @@
 				F7BE72A72BA8F680005BDEDA /* GameService.swift */,
 				F7BE72A92BA8F6AC005BDEDA /* AudioService.swift */,
 				F7BE72D92BA90533005BDEDA /* AdService.swift */,
+				F7A908DB2BB9EE92003E40AE /* ReviewService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -300,7 +318,6 @@
 			);
 			name = taurus;
 			packageProductDependencies = (
-				F7BE72D52BA8FAFA005BDEDA /* GoogleMobileAds */,
 				F7A908B82BB26BE4003E40AE /* FirebaseAnalytics */,
 				F7A908BA2BB26BE4003E40AE /* FirebaseAnalyticsSwift */,
 				F7A908BC2BB26BE4003E40AE /* FirebaseAppDistribution-Beta */,
@@ -311,6 +328,8 @@
 				F7A908C62BB26BE4003E40AE /* FirebasePerformance */,
 				F7A908C82BB26BE4003E40AE /* FirebaseRemoteConfig */,
 				F7A908CA2BB26BE4003E40AE /* FirebaseRemoteConfigSwift */,
+				F7A908D62BB5F19E003E40AE /* GoogleMobileAds */,
+				F7A908DE2BBC7D6B003E40AE /* FirebaseAuth */,
 			);
 			productName = taurus;
 			productReference = F7BE72932BA8F611005BDEDA /* taurus.app */;
@@ -341,8 +360,8 @@
 			);
 			mainGroup = F7BE728A2BA8F611005BDEDA;
 			packageReferences = (
-				F7BE72D42BA8FAFA005BDEDA /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 				F7A908B72BB26BE4003E40AE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F7A908D52BB5F19E003E40AE /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
 			);
 			productRefGroup = F7BE72942BA8F611005BDEDA /* Products */;
 			projectDirPath = "";
@@ -358,8 +377,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F7A908B62BB26899003E40AE /* GoogleService-Info.plist in Resources */,
 				F7BE729E2BA8F612005BDEDA /* Preview Assets.xcassets in Resources */,
+				F7A908D92BB8547D003E40AE /* GoogleService-Info.plist in Resources */,
 				F7A9088F2BAEFFE4003E40AE /* Modak-Regular.ttf in Resources */,
 				F7BE729B2BA8F612005BDEDA /* Assets.xcassets in Resources */,
 			);
@@ -385,6 +404,7 @@
 				F7A908702BAB63B8003E40AE /* CharacterNode.swift in Sources */,
 				F7BE72DA2BA90533005BDEDA /* AdService.swift in Sources */,
 				F7A908972BB2345A003E40AE /* Item.swift in Sources */,
+				F7A908D32BB4B884003E40AE /* DashNode.swift in Sources */,
 				F7A908CD2BB32EE8003E40AE /* SKScene+Ext.swift in Sources */,
 				F7A908992BB234A2003E40AE /* SpawnNode.swift in Sources */,
 				F7BE72B62BA8F87D005BDEDA /* StartView.swift in Sources */,
@@ -396,6 +416,7 @@
 				F7A9088A2BAEF75D003E40AE /* StartScene.swift in Sources */,
 				F7A908722BAB7325003E40AE /* EndGameView.swift in Sources */,
 				F7A908772BAB8378003E40AE /* CoinNode.swift in Sources */,
+				F7A908DC2BB9EE92003E40AE /* ReviewService.swift in Sources */,
 				F7A908882BACFB81003E40AE /* SpriteSheet.swift in Sources */,
 				F7BE72B02BA8F6F8005BDEDA /* RewardedAdView.swift in Sources */,
 				F7BE72D12BA8FAB6005BDEDA /* View+Ext.swift in Sources */,
@@ -538,7 +559,8 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = taurus/taurus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 20;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"taurus/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
@@ -552,12 +574,12 @@
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.berkspar.taurus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -577,7 +599,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = taurus/taurus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 17;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_ASSET_PATHS = "\"taurus/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
@@ -591,12 +613,12 @@
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.0;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.berkspar.taurus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -641,7 +663,7 @@
 				minimumVersion = 10.23.0;
 			};
 		};
-		F7BE72D42BA8FAFA005BDEDA /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+		F7A908D52BB5F19E003E40AE /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
 			requirement = {
@@ -702,10 +724,15 @@
 			package = F7A908B72BB26BE4003E40AE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseRemoteConfigSwift;
 		};
-		F7BE72D52BA8FAFA005BDEDA /* GoogleMobileAds */ = {
+		F7A908D62BB5F19E003E40AE /* GoogleMobileAds */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = F7BE72D42BA8FAFA005BDEDA /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			package = F7A908D52BB5F19E003E40AE /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
 			productName = GoogleMobileAds;
+		};
+		F7A908DE2BBC7D6B003E40AE /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F7A908B72BB26BE4003E40AE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -7,6 +7,8 @@
 
 import SwiftUI
 import GoogleMobileAds
+import FirebaseAuth
+
 
 enum Screen {
     case start
@@ -25,7 +27,19 @@ struct ContentView: View {
         InterstitialAd.shared.loadAd(withAdUnitId: AdService.intersticalId)
         
         GameService.shared.authenticate { error in
-            
+            GameCenterAuthProvider.getCredential() { (credential, error) in
+                if let error = error {
+                    return
+                }
+                
+                Auth.auth().signIn(with:credential!) { (user, error) in
+                    if let error = error {
+                        return
+                    }
+                    
+                    
+                }
+            }
         }
     }
     

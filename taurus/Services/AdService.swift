@@ -8,7 +8,13 @@
 import Foundation
 
 class AdService: ObservableObject {
-    static let gameView = "ca-app-pub-3940256099942544/2435281174"
-    static let rewardedId = "ca-app-pub-3940256099942544/1712485313"
+    // Production
+    static let gameView = "ca-app-pub-2005622694052245/3042641245"
+    static let rewardedId = "ca-app-pub-2005622694052245/1653940901"
     static let intersticalId = "ca-app-pub-3940256099942544/4411468910"
+    
+    // Test
+//    static let gameView = "ca-app-pub-2005622694052245/3042641245"
+//    static let rewardedId = "ca-app-pub-2005622694052245/1653940901"
+//    static let intersticalId = "ca-app-pub-3940256099942544/4411468910"
 }

@@ -51,11 +51,12 @@ class EnemyNode: SKNode, Item {
         let node = SKSpriteNode(imageNamed: "basic_enemy")
         node.size = CGSize(width: 40, height: 40)
         
+        physicsBody = SKPhysicsBody(texture: node.texture!, size: node.size)
+        
         addChild(node)
     }
     
     func configureCollision() {
-        physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 40, height: 40))
         physicsBody?.categoryBitMask = PhysicsCategory.enemy
         
         physicsBody?.contactTestBitMask = PhysicsCategory.character

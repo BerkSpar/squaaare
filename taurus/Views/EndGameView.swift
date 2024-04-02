@@ -7,6 +7,7 @@
 
 import SwiftUI
 import SpriteKit
+import StoreKit
 
 struct EndGameView: View {
     var scene: EndGameScene {
@@ -26,6 +27,11 @@ struct EndGameView: View {
         ZStack {
             SpriteView(scene: self.scene)
                 .ignoresSafeArea()
+        }
+        .onAppear {
+            if #available(iOS 16.0, *) {
+                ReviewService().requestReview()
+            }
         }
     }
 }

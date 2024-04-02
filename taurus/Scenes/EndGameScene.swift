@@ -9,6 +9,7 @@ import SpriteKit
 import SwiftUI
 import GoogleMobileAds
 import FirebaseAnalytics
+import StoreKit
 
 class EndGameScene: SKScene, GADFullScreenContentDelegate {
     override func didMove(to view: SKView) {

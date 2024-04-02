@@ -42,6 +42,8 @@ class CoinNode: SKNode, Item {
         let node = SKSpriteNode(imageNamed: "coin")
         node.size = CGSize(width: 30, height: 30)
         
+        physicsBody = SKPhysicsBody(texture: node.texture!, size: node.size)
+        
         addChild(node)
         
         let label = SKLabelNode(text: points.formatted())
@@ -55,7 +57,6 @@ class CoinNode: SKNode, Item {
     }
     
     func configureCollision() {
-        physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 30, height: 30))
         physicsBody?.categoryBitMask = PhysicsCategory.coin
         
         physicsBody?.contactTestBitMask = PhysicsCategory.character
