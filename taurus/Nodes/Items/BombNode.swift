@@ -108,7 +108,7 @@ class BombNode: SKNode, Item {
         ]))
     }
     
-    func draw() {
+    func draw() -> SKNode {
         let node = SKSpriteNode(imageNamed: "bomb_enemy")
         node.size = CGSize(width: 70, height: 70)
         
@@ -123,6 +123,8 @@ class BombNode: SKNode, Item {
         label.position.y -= 7
         
         node.addChild(label)
+        
+        return self
     }
     
     func configureCollision() {
@@ -135,8 +137,7 @@ class BombNode: SKNode, Item {
     }
     
     func didContact(_ scene: GameScene, _ contact: SKPhysicsContact) {
-        HapticsService.shared.notify(.error)
-        
-        RouterService.shared.navigate(.endGame)
+        removeFromParent()
+        scene.gameOver()
     }
 }

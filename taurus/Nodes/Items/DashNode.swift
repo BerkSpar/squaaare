@@ -31,18 +31,18 @@ class DashNode: SKNode, Item {
     
     func didContact(_ scene: GameScene, _ contact: SKPhysicsContact) {
         removeFromParent()
-        HapticsService.shared.notify(.error)
-        
-        RouterService.shared.navigate(.endGame)
+        scene.gameOver()
     }
     
-    func draw() {
+    func draw() -> SKNode {
         let node = SKSpriteNode(imageNamed: "dash_enemy")
         node.size = CGSize(width: 40, height: 40)
         
         physicsBody = SKPhysicsBody(texture: node.texture!, size: node.size)
         
         addChild(node)
+        
+        return self
     }
     
     func configureCollision() {

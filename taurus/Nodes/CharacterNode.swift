@@ -16,11 +16,39 @@ enum RotateType {
 
 class CharacterNode: SKNode {
     var isRotating = false
+    var playerSpeed: CGFloat = 2.0
     
     override init() {
         super.init()
         
         self.draw()
+    }
+    
+    func die(_ scene: GameScene, callback: @escaping () -> Void) {
+        playerSpeed = 0
+        
+        run(.sequence([
+            .hide(),
+            .repeat(.sequence([
+                .run {
+                    let node = SKSpriteNode(imageNamed: "character")
+                    node.size = CGSize(width: 40, height: 40)
+                    node.position = self.position
+                    scene.addChild(node)
+                    
+                    node.run(.sequence([
+                        .group([
+                            .scale(to: 0, duration: 1),
+                            .move(by: CGVector(dx: Int.random(in: -75...75), dy: Int.random(in: -75...75)), duration: 1),
+                            .fadeOut(withDuration: 1),
+                        ]),
+                        .run {
+                            callback()
+                        }
+                    ]))
+                }
+            ]), count: 15)
+        ]))
     }
     
     func draw() {
@@ -42,7 +70,6 @@ class CharacterNode: SKNode {
     func move() {
         if isRotating { return }
         
-        let playerSpeed: CGFloat = 2.0
         let direction = zRotation + CGFloat.pi / 2
         
         let dx = playerSpeed * cos(direction)

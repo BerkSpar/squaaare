@@ -28,6 +28,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         ])
     }
     
+    func gameOver() {
+        HapticsService.shared.notify(.error)
+        
+        spawner.stop(self)
+        character.die(self) {
+            RouterService.shared.navigate(.endGame)
+        }
+    }
+    
     func configureScene() {
         physicsWorld.contactDelegate = self
         anchorPoint = CGPoint(x: 0.5, y: 0.5)

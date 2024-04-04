@@ -14,7 +14,7 @@ protocol Item {
     var id: String { get }
     
     func didContact(_ scene: GameScene, _ contact: SKPhysicsContact)
-    func draw()
+    func draw() -> SKNode
     func configureCollision()
     func spawn(_ scene: GameScene)
     func clone() -> Item

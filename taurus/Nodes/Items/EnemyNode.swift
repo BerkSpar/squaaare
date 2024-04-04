@@ -47,13 +47,15 @@ class EnemyNode: SKNode, Item {
         ]))
     }
     
-    func draw() {
+    func draw() -> SKNode {
         let node = SKSpriteNode(imageNamed: "basic_enemy")
         node.size = CGSize(width: 40, height: 40)
         
         physicsBody = SKPhysicsBody(texture: node.texture!, size: node.size)
         
         addChild(node)
+        
+        return self
     }
     
     func configureCollision() {
@@ -66,8 +68,7 @@ class EnemyNode: SKNode, Item {
     }
     
     func didContact(_ scene: GameScene, _ contact: SKPhysicsContact) {
-        HapticsService.shared.notify(.error)
-        
-        RouterService.shared.navigate(.endGame)
+        removeFromParent()
+        scene.gameOver()
     }
 }

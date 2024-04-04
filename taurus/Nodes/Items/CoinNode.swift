@@ -38,7 +38,7 @@ class CoinNode: SKNode, Item {
         CoinNode(spawnTimeRange: spawnTimeRange, levelRange: levelRange, pointsRange: pointsRange, velocityRange: velocityRange)
     }
     
-    func draw() {
+    func draw() -> SKNode {
         let node = SKSpriteNode(imageNamed: "coin")
         node.size = CGSize(width: 30, height: 30)
         
@@ -54,6 +54,8 @@ class CoinNode: SKNode, Item {
         label.position.y -= 7
         
         node.addChild(label)
+        
+        return self
     }
     
     func configureCollision() {

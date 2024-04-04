@@ -67,7 +67,15 @@ class SpawnNode: SKNode {
         }
     }
     
-    func stop() {
+    func stop(_ scene: GameScene) {
+        for child in scene.children {
+            if child is Item {
+                child.run(.sequence([
+                    .fadeOut(withDuration: 0.5),
+                ]))
+            }
+        }
+        
         removeAllActions()
     }
 }

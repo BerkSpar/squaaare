@@ -20,9 +20,6 @@ struct ContentView: View {
     @StateObject var router = RouterService.shared
     
     func initializeApp() {
-        GADMobileAds.sharedInstance().start()
-        GADMobileAds.sharedInstance().disableSDKCrashReporting()
-        
         RewardedAd.shared.loadAd(withAdUnitId: AdService.rewardedId)
         InterstitialAd.shared.loadAd(withAdUnitId: AdService.intersticalId)
         

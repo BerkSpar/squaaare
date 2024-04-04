@@ -20,8 +20,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
         FirebaseApp.configure()
         
         #if DEBUG
-        // Remover em prod
-        Analytics.setAnalyticsCollectionEnabled(false)
+            Analytics.setAnalyticsCollectionEnabled(false)
         #endif
         
         Messaging.messaging().delegate = self
@@ -55,18 +54,34 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
 struct taurusApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
-    init() {
-        if ATTrackingManager.trackingAuthorizationStatus == .notDetermined {
-            //User has not indicated their choice for app tracking
-            //You may want to show a pop-up explaining why you are collecting their data
-            //Toggle any variables to do this here
-        } else {
-            ATTrackingManager.requestTrackingAuthorization { status in
-                //Whether or not user has opted in initialize GADMobileAds here it will handle the rest
-                                                            
+    func requestPermissionAndInit() {
+        ATTrackingManager.requestTrackingAuthorization { status in
+            switch status {
+            case .authorized:
+                // Tracking authorization dialog was shown
+                // and we are authorized
+                print("Authorized")
+                
+                // Now that we are authorized we can get the IDFA
+                print(ASIdentifierManager.shared().advertisingIdentifier)
                 GADMobileAds.sharedInstance().start(completionHandler: nil)
+            case .denied:
+                // Tracking authorization dialog was
+                // shown and permission is denied
+                print("Denied")
+            case .notDetermined:
+                // Tracking authorization dialog has not been shown
+                print("Not Determined")
+            case .restricted:
+                print("Restricted")
+            @unknown default:
+                print("Unknown")
             }
         }
+    }
+    
+    init() {
+        requestPermissionAndInit()
     }
     
     var body: some Scene {
