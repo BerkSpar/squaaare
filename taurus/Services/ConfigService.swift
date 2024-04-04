@@ -10,30 +10,23 @@ import FirebaseRemoteConfig
 class ConfigService {
     static let shared = ConfigService()
     
-    var remoteConfig: RemoteConfig?
-    
     var rotateCharacter: Bool = true
     
     func start() {
-        remoteConfig = RemoteConfig.remoteConfig()
-        let settings = RemoteConfigSettings()
-        settings.minimumFetchInterval = 0
-        remoteConfig?.configSettings = settings
-        
         #if DEBUG
             let fetchDuration: TimeInterval = 0
         #else
             let fetchDuration: TimeInterval = 10
         #endif
         
-        remoteConfig?.fetch(withExpirationDuration: fetchDuration) { status, error in
+        RemoteConfig.remoteConfig().fetch(withExpirationDuration: fetchDuration) { status, error in
             if error != nil {
               return
             }
             
-            self.remoteConfig?.activate()
+            RemoteConfig.remoteConfig().activate()
             
-            self.rotateCharacter = self.remoteConfig?.configValue(forKey: "rotate_character").boolValue ?? self.rotateCharacter
+            self.rotateCharacter = RemoteConfig.remoteConfig().configValue(forKey: "rotate_character").boolValue
         }
     }
 }
