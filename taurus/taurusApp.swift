@@ -34,6 +34,8 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
         
         application.registerForRemoteNotifications()
         
+        ConfigService.shared.start()
+        
         return true
     }
     

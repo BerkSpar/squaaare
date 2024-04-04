@@ -114,8 +114,13 @@ class CharacterNode: SKNode {
         case .right:
             angle = -.pi/2
         }
-
-        run(.rotate(toAngle: angle, duration: 0.2, shortestUnitArc: true)) {
+                
+        if ConfigService.shared.rotateCharacter {
+            run(.rotate(toAngle: angle, duration: 0.2, shortestUnitArc: true)) {
+                self.isRotating = false
+            }
+        } else {
+            self.zRotation = angle
             self.isRotating = false
         }
     }

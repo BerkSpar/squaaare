@@ -72,6 +72,7 @@ class SpawnNode: SKNode {
             if child is Item {
                 child.run(.sequence([
                     .fadeOut(withDuration: 0.5),
+                    .removeFromParent()
                 ]))
             }
         }

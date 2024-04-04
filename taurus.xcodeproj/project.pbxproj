@@ -59,6 +59,7 @@
 		F7BE72D22BA8FAB6005BDEDA /* FullscreenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72C52BA8FAB6005BDEDA /* FullscreenModifier.swift */; };
 		F7BE72D32BA8FAB6005BDEDA /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72C72BA8FAB6005BDEDA /* Duration.swift */; };
 		F7BE72DA2BA90533005BDEDA /* AdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72D92BA90533005BDEDA /* AdService.swift */; };
+		F7C970A22BBE6A0B006558FD /* RemoteConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C970A12BBE6A0B006558FD /* RemoteConfigService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,7 @@
 		F7BE72D72BA8FD98005BDEDA /* taurus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = taurus.entitlements; sourceTree = "<group>"; };
 		F7BE72D82BA8FDD3005BDEDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F7BE72D92BA90533005BDEDA /* AdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdService.swift; sourceTree = "<group>"; };
+		F7C970A12BBE6A0B006558FD /* RemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 				F7BE72A92BA8F6AC005BDEDA /* AudioService.swift */,
 				F7BE72D92BA90533005BDEDA /* AdService.swift */,
 				F7A908DB2BB9EE92003E40AE /* ReviewService.swift */,
+				F7C970A12BBE6A0B006558FD /* RemoteConfigService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -451,6 +454,7 @@
 				F7BE72A82BA8F680005BDEDA /* GameService.swift in Sources */,
 				F7BE72CB2BA8FAB6005BDEDA /* Color+Ext.swift in Sources */,
 				F7A908792BAB9697003E40AE /* EnemyNode.swift in Sources */,
+				F7C970A22BBE6A0B006558FD /* RemoteConfigService.swift in Sources */,
 				F7BE72D02BA8FAB6005BDEDA /* String+Ext.swift in Sources */,
 				F7A9087E2BABA2AC003E40AE /* GameController.swift in Sources */,
 			);
