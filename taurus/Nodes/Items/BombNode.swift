@@ -72,7 +72,7 @@ class BombNode: SKNode, Item {
         scene.addChild(self)
         
         run(.sequence([
-            .move(to: CGPoint(x: position.x, y:  Double.random(in: -200...200)), duration: 2),
+            .move(to: CGPoint(x: position.x, y:  Double.random(in: -400...400)), duration: 2),
             .repeat(.sequence([
                 .run {
                     self.time -= 1
@@ -103,6 +103,12 @@ class BombNode: SKNode, Item {
                     coin.position.y += Double.random(in: -30...30)
                     
                     scene.addChild(coin)
+                    
+                    coin.run(.sequence([
+                        .wait(forDuration: 5.5),
+                        .fadeOut(withDuration: 0.5),
+                        .removeFromParent()
+                    ]))
                 }
             }
         ]))

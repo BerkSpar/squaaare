@@ -24,7 +24,6 @@ struct ContentView: View {
         GADMobileAds.sharedInstance().disableSDKCrashReporting()
         
         RewardedAd.shared.loadAd(withAdUnitId: AdService.rewardedId)
-        InterstitialAd.shared.loadAd(withAdUnitId: AdService.intersticalId)
         
         GameService.shared.authenticate { error in
             GameCenterAuthProvider.getCredential() { (credential, error) in
