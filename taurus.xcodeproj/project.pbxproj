@@ -59,6 +59,7 @@
 		F7BE72D22BA8FAB6005BDEDA /* FullscreenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72C52BA8FAB6005BDEDA /* FullscreenModifier.swift */; };
 		F7BE72D32BA8FAB6005BDEDA /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72C72BA8FAB6005BDEDA /* Duration.swift */; };
 		F7BE72DA2BA90533005BDEDA /* AdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72D92BA90533005BDEDA /* AdService.swift */; };
+		F7C970A22BBE6A0B006558FD /* RemoteConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C970A12BBE6A0B006558FD /* RemoteConfigService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -106,6 +107,7 @@
 		F7BE72D72BA8FD98005BDEDA /* taurus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = taurus.entitlements; sourceTree = "<group>"; };
 		F7BE72D82BA8FDD3005BDEDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F7BE72D92BA90533005BDEDA /* AdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdService.swift; sourceTree = "<group>"; };
+		F7C970A12BBE6A0B006558FD /* RemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +245,7 @@
 				F7BE72A92BA8F6AC005BDEDA /* AudioService.swift */,
 				F7BE72D92BA90533005BDEDA /* AdService.swift */,
 				F7A908DB2BB9EE92003E40AE /* ReviewService.swift */,
+				F7C970A12BBE6A0B006558FD /* RemoteConfigService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				F7BE728F2BA8F611005BDEDA /* Sources */,
 				F7BE72902BA8F611005BDEDA /* Frameworks */,
 				F7BE72912BA8F611005BDEDA /* Resources */,
+				F7C970A02BBE4D10006558FD /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -386,6 +390,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F7C970A02BBE4D10006558FD /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F7BE728F2BA8F611005BDEDA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -425,6 +454,7 @@
 				F7BE72A82BA8F680005BDEDA /* GameService.swift in Sources */,
 				F7BE72CB2BA8FAB6005BDEDA /* Color+Ext.swift in Sources */,
 				F7A908792BAB9697003E40AE /* EnemyNode.swift in Sources */,
+				F7C970A22BBE6A0B006558FD /* RemoteConfigService.swift in Sources */,
 				F7BE72D02BA8FAB6005BDEDA /* String+Ext.swift in Sources */,
 				F7A9087E2BABA2AC003E40AE /* GameController.swift in Sources */,
 			);
@@ -559,7 +589,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = taurus/taurus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 22;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"taurus/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
@@ -579,7 +609,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.berkspar.taurus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -599,7 +630,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = taurus/taurus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 22;
 				DEVELOPMENT_ASSET_PATHS = "\"taurus/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
@@ -618,7 +649,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.2;
+				MARKETING_VERSION = 1.1.3;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.berkspar.taurus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

@@ -20,22 +20,15 @@ struct ContentView: View {
     @StateObject var router = RouterService.shared
     
     func initializeApp() {
-        GADMobileAds.sharedInstance().start()
-        GADMobileAds.sharedInstance().disableSDKCrashReporting()
-        
         RewardedAd.shared.loadAd(withAdUnitId: AdService.rewardedId)
         
         GameService.shared.authenticate { error in
             GameCenterAuthProvider.getCredential() { (credential, error) in
-                if let error = error {
+                if error != nil {
                     return
                 }
                 
                 Auth.auth().signIn(with:credential!) { (user, error) in
-                    if let error = error {
-                        return
-                    }
-                    
                     
                 }
             }

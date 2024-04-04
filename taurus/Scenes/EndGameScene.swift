@@ -36,7 +36,6 @@ class EndGameScene: SKScene, GADFullScreenContentDelegate {
             ad.present(fromRootViewController: self.view?.window?.rootViewController) {
                 GameController.shared.oneMoreChance = false
             }
-            
         }
     }
     
