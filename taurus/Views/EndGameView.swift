@@ -30,7 +30,7 @@ struct EndGameView: View {
         }
         .onAppear {
             if #available(iOS 16.0, *) {
-                ReviewService().requestReview()
+                ReviewService().reviewIfNeeded()
             }
         }
     }

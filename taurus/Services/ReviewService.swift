@@ -5,19 +5,20 @@
 //  Created by Felipe Passos on 31/03/24.
 //
 
+import UIKit
 import StoreKit
-import Foundation
-import SwiftUI
 
-@available(iOS 16.0, *)
 class ReviewService {
-    @Environment(\.requestReview) var requestReview
     
-    private let userDefaultsKey = "has_reviewd"
+    private let userDefaultsKey = "has_reviewed"
     
-    @MainActor func review() {
+    func reviewIfNeeded() {
         if !UserDefaults.standard.bool(forKey: userDefaultsKey) {
-            requestReview()
+            if let scene = UIApplication.shared.connectedScenes.first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene {
+                DispatchQueue.main.async {
+                    SKStoreReviewController.requestReview(in: scene)
+                }
+            }
             
             UserDefaults.standard.set(true, forKey: userDefaultsKey)
         }

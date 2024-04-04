@@ -28,15 +28,11 @@ struct ContentView: View {
         
         GameService.shared.authenticate { error in
             GameCenterAuthProvider.getCredential() { (credential, error) in
-                if let error = error {
+                if error != nil {
                     return
                 }
                 
                 Auth.auth().signIn(with:credential!) { (user, error) in
-                    if let error = error {
-                        return
-                    }
-                    
                     
                 }
             }
