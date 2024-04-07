@@ -7,15 +7,18 @@
 
 import SpriteKit
 
-protocol Item {
+protocol Item: Contactable {
     var spawnTimeRange: ClosedRange<TimeInterval> { get }
     var levelRange: ClosedRange<Int> { get }
     var velocity: Double { get }
     var id: String { get }
     
-    func didContact(_ scene: GameScene, _ contact: SKPhysicsContact)
     func draw() -> SKNode
     func configureCollision()
     func spawn(_ scene: GameScene)
     func clone() -> Item
+}
+
+protocol Enemy: Item {
+    
 }

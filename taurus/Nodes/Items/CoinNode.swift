@@ -55,7 +55,7 @@ class CoinNode: SKNode, Item {
         
         node.addChild(label)
         
-        return self
+        return node.copy() as! SKNode
     }
     
     func configureCollision() {
@@ -68,6 +68,10 @@ class CoinNode: SKNode, Item {
     }
     
     func didContact(_ scene: GameScene, _ contact: SKPhysicsContact) {
+        let contactNode = contact.bodyA.node is CoinNode ? contact.bodyB.node : contact.bodyA.node
+                
+        if contactNode is Barrier { return }
+        
         let label = SKLabelNode(text: "+\(points)")
         label.position = contact.contactPoint
         label.fontColor = .primary

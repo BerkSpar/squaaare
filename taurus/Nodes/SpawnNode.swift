@@ -47,7 +47,7 @@ class SpawnNode: SKNode {
         if !item.levelRange.contains(level) { return }
         
         let clone = item.clone()
-        clone.draw()
+        _ = clone.draw()
         clone.configureCollision()
         clone.spawn(scene)
         

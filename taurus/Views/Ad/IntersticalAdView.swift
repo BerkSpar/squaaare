@@ -15,6 +15,7 @@ class InterstitialAd: NSObject {
     static let shared = InterstitialAd()
     
     func loadAd(withAdUnitId id: String) {
+        
         let req = GADRequest()
         GADInterstitialAd.load(withAdUnitID: id, request: req) { interstitialAd, err in
             if let err = err {

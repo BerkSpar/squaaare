@@ -12,6 +12,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     let character = CharacterNode()
     let pointsNode = SKLabelNode()
     let spawner = SpawnNode()
+    let abilityModal = AbilityModal()
+    
+    var isShowingModal = false
     
     override func didMove(to view: SKView) {
         configureScene()
@@ -22,6 +25,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         updatePoints()
         spawner.start(self)
         addChild(spawner)
+        
+        abilityModal.name = "modal"
+        addChild(abilityModal)
         
         Analytics.logEvent(AnalyticsEventLevelStart, parameters: [
             AnalyticsParameterLevelName: "game"
@@ -97,16 +103,36 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         guard let nodeA = contact.bodyA.node else { return }
         guard let nodeB = contact.bodyB.node else { return }
         
-        if (nodeA.name == "bullet" || nodeB.name == "bullet") {
-            gameOver()
-            return
+        if (nodeA is Contactable) { (nodeA as! Contactable).didContact(self, contact) }
+        if (nodeB is Contactable) { (nodeB as! Contactable).didContact(self, contact) }
+    }
+    
+    func pause() {
+        for child in children {
+            if child.name == "modal" { continue }
+            child.isPaused = true
         }
-        
-        if (nodeA is Item) { (nodeA as! Item).didContact(self, contact) }
-        if (nodeB is Item) { (nodeB as! Item).didContact(self, contact) }
+    }
+    
+    func unpause() {
+        for child in children {
+            child.isPaused = false
+        }
     }
     
     override func update(_ currentTime: TimeInterval) {
+        if isShowingModal { return }
+        
+        if GameController.shared.canGoNextLevel() {
+            self.pause()
+            self.isShowingModal = true
+            
+            abilityModal.show(self) {
+                self.unpause()
+                self.isShowingModal = false
+            }
+        }
+        
         character.move()
     }
 }

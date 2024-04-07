@@ -51,6 +51,14 @@ class CharacterNode: SKNode {
         ]))
     }
     
+    func addBarrier() {
+        let barrier = Barrier()
+        barrier.alpha = 0
+        addChild(barrier)
+        
+        barrier.run(.fadeIn(withDuration: 0.3))
+    }
+    
     func draw() {
         let node = SKSpriteNode(imageNamed: "character")
         node.size = CGSize(width: 40, height: 40)

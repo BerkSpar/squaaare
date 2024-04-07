@@ -59,7 +59,14 @@
 		F7BE72D22BA8FAB6005BDEDA /* FullscreenModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72C52BA8FAB6005BDEDA /* FullscreenModifier.swift */; };
 		F7BE72D32BA8FAB6005BDEDA /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72C72BA8FAB6005BDEDA /* Duration.swift */; };
 		F7BE72DA2BA90533005BDEDA /* AdService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7BE72D92BA90533005BDEDA /* AdService.swift */; };
-		F7C970A22BBE6A0B006558FD /* RemoteConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C970A12BBE6A0B006558FD /* RemoteConfigService.swift */; };
+		F7C970A22BBE6A0B006558FD /* ConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C970A12BBE6A0B006558FD /* ConfigService.swift */; };
+		F7C970A42BBF35E1006558FD /* SKLabelNode+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C970A32BBF35E1006558FD /* SKLabelNode+Ext.swift */; };
+		F7C970A62BBF82AE006558FD /* AbilityNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C970A52BBF82AE006558FD /* AbilityNode.swift */; };
+		F7C970A92BBF82DF006558FD /* AbilityModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C970A82BBF82DF006558FD /* AbilityModal.swift */; };
+		F7C970AD2BC21DF0006558FD /* SKNode+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C970AC2BC21DF0006558FD /* SKNode+Ext.swift */; };
+		F7C970B02BC2FBA2006558FD /* Barrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C970AF2BC2FBA2006558FD /* Barrier.swift */; };
+		F7C970B22BC2FBBA006558FD /* Contactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C970B12BC2FBBA006558FD /* Contactable.swift */; };
+		F7C970B42BC359F0006558FD /* BulletNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C970B32BC359F0006558FD /* BulletNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -107,7 +114,14 @@
 		F7BE72D72BA8FD98005BDEDA /* taurus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = taurus.entitlements; sourceTree = "<group>"; };
 		F7BE72D82BA8FDD3005BDEDA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F7BE72D92BA90533005BDEDA /* AdService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdService.swift; sourceTree = "<group>"; };
-		F7C970A12BBE6A0B006558FD /* RemoteConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteConfigService.swift; sourceTree = "<group>"; };
+		F7C970A12BBE6A0B006558FD /* ConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigService.swift; sourceTree = "<group>"; };
+		F7C970A32BBF35E1006558FD /* SKLabelNode+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKLabelNode+Ext.swift"; sourceTree = "<group>"; };
+		F7C970A52BBF82AE006558FD /* AbilityNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityNode.swift; sourceTree = "<group>"; };
+		F7C970A82BBF82DF006558FD /* AbilityModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityModal.swift; sourceTree = "<group>"; };
+		F7C970AC2BC21DF0006558FD /* SKNode+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKNode+Ext.swift"; sourceTree = "<group>"; };
+		F7C970AF2BC2FBA2006558FD /* Barrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barrier.swift; sourceTree = "<group>"; };
+		F7C970B12BC2FBBA006558FD /* Contactable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contactable.swift; sourceTree = "<group>"; };
+		F7C970B32BC359F0006558FD /* BulletNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,10 +160,14 @@
 		F7A9086E2BAB63AA003E40AE /* Nodes */ = {
 			isa = PBXGroup;
 			children = (
+				F7C970AE2BC2FB91006558FD /* PowerUps */,
+				F7C970A72BBF82D1006558FD /* Modals */,
 				F7A908752BAB8369003E40AE /* Items */,
 				F7A908982BB234A2003E40AE /* SpawnNode.swift */,
 				F7A9086F2BAB63B8003E40AE /* CharacterNode.swift */,
 				F7A9088B2BAEFA75003E40AE /* ButtonNode.swift */,
+				F7C970A52BBF82AE006558FD /* AbilityNode.swift */,
+				F7C970B12BC2FBBA006558FD /* Contactable.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -162,6 +180,7 @@
 				F7A908782BAB9697003E40AE /* EnemyNode.swift */,
 				F7A908D02BB39B5B003E40AE /* BombNode.swift */,
 				F7A908D22BB4B884003E40AE /* DashNode.swift */,
+				F7C970B32BC359F0006558FD /* BulletNode.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -245,7 +264,7 @@
 				F7BE72A92BA8F6AC005BDEDA /* AudioService.swift */,
 				F7BE72D92BA90533005BDEDA /* AdService.swift */,
 				F7A908DB2BB9EE92003E40AE /* ReviewService.swift */,
-				F7C970A12BBE6A0B006558FD /* RemoteConfigService.swift */,
+				F7C970A12BBE6A0B006558FD /* ConfigService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -279,6 +298,8 @@
 				F7BE72C22BA8FAB6005BDEDA /* String+Ext.swift */,
 				F7BE72C32BA8FAB6005BDEDA /* View+Ext.swift */,
 				F7A908CC2BB32EE8003E40AE /* SKScene+Ext.swift */,
+				F7C970A32BBF35E1006558FD /* SKLabelNode+Ext.swift */,
+				F7C970AC2BC21DF0006558FD /* SKNode+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -302,6 +323,22 @@
 				F7A9089A2BB25AA5003E40AE /* GoogleAdsConsentManager.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		F7C970A72BBF82D1006558FD /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				F7C970A82BBF82DF006558FD /* AbilityModal.swift */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
+		F7C970AE2BC2FB91006558FD /* PowerUps */ = {
+			isa = PBXGroup;
+			children = (
+				F7C970AF2BC2FBA2006558FD /* Barrier.swift */,
+			);
+			path = PowerUps;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,13 +474,16 @@
 				F7A908CD2BB32EE8003E40AE /* SKScene+Ext.swift in Sources */,
 				F7A908992BB234A2003E40AE /* SpawnNode.swift in Sources */,
 				F7BE72B62BA8F87D005BDEDA /* StartView.swift in Sources */,
+				F7C970B42BC359F0006558FD /* BulletNode.swift in Sources */,
 				F7BE72B32BA8F781005BDEDA /* RouterService.swift in Sources */,
 				F7BE72D32BA8FAB6005BDEDA /* Duration.swift in Sources */,
 				F7BE72AF2BA8F6F8005BDEDA /* IntersticalAdView.swift in Sources */,
 				F7BE72B82BA8F8A9005BDEDA /* GameView.swift in Sources */,
 				F7BE72B12BA8F6F8005BDEDA /* BannerAdView.swift in Sources */,
 				F7A9088A2BAEF75D003E40AE /* StartScene.swift in Sources */,
+				F7C970B02BC2FBA2006558FD /* Barrier.swift in Sources */,
 				F7A908722BAB7325003E40AE /* EndGameView.swift in Sources */,
+				F7C970B22BC2FBBA006558FD /* Contactable.swift in Sources */,
 				F7A908772BAB8378003E40AE /* CoinNode.swift in Sources */,
 				F7A908DC2BB9EE92003E40AE /* ReviewService.swift in Sources */,
 				F7A908882BACFB81003E40AE /* SpriteSheet.swift in Sources */,
@@ -452,9 +492,13 @@
 				F7BE72972BA8F611005BDEDA /* taurusApp.swift in Sources */,
 				F7BE72A62BA8F63C005BDEDA /* HapticsService.swift in Sources */,
 				F7BE72A82BA8F680005BDEDA /* GameService.swift in Sources */,
+				F7C970AD2BC21DF0006558FD /* SKNode+Ext.swift in Sources */,
+				F7C970A92BBF82DF006558FD /* AbilityModal.swift in Sources */,
+				F7C970A42BBF35E1006558FD /* SKLabelNode+Ext.swift in Sources */,
+				F7C970A62BBF82AE006558FD /* AbilityNode.swift in Sources */,
 				F7BE72CB2BA8FAB6005BDEDA /* Color+Ext.swift in Sources */,
 				F7A908792BAB9697003E40AE /* EnemyNode.swift in Sources */,
-				F7C970A22BBE6A0B006558FD /* RemoteConfigService.swift in Sources */,
+				F7C970A22BBE6A0B006558FD /* ConfigService.swift in Sources */,
 				F7BE72D02BA8FAB6005BDEDA /* String+Ext.swift in Sources */,
 				F7A9087E2BABA2AC003E40AE /* GameController.swift in Sources */,
 			);
@@ -589,7 +633,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = taurus/taurus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"taurus/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
@@ -609,7 +653,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.berkspar.taurus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -630,7 +674,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = taurus/taurus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 22;
+				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_ASSET_PATHS = "\"taurus/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
@@ -649,7 +693,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.2.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.berkspar.taurus;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -11,6 +11,7 @@ class ConfigService {
     static let shared = ConfigService()
     
     var rotateCharacter: Bool = true
+    var showGameBanner: Bool = false
     
     func start() {
         #if DEBUG
@@ -27,6 +28,7 @@ class ConfigService {
             RemoteConfig.remoteConfig().activate()
             
             self.rotateCharacter = RemoteConfig.remoteConfig().configValue(forKey: "rotate_character").boolValue
+            self.showGameBanner = RemoteConfig.remoteConfig().configValue(forKey: "show_game_banner").boolValue
         }
     }
 }

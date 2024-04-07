@@ -8,7 +8,7 @@
 import SwiftUI
 import SpriteKit
 
-struct StartView: View {
+struct StartView: View {    
     var scene: SKScene {
         let scene = StartScene()
                 

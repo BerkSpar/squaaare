@@ -7,7 +7,7 @@
 
 import SpriteKit
 
-class BombNode: SKNode, Item {
+class BombNode: SKNode, Enemy {
     let id = "bomb"
     
     var spawnTimeRange: ClosedRange<TimeInterval>
@@ -35,33 +35,6 @@ class BombNode: SKNode, Item {
         BombNode(spawnTimeRange: spawnTimeRange, levelRange: levelRange, velocityRange: velocityRange)
     }
     
-    func spawnBullet(_ scene: GameScene, _ angle: Double, _ force: Double) {
-        let node = SKShapeNode(ellipseOf: CGSize(width: 15, height: 15))
-        node.strokeColor = .grape
-        node.fillColor = .grape
-        node.position = position
-        
-        node.name = "bullet"
-        node.physicsBody = SKPhysicsBody(circleOfRadius: 15)
-        node.physicsBody?.categoryBitMask = PhysicsCategory.enemy
-        
-        node.physicsBody?.contactTestBitMask = PhysicsCategory.character
-        node.physicsBody?.affectedByGravity = false
-        node.physicsBody?.allowsRotation = false
-        node.physicsBody?.collisionBitMask = 0;
-        
-        self.scene?.addChild(node)
-        
-        let dx = force * cos(angle)
-        let dy = force * sin(angle)
-        
-        node.run(.sequence([
-            .move(by: CGVector(dx: dx, dy: dy), duration: 1),
-            .fadeOut(withDuration: 0.3),
-            .removeFromParent()
-        ]))
-    }
-    
     func spawn(_ scene: GameScene) {
         let xPosition = Double.random(in: -scene.frame.width/2+50 ... scene.frame.width/2-50)
         let yPosition = (scene.frame.height / 2)
@@ -85,11 +58,18 @@ class BombNode: SKNode, Item {
             .run {
                 let angles = [0, 1, 2, 3, 4, 5].map { $0 * Double.pi/3 }
                 for angle in angles {
-                    self.spawnBullet(scene, angle, 100)
+                    let bullet = BulletNode()
+                    bullet.draw()
+                    bullet.configureCollision()
+                    bullet.position = self.position
+                    scene.addChild(bullet)
+                    
+                    bullet.spawnBullet(scene, angle, 100)
                 }
             },
             .run {
                 scene.bombShake()
+                HapticsService.shared.play(.heavy)
             },
             .removeFromParent(),
             .run {
@@ -130,7 +110,7 @@ class BombNode: SKNode, Item {
         
         node.addChild(label)
         
-        return self
+        return node.copy() as! SKNode
     }
     
     func configureCollision() {
@@ -143,6 +123,11 @@ class BombNode: SKNode, Item {
     }
     
     func didContact(_ scene: GameScene, _ contact: SKPhysicsContact) {
+        let contactNode = contact.bodyA.node is BombNode ? contact.bodyB.node : contact.bodyA.node
+                
+        if contactNode is Barrier { return }
+        if contactNode is Enemy { return }
+        
         removeFromParent()
         scene.gameOver()
     }

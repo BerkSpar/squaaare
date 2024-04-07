@@ -44,18 +44,20 @@ struct GameView: View {
             SpriteView(scene: self.scene)
                 .ignoresSafeArea()
             
-//            VStack {
-//                Spacer()
-//                
-//                BannerAd(adUnitId: AdService.gameView)
-//                    .frame(width: width, height: height, alignment: .center)
-//                    .onAppear {
-//                        setFrame()
-//                    }
-//                    .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
-//                        setFrame()
-//                    }
-//            }
+            if (ConfigService.shared.showGameBanner) {
+                VStack {
+                    Spacer()
+                    
+                    BannerAd(adUnitId: AdService.gameView)
+                        .frame(width: width, height: height, alignment: .center)
+                        .onAppear {
+                            setFrame()
+                        }
+                        .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
+                            setFrame()
+                        }
+                }
+            }
         }
     }
 }

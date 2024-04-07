@@ -55,7 +55,7 @@ class EnemyNode: SKNode, Item {
         
         addChild(node)
         
-        return self
+        return node.copy() as! SKNode
     }
     
     func configureCollision() {
@@ -68,6 +68,10 @@ class EnemyNode: SKNode, Item {
     }
     
     func didContact(_ scene: GameScene, _ contact: SKPhysicsContact) {
+        let contactNode = contact.bodyA.node is EnemyNode ? contact.bodyB.node : contact.bodyA.node
+                
+        if contactNode is Barrier { return }
+        
         removeFromParent()
         scene.gameOver()
     }
