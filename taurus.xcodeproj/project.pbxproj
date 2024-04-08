@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C06D13822BC47BFE00506A9B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C06D13812BC47BFE00506A9B /* FirebaseAnalytics */; };
+		C06D13842BC47BFE00506A9B /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = C06D13832BC47BFE00506A9B /* FirebaseAnalyticsOnDeviceConversion */; };
+		C06D13862BC47BFE00506A9B /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C06D13852BC47BFE00506A9B /* FirebaseAnalyticsSwift */; };
+		C06D13882BC47BFE00506A9B /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = C06D13872BC47BFE00506A9B /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		C06D138A2BC47BFE00506A9B /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = C06D13892BC47BFE00506A9B /* FirebaseAppCheck */; };
+		C06D138D2BC47C6C00506A9B /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = C06D138C2BC47C6C00506A9B /* FacebookCore */; };
+		C06D138F2BC47D6500506A9B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C06D138E2BC47D6500506A9B /* AdSupport.framework */; };
+		C06D13912BC47D6F00506A9B /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C06D13902BC47D6F00506A9B /* AppTrackingTransparency.framework */; };
 		F7A908652BAA349F003E40AE /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908642BAA349F003E40AE /* GameScene.swift */; };
 		F7A908702BAB63B8003E40AE /* CharacterNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A9086F2BAB63B8003E40AE /* CharacterNode.swift */; };
 		F7A908722BAB7325003E40AE /* EndGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7A908712BAB7325003E40AE /* EndGameView.swift */; };
@@ -70,6 +78,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C06D138E2BC47D6500506A9B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		C06D13902BC47D6F00506A9B /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 		F7A908642BAA349F003E40AE /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		F7A9086F2BAB63B8003E40AE /* CharacterNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterNode.swift; sourceTree = "<group>"; };
 		F7A908712BAB7325003E40AE /* EndGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameView.swift; sourceTree = "<group>"; };
@@ -129,13 +139,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C06D138F2BC47D6500506A9B /* AdSupport.framework in Frameworks */,
 				F7A908C52BB26BE4003E40AE /* FirebaseMessaging in Frameworks */,
+				C06D138A2BC47BFE00506A9B /* FirebaseAppCheck in Frameworks */,
 				F7A908BB2BB26BE4003E40AE /* FirebaseAnalyticsSwift in Frameworks */,
 				F7A908C72BB26BE4003E40AE /* FirebasePerformance in Frameworks */,
+				C06D13912BC47D6F00506A9B /* AppTrackingTransparency.framework in Frameworks */,
+				C06D13842BC47BFE00506A9B /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
 				F7A908C32BB26BE4003E40AE /* FirebaseInstallations in Frameworks */,
+				C06D13822BC47BFE00506A9B /* FirebaseAnalytics in Frameworks */,
+				C06D138D2BC47C6C00506A9B /* FacebookCore in Frameworks */,
 				F7A908B92BB26BE4003E40AE /* FirebaseAnalytics in Frameworks */,
+				C06D13882BC47BFE00506A9B /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				F7A908D72BB5F19E003E40AE /* GoogleMobileAds in Frameworks */,
 				F7A908CB2BB26BE4003E40AE /* FirebaseRemoteConfigSwift in Frameworks */,
+				C06D13862BC47BFE00506A9B /* FirebaseAnalyticsSwift in Frameworks */,
 				F7A908DF2BBC7D6B003E40AE /* FirebaseAuth in Frameworks */,
 				F7A908BF2BB26BE4003E40AE /* FirebaseCrashlytics in Frameworks */,
 				F7A908BD2BB26BE4003E40AE /* FirebaseAppDistribution-Beta in Frameworks */,
@@ -204,6 +222,8 @@
 		F7A908DD2BBC7D6B003E40AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C06D13902BC47D6F00506A9B /* AppTrackingTransparency.framework */,
+				C06D138E2BC47D6500506A9B /* AdSupport.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -371,6 +391,12 @@
 				F7A908CA2BB26BE4003E40AE /* FirebaseRemoteConfigSwift */,
 				F7A908D62BB5F19E003E40AE /* GoogleMobileAds */,
 				F7A908DE2BBC7D6B003E40AE /* FirebaseAuth */,
+				C06D13812BC47BFE00506A9B /* FirebaseAnalytics */,
+				C06D13832BC47BFE00506A9B /* FirebaseAnalyticsOnDeviceConversion */,
+				C06D13852BC47BFE00506A9B /* FirebaseAnalyticsSwift */,
+				C06D13872BC47BFE00506A9B /* FirebaseAnalyticsWithoutAdIdSupport */,
+				C06D13892BC47BFE00506A9B /* FirebaseAppCheck */,
+				C06D138C2BC47C6C00506A9B /* FacebookCore */,
 			);
 			productName = taurus;
 			productReference = F7BE72932BA8F611005BDEDA /* taurus.app */;
@@ -403,6 +429,7 @@
 			packageReferences = (
 				F7A908B72BB26BE4003E40AE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				F7A908D52BB5F19E003E40AE /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+				C06D138B2BC47C6C00506A9B /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
 			);
 			productRefGroup = F7BE72942BA8F611005BDEDA /* Products */;
 			projectDirPath = "";
@@ -636,12 +663,13 @@
 				CURRENT_PROJECT_VERSION = 23;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"taurus/Preview Content\"";
-				DEVELOPMENT_TEAM = R9V648Y475;
+				DEVELOPMENT_TEAM = R3YK2SQ7K3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = taurus/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Squaaare;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Our app uses your data to improve your experience.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -676,12 +704,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 23;
 				DEVELOPMENT_ASSET_PATHS = "\"taurus/Preview Content\"";
-				DEVELOPMENT_TEAM = R9V648Y475;
+				DEVELOPMENT_TEAM = R3YK2SQ7K3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = taurus/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Squaaare;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Our app uses your data to improve your experience.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -731,6 +760,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		C06D138B2BC47C6C00506A9B /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.1.0;
+			};
+		};
 		F7A908B72BB26BE4003E40AE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -750,6 +787,31 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C06D13812BC47BFE00506A9B /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseAnalytics;
+		};
+		C06D13832BC47BFE00506A9B /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		C06D13852BC47BFE00506A9B /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseAnalyticsSwift;
+		};
+		C06D13872BC47BFE00506A9B /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		C06D13892BC47BFE00506A9B /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FirebaseAppCheck;
+		};
+		C06D138C2BC47C6C00506A9B /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C06D138B2BC47C6C00506A9B /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
+		};
 		F7A908B82BB26BE4003E40AE /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F7A908B72BB26BE4003E40AE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
