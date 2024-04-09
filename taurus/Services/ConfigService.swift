@@ -12,6 +12,9 @@ class ConfigService {
     
     var rotateCharacter: Bool = true
     var showGameBanner: Bool = false
+    var showStartBanner: Bool = true
+    var showEndGameBanner: Bool = true
+    var showPosGameInterstitial: Bool = true
     
     func start() {
         #if DEBUG
@@ -29,6 +32,9 @@ class ConfigService {
             
             self.rotateCharacter = RemoteConfig.remoteConfig().configValue(forKey: "rotate_character").boolValue
             self.showGameBanner = RemoteConfig.remoteConfig().configValue(forKey: "show_game_banner").boolValue
+            self.showStartBanner = RemoteConfig.remoteConfig().configValue(forKey: "show_start_banner").boolValue
+            self.showEndGameBanner = RemoteConfig.remoteConfig().configValue(forKey: "show_endgame_banner").boolValue
+            self.showPosGameInterstitial = RemoteConfig.remoteConfig().configValue(forKey: "show_posgame_Interstitial").boolValue
         }
     }
 }
