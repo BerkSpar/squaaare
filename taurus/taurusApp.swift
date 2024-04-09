@@ -75,7 +75,7 @@ struct taurusApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @Environment(\.scenePhase) var scenePhase
     
-    func requestPermissionAndInit() {
+    func requestDataPermission() {
         ATTrackingManager.requestTrackingAuthorization { status in
             switch status {
             case .authorized:
@@ -106,13 +106,14 @@ struct taurusApp: App {
         }
     }
     
-    init() {
-        requestPermissionAndInit()
-    }
-    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .onChange(of: scenePhase) { newValue in
+                    if newValue == .active {
+                        requestDataPermission()
+                    }
+                }
         }
     }
 }

@@ -660,10 +660,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = taurus/taurus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 27;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"taurus/Preview Content\"";
-				DEVELOPMENT_TEAM = R3YK2SQ7K3;
+				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = taurus/Info.plist;
@@ -702,9 +702,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = taurus/taurus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 23;
+				CURRENT_PROJECT_VERSION = 27;
 				DEVELOPMENT_ASSET_PATHS = "\"taurus/Preview Content\"";
-				DEVELOPMENT_TEAM = R3YK2SQ7K3;
+				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = taurus/Info.plist;
@@ -765,7 +765,7 @@
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 14.1.0;
+				minimumVersion = 17.0.0;
 			};
 		};
 		F7A908B72BB26BE4003E40AE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
