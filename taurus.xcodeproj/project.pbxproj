@@ -75,6 +75,7 @@
 		F7C970B02BC2FBA2006558FD /* Barrier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C970AF2BC2FBA2006558FD /* Barrier.swift */; };
 		F7C970B22BC2FBBA006558FD /* Contactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C970B12BC2FBBA006558FD /* Contactable.swift */; };
 		F7C970B42BC359F0006558FD /* BulletNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C970B32BC359F0006558FD /* BulletNode.swift */; };
+		F7E6DB9A2BC5D0560027F208 /* Captalist.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E6DB992BC5D0560027F208 /* Captalist.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +133,7 @@
 		F7C970AF2BC2FBA2006558FD /* Barrier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barrier.swift; sourceTree = "<group>"; };
 		F7C970B12BC2FBBA006558FD /* Contactable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contactable.swift; sourceTree = "<group>"; };
 		F7C970B32BC359F0006558FD /* BulletNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletNode.swift; sourceTree = "<group>"; };
+		F7E6DB992BC5D0560027F208 /* Captalist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Captalist.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -357,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				F7C970AF2BC2FBA2006558FD /* Barrier.swift */,
+				F7E6DB992BC5D0560027F208 /* Captalist.swift */,
 			);
 			path = PowerUps;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				F7BE72B12BA8F6F8005BDEDA /* BannerAdView.swift in Sources */,
 				F7A9088A2BAEF75D003E40AE /* StartScene.swift in Sources */,
 				F7C970B02BC2FBA2006558FD /* Barrier.swift in Sources */,
+				F7E6DB9A2BC5D0560027F208 /* Captalist.swift in Sources */,
 				F7A908722BAB7325003E40AE /* EndGameView.swift in Sources */,
 				F7C970B22BC2FBBA006558FD /* Contactable.swift in Sources */,
 				F7A908772BAB8378003E40AE /* CoinNode.swift in Sources */,
@@ -660,7 +664,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = taurus/taurus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 27;
+				CURRENT_PROJECT_VERSION = 29;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"taurus/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
@@ -702,7 +706,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = taurus/taurus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 27;
+				CURRENT_PROJECT_VERSION = 29;
 				DEVELOPMENT_ASSET_PATHS = "\"taurus/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;

@@ -18,6 +18,8 @@ class EndGameScene: SKScene, GADFullScreenContentDelegate {
         
         draw()
         
+        GameController.shared.submitScore()
+        
         Analytics.logEvent(AnalyticsEventLevelEnd, parameters: [
             AnalyticsParameterLevel: GameController.shared.points,
             AnalyticsParameterLevelName: "game"

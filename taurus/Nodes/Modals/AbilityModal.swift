@@ -7,6 +7,7 @@
 
 import SpriteKit
 import GoogleMobileAds
+import FirebaseAnalytics
 
 class AbilityModal: SKNode, GADFullScreenContentDelegate {
     var canReroll = false
@@ -17,17 +18,46 @@ class AbilityModal: SKNode, GADFullScreenContentDelegate {
     func populate(_ scene: GameScene, callback: @escaping () -> Void) {
         abilities = [
             AbilityNode(imageNamed: "strong_power_up") {
+                Analytics.logEvent("select_content", parameters: [
+                    AnalyticsParameterLevel: GameController.shared.points,
+                    AnalyticsParameterLevelName: "game",
+                    AnalyticsParameterContentType: "ability",
+                    AnalyticsParameterContent: "strong_power_up"
+                ])
+                
                 scene.character.addBarrier()
                 self.hide(callback: callback)
             },
             AbilityNode(imageNamed: "life_power_up") {
+                Analytics.logEvent("select_content", parameters: [
+                    AnalyticsParameterLevel: GameController.shared.points,
+                    AnalyticsParameterLevelName: "game",
+                    AnalyticsParameterContentType: "ability",
+                    AnalyticsParameterContent: "life_power_up"
+                ])
+                
                 self.hide(callback: callback)
             },
             AbilityNode(imageNamed: "accelerate_power_up") {
-                scene.character.playerSpeed += scene.character.playerSpeed * 0.15
+                Analytics.logEvent("select_content", parameters: [
+                    AnalyticsParameterLevel: GameController.shared.points,
+                    AnalyticsParameterLevelName: "game",
+                    AnalyticsParameterContentType: "ability",
+                    AnalyticsParameterContent: "accelerate_power_up"
+                ])
+                
+                scene.character.playerSpeed += scene.character.playerSpeed * 0.2
                 self.hide(callback: callback)
             },
             AbilityNode(imageNamed: "captalist_power_up") {
+                Analytics.logEvent("select_content", parameters: [
+                    AnalyticsParameterLevel: GameController.shared.points,
+                    AnalyticsParameterLevelName: "game",
+                    AnalyticsParameterContentType: "ability",
+                    AnalyticsParameterContent: "captalist_power_up"
+                ])
+                
+                scene.character.addCaptalist()
                 self.hide(callback: callback)
             }
         ]
@@ -66,6 +96,11 @@ class AbilityModal: SKNode, GADFullScreenContentDelegate {
                 self.drawAbilities()
             }
         ]))
+        
+        Analytics.logEvent("reroll", parameters: [
+            AnalyticsParameterLevel: GameController.shared.points,
+            AnalyticsParameterLevelName: "game"
+        ])
     }
     
     private func showRewaredAd() {

@@ -59,6 +59,24 @@ class CharacterNode: SKNode {
         barrier.run(.fadeIn(withDuration: 0.3))
     }
     
+    func addCaptalist() {
+        for child in children {
+            if child is Captalist {
+                child.removeFromParent()
+            }
+        }
+        
+        let captalist = Captalist()
+        captalist.alpha = 0
+        addChild(captalist)
+        
+        captalist.run(.sequence([
+            .fadeIn(withDuration: 0.3),
+            .wait(forDuration: 20),
+            .removeFromParent()
+        ]))
+    }
+    
     func draw() {
         let node = SKSpriteNode(imageNamed: "character")
         node.size = CGSize(width: 40, height: 40)

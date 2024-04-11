@@ -12,6 +12,7 @@ class ConfigService {
     
     var rotateCharacter: Bool = true
     var showGameBanner: Bool = false
+    var enableChocoOz: Bool = false
     
     func start() {
         #if DEBUG
@@ -29,6 +30,7 @@ class ConfigService {
             
             self.rotateCharacter = RemoteConfig.remoteConfig().configValue(forKey: "rotate_character").boolValue
             self.showGameBanner = RemoteConfig.remoteConfig().configValue(forKey: "show_game_banner").boolValue
+            self.showGameBanner = RemoteConfig.remoteConfig().configValue(forKey: "enable_choco_oz").boolValue
         }
     }
 }

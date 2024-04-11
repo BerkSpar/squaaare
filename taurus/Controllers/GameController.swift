@@ -13,11 +13,11 @@ class GameController: ObservableObject {
     
     @Published var points: Int = 0
     @Published var oneMoreChance: Bool = true
-    @Published var nextLevel = 100
+    @Published var nextLevel = 50
     
     func canGoNextLevel() -> Bool {
         if points >= nextLevel {
-            nextLevel += 100
+            nextLevel += 50
             return true
         }
         
@@ -26,11 +26,17 @@ class GameController: ObservableObject {
     
     func reset() {
         points = 0
-        nextLevel = 100
+        nextLevel = 50
         oneMoreChance = true
     }
     
     func save() {
+        submitScore()
+        
+        GameController.shared.reset()
+    }
+    
+    func submitScore() {
         let savedPoints = points
         GameService.shared.submitScore(savedPoints, ids: ["global_2", "daily_2"]) {
             Analytics.logEvent(AnalyticsEventPostScore, parameters: [
@@ -38,6 +44,12 @@ class GameController: ObservableObject {
             ])
         }
         
-        GameController.shared.reset()
+        if ConfigService.shared.enableChocoOz {
+            GameService.shared.submitScore(savedPoints, ids: ["choco_oz"]) {
+                Analytics.logEvent(AnalyticsEventPostScore, parameters: [
+                    AnalyticsParameterScore: savedPoints
+                ])
+            }
+        }
     }
 }

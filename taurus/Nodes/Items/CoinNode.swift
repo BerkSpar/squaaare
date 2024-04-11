@@ -38,6 +38,21 @@ class CoinNode: SKNode, Item {
         CoinNode(spawnTimeRange: spawnTimeRange, levelRange: levelRange, pointsRange: pointsRange, velocityRange: velocityRange)
     }
     
+    public func follow(_ scene: GameScene) {
+        removeAllActions()
+        
+        let followPlayer = SKAction.customAction(withDuration: TimeInterval(Int.max), actionBlock: {
+            (node,elapsedTime) in
+            let dx = scene.character.position.x - node.position.x
+            let dy = scene.character.position.y - node.position.y
+            let angle = atan2(dx,dy)
+            node.position.x += sin(angle) * 2
+            node.position.y += cos(angle) * 2
+        })
+        
+        run(followPlayer)
+    }
+    
     func draw() -> SKNode {
         let node = SKSpriteNode(imageNamed: "coin")
         node.size = CGSize(width: 30, height: 30)
@@ -71,6 +86,7 @@ class CoinNode: SKNode, Item {
         let contactNode = contact.bodyA.node is CoinNode ? contact.bodyB.node : contact.bodyA.node
                 
         if contactNode is Barrier { return }
+        if contactNode is Captalist { return }
         
         let label = SKLabelNode(text: "+\(points)")
         label.position = contact.contactPoint
