@@ -87,6 +87,7 @@ class CoinNode: SKNode, Item {
                 
         if contactNode is Barrier { return }
         if contactNode is Captalist { return }
+        if contactNode is CharacterBulletNode { return }
         
         let label = SKLabelNode(text: "+\(points)")
         label.position = contact.contactPoint

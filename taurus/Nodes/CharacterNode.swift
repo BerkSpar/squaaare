@@ -24,6 +24,22 @@ class CharacterNode: SKNode {
         self.draw()
     }
     
+    func addGun(angle: Double) {
+        run(.repeat(.sequence([
+            .run {
+                let bullet = CharacterBulletNode()
+                _ = bullet.draw()
+                bullet.configureCollision()
+                bullet.position = self.position
+                bullet.zRotation = self.zRotation
+                self.scene?.addChild(bullet)
+                
+                bullet.spawnBullet(angle, 15)
+            },
+            .wait(forDuration: 1)
+        ]), count: 15))
+    }
+    
     func die(_ scene: GameScene, callback: @escaping () -> Void) {
         playerSpeed = 0
         

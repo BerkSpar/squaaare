@@ -1,5 +1,5 @@
 //
-//  Barrier.swift
+//  CharacterBulletNode.swift
 //  taurus
 //
 //  Created by Felipe Passos on 07/04/24.
@@ -7,41 +7,64 @@
 
 import SpriteKit
 
-class Barrier: SKNode, Contactable {
-    override init() {
-        super.init()
-        draw()
+class CharacterBulletNode: SKNode, Enemy {
+    func clone() -> any Item {
+        CharacterBulletNode()
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
+    var spawnTimeRange: ClosedRange<TimeInterval> = 1...1
+    var levelRange: ClosedRange<Int> = 1...1
+    var velocity = 0.0
+    let id = "character_bullet"
     
-    func draw() {
-        let circle = SKShapeNode(circleOfRadius: 40)
-        circle.name = "barrier"
-        circle.strokeColor = .accentBlue
-        circle.lineWidth = 5
+    func draw() -> SKNode {
+        let node = SKShapeNode(ellipseOf: CGSize(width: 15, height: 15))
+        node.strokeColor = .red
+        node.fillColor = .red
+        node.position = position
         
-        physicsBody = SKPhysicsBody(circleOfRadius: 40)
+        addChild(node)
+        
+        return node.copy() as! SKNode
+    }
+    
+    func configureCollision() {
+        physicsBody = SKPhysicsBody(circleOfRadius: 15)
         physicsBody?.categoryBitMask = PhysicsCategory.character
         
-        physicsBody?.contactTestBitMask = PhysicsCategory.character
+        physicsBody?.contactTestBitMask = PhysicsCategory.enemy
         physicsBody?.affectedByGravity = false
         physicsBody?.allowsRotation = false
         physicsBody?.collisionBitMask = 0;
+    }
+    
+    func spawnBullet(_ angle: Double, _ force: Double) {
+        run(.sequence([
+            .customAction(withDuration: 1, actionBlock: { node, delta in
+                let direction = self.zRotation + angle
+                
+                let dx = force * cos(direction)
+                let dy = force * sin(direction)
+                
+                self.position.x += dx
+                self.position.y += dy
+            }),
+            .fadeOut(withDuration: 0.3),
+            .removeFromParent()
+        ]))
+    }
+    
+    func spawn(_ scene: GameScene) {
         
-        addChild(circle)
     }
     
     func didContact(_ scene: GameScene, _ contact: SKPhysicsContact) {
-        let contactNode = contact.bodyA.node is Barrier ? contact.bodyB.node : contact.bodyA.node
-        
-        if contactNode is CoinNode { return }
-        if contactNode is CharacterBulletNode { return }
+        let contactNode = contact.bodyA.node is BulletNode ? contact.bodyB.node : contact.bodyA.node
+                
         if !(contactNode is Item) { return }
-        
-        HapticsService.shared.play(.rigid)
+        if contactNode is Barrier { return }
+        if contactNode is CharacterNode { return }
+        if contactNode is CoinNode { return }
         
         contactNode?.removeAllActions()
         contactNode?.physicsBody?.contactTestBitMask = 0

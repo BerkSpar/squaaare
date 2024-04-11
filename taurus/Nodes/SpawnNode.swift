@@ -16,7 +16,7 @@ class SpawnNode: SKNode {
         EnemyNode(spawnTimeRange: 4...8, levelRange: 51...100, velocityRange: 6...10),
         EnemyNode(spawnTimeRange: 6...8, levelRange: 101...150, velocityRange: 4...8),
         EnemyNode(spawnTimeRange: 6...8, levelRange: 151...Int.max, velocityRange: 2...4),
-        
+
         BombNode(spawnTimeRange: 30...40, levelRange: 201...400, velocityRange: 4...6),
         BombNode(spawnTimeRange: 20...30, levelRange: 401...600, velocityRange: 4...6),
         BombNode(spawnTimeRange: 10...20, levelRange: 600...Int.max, velocityRange: 4...6),

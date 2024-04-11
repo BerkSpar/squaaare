@@ -33,6 +33,7 @@ class DashNode: SKNode, Item {
         let contactNode = contact.bodyA.node is DashNode ? contact.bodyB.node : contact.bodyA.node
                 
         if contactNode is Barrier { return }
+        if contactNode is CharacterBulletNode { return }
         
         removeFromParent()
         scene.gameOver()

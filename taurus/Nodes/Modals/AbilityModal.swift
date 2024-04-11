@@ -36,6 +36,10 @@ class AbilityModal: SKNode, GADFullScreenContentDelegate {
                     AnalyticsParameterContent: "life_power_up"
                 ])
                 
+                scene.character.addGun(angle: CGFloat.pi / 2)
+                scene.character.addGun(angle: CGFloat.pi / 3)
+                scene.character.addGun(angle: 2 / 3 * CGFloat.pi)
+                
                 self.hide(callback: callback)
             },
             AbilityNode(imageNamed: "accelerate_power_up") {

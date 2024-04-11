@@ -76,6 +76,7 @@
 		F7C970B22BC2FBBA006558FD /* Contactable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C970B12BC2FBBA006558FD /* Contactable.swift */; };
 		F7C970B42BC359F0006558FD /* BulletNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7C970B32BC359F0006558FD /* BulletNode.swift */; };
 		F7E6DB9A2BC5D0560027F208 /* Captalist.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E6DB992BC5D0560027F208 /* Captalist.swift */; };
+		F7E6DB9C2BC7A4090027F208 /* CharacterBulletNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7E6DB9B2BC7A4090027F208 /* CharacterBulletNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +135,7 @@
 		F7C970B12BC2FBBA006558FD /* Contactable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contactable.swift; sourceTree = "<group>"; };
 		F7C970B32BC359F0006558FD /* BulletNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletNode.swift; sourceTree = "<group>"; };
 		F7E6DB992BC5D0560027F208 /* Captalist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Captalist.swift; sourceTree = "<group>"; };
+		F7E6DB9B2BC7A4090027F208 /* CharacterBulletNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterBulletNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +203,7 @@
 				F7A908D02BB39B5B003E40AE /* BombNode.swift */,
 				F7A908D22BB4B884003E40AE /* DashNode.swift */,
 				F7C970B32BC359F0006558FD /* BulletNode.swift */,
+				F7E6DB9B2BC7A4090027F208 /* CharacterBulletNode.swift */,
 			);
 			path = Items;
 			sourceTree = "<group>";
@@ -522,6 +525,7 @@
 				F7BE72D12BA8FAB6005BDEDA /* View+Ext.swift in Sources */,
 				F7BE72972BA8F611005BDEDA /* taurusApp.swift in Sources */,
 				F7BE72A62BA8F63C005BDEDA /* HapticsService.swift in Sources */,
+				F7E6DB9C2BC7A4090027F208 /* CharacterBulletNode.swift in Sources */,
 				F7BE72A82BA8F680005BDEDA /* GameService.swift in Sources */,
 				F7C970AD2BC21DF0006558FD /* SKNode+Ext.swift in Sources */,
 				F7C970A92BBF82DF006558FD /* AbilityModal.swift in Sources */,
@@ -664,7 +668,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = taurus/taurus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"taurus/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
@@ -706,7 +710,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = taurus/taurus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 29;
+				CURRENT_PROJECT_VERSION = 30;
 				DEVELOPMENT_ASSET_PATHS = "\"taurus/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;

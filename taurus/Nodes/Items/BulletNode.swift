@@ -58,10 +58,9 @@ class BulletNode: SKNode, Enemy {
                 
         if contactNode is Barrier { return }
         if contactNode is Enemy { return }
+        if contactNode is CharacterBulletNode { return }
         
         removeFromParent()
         scene.gameOver()
     }
-    
-    
 }
