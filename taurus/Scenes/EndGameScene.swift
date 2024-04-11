@@ -19,6 +19,10 @@ class EndGameScene: SKScene, GADFullScreenContentDelegate {
         draw()
         
         GameController.shared.submitScore()
+
+        if (ConfigService.shared.showPosGameInterstitial) {
+            showAd()
+        }
         
         Analytics.logEvent(AnalyticsEventLevelEnd, parameters: [
             AnalyticsParameterLevel: GameController.shared.points,
@@ -27,7 +31,9 @@ class EndGameScene: SKScene, GADFullScreenContentDelegate {
     }
     
     func adDidDismissFullScreenContent(_ ad: any GADFullScreenPresentingAd) {
-        RouterService.shared.navigate(.game)
+        if ad is GADAdReward {
+            RouterService.shared.navigate(.game)
+        }
     }
     
     func oneMoreChange() {
@@ -38,6 +44,14 @@ class EndGameScene: SKScene, GADFullScreenContentDelegate {
             ad.present(fromRootViewController: self.view?.window?.rootViewController) {
                 GameController.shared.oneMoreChance = false
             }
+        }
+    }
+    
+    func showAd() {
+        if let ad = InterstitialAd.shared.interstitialAd {
+            ad.fullScreenContentDelegate = self
+            ad.present(fromRootViewController: self.view?.window?.rootViewController)
+            InterstitialAd.shared.loadAd(withAdUnitId: AdService.posGameIntersticalId)
         }
     }
     

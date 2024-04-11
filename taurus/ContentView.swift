@@ -21,6 +21,7 @@ struct ContentView: View {
     
     func initializeApp() {
         RewardedAd.shared.loadAd(withAdUnitId: AdService.rewardedId)
+        InterstitialAd.shared.loadAd(withAdUnitId: AdService.posGameIntersticalId)
         
         GameService.shared.authenticate { error in
             GameCenterAuthProvider.getCredential() { (credential, error) in
