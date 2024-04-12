@@ -28,17 +28,17 @@ class AbilityModal: SKNode, GADFullScreenContentDelegate {
                 scene.character.addBarrier()
                 self.hide(callback: callback)
             },
-            AbilityNode(imageNamed: "life_power_up") {
+            AbilityNode(imageNamed: "shuriken_power_up") {
                 Analytics.logEvent("select_content", parameters: [
                     AnalyticsParameterLevel: GameController.shared.points,
                     AnalyticsParameterLevelName: "game",
                     AnalyticsParameterContentType: "ability",
-                    AnalyticsParameterContent: "life_power_up"
+                    AnalyticsParameterContent: "shuriken_power_up"
                 ])
                 
-                scene.character.addGun(angle: CGFloat.pi / 2)
-                scene.character.addGun(angle: CGFloat.pi / 3)
-                scene.character.addGun(angle: 2 / 3 * CGFloat.pi)
+                scene.character.addShuriken(angle: CGFloat.pi / 2)
+                scene.character.addShuriken(angle: CGFloat.pi / 3)
+                scene.character.addShuriken(angle: 2 / 3 * CGFloat.pi)
                 
                 self.hide(callback: callback)
             },

@@ -31,7 +31,7 @@ class EndGameScene: SKScene, GADFullScreenContentDelegate {
     }
     
     func adDidDismissFullScreenContent(_ ad: any GADFullScreenPresentingAd) {
-        if ad is GADAdReward {
+        if ad is GADRewardedAd {
             RouterService.shared.navigate(.game)
         }
     }

@@ -18,10 +18,13 @@ class CharacterBulletNode: SKNode, Enemy {
     let id = "character_bullet"
     
     func draw() -> SKNode {
-        let node = SKShapeNode(ellipseOf: CGSize(width: 15, height: 15))
-        node.strokeColor = .red
-        node.fillColor = .red
+        let node = SKSpriteNode(imageNamed: "shuriken")
+        node.size = CGSize(width: 30, height: 30)
         node.position = position
+        
+        node.run(.repeatForever(.rotate(byAngle: .pi, duration: 0.1)))
+        
+        physicsBody = SKPhysicsBody(texture: node.texture!, size: node.size)
         
         addChild(node)
         
@@ -29,7 +32,6 @@ class CharacterBulletNode: SKNode, Enemy {
     }
     
     func configureCollision() {
-        physicsBody = SKPhysicsBody(circleOfRadius: 15)
         physicsBody?.categoryBitMask = PhysicsCategory.character
         
         physicsBody?.contactTestBitMask = PhysicsCategory.enemy
@@ -39,6 +41,8 @@ class CharacterBulletNode: SKNode, Enemy {
     }
     
     func spawnBullet(_ angle: Double, _ force: Double) {
+        run(.repeatForever(.rotate(byAngle: .pi, duration: 1)))
+        
         run(.sequence([
             .customAction(withDuration: 1, actionBlock: { node, delta in
                 let direction = self.zRotation + angle
@@ -59,7 +63,7 @@ class CharacterBulletNode: SKNode, Enemy {
     }
     
     func didContact(_ scene: GameScene, _ contact: SKPhysicsContact) {
-        let contactNode = contact.bodyA.node is BulletNode ? contact.bodyB.node : contact.bodyA.node
+        let contactNode = contact.bodyA.node is CharacterBulletNode ? contact.bodyB.node : contact.bodyA.node
                 
         if !(contactNode is Item) { return }
         if contactNode is Barrier { return }

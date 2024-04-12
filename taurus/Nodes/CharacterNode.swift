@@ -24,7 +24,7 @@ class CharacterNode: SKNode {
         self.draw()
     }
     
-    func addGun(angle: Double) {
+    func addShuriken(angle: Double) {
         run(.repeat(.sequence([
             .run {
                 let bullet = CharacterBulletNode()
@@ -34,7 +34,7 @@ class CharacterNode: SKNode {
                 bullet.zRotation = self.zRotation
                 self.scene?.addChild(bullet)
                 
-                bullet.spawnBullet(angle, 15)
+                bullet.spawnBullet(angle, 5)
             },
             .wait(forDuration: 1)
         ]), count: 15))

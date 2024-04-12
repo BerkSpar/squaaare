@@ -8,6 +8,7 @@
 import SpriteKit
 import GoogleMobileAds
 import FirebaseAnalytics
+import FacebookCore
 
 class StartScene: SKScene {
     let title = SKLabelNode(text: "SQUAAARE")
@@ -20,6 +21,7 @@ class StartScene: SKScene {
     }
     
     func play() {
+        AppEvents.shared.logEvent(AppEvents.Name("FB-Play"))
         RouterService.shared.navigate(.game)
     }
     

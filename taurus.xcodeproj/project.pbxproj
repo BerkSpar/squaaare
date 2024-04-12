@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		27B8D75C0A0E0592BCA7C6EE /* Pods_taurus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53238E7ED3D712AA25FABC61 /* Pods_taurus.framework */; };
 		C06D13822BC47BFE00506A9B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C06D13812BC47BFE00506A9B /* FirebaseAnalytics */; };
 		C06D13842BC47BFE00506A9B /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = C06D13832BC47BFE00506A9B /* FirebaseAnalyticsOnDeviceConversion */; };
 		C06D13862BC47BFE00506A9B /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C06D13852BC47BFE00506A9B /* FirebaseAnalyticsSwift */; };
@@ -80,6 +81,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26405A0B80BB725D6FA69B36 /* Pods-taurus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-taurus.debug.xcconfig"; path = "Target Support Files/Pods-taurus/Pods-taurus.debug.xcconfig"; sourceTree = "<group>"; };
+		47984651FCAA189BD7F8E02D /* Pods-taurus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-taurus.release.xcconfig"; path = "Target Support Files/Pods-taurus/Pods-taurus.release.xcconfig"; sourceTree = "<group>"; };
+		53238E7ED3D712AA25FABC61 /* Pods_taurus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_taurus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06D138E2BC47D6500506A9B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		C06D13902BC47D6F00506A9B /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
 		F7A908642BAA349F003E40AE /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -163,12 +167,22 @@
 				F7A908BD2BB26BE4003E40AE /* FirebaseAppDistribution-Beta in Frameworks */,
 				F7A908C12BB26BE4003E40AE /* FirebaseDynamicLinks in Frameworks */,
 				F7A908C92BB26BE4003E40AE /* FirebaseRemoteConfig in Frameworks */,
+				27B8D75C0A0E0592BCA7C6EE /* Pods_taurus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78F65FB6ECA631B840DB6631 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				26405A0B80BB725D6FA69B36 /* Pods-taurus.debug.xcconfig */,
+				47984651FCAA189BD7F8E02D /* Pods-taurus.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F7A908612BAA344C003E40AE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +243,7 @@
 			children = (
 				C06D13902BC47D6F00506A9B /* AppTrackingTransparency.framework */,
 				C06D138E2BC47D6500506A9B /* AdSupport.framework */,
+				53238E7ED3D712AA25FABC61 /* Pods_taurus.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -239,6 +254,7 @@
 				F7BE72952BA8F611005BDEDA /* taurus */,
 				F7BE72942BA8F611005BDEDA /* Products */,
 				F7A908DD2BBC7D6B003E40AE /* Frameworks */,
+				78F65FB6ECA631B840DB6631 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -374,10 +390,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F7BE72A12BA8F612005BDEDA /* Build configuration list for PBXNativeTarget "taurus" */;
 			buildPhases = (
+				834B1CDE36B9F3AB0BC8A8E5 /* [CP] Check Pods Manifest.lock */,
 				F7BE728F2BA8F611005BDEDA /* Sources */,
 				F7BE72902BA8F611005BDEDA /* Frameworks */,
 				F7BE72912BA8F611005BDEDA /* Resources */,
 				F7C970A02BBE4D10006558FD /* ShellScript */,
+				35D5F3B0A00348C362BF24BE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -461,6 +479,45 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		35D5F3B0A00348C362BF24BE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-taurus/Pods-taurus-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-taurus/Pods-taurus-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-taurus/Pods-taurus-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		834B1CDE36B9F3AB0BC8A8E5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-taurus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F7C970A02BBE4D10006558FD /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -663,16 +720,18 @@
 		};
 		F7BE72A22BA8F612005BDEDA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26405A0B80BB725D6FA69B36 /* Pods-taurus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = taurus/taurus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 32;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"taurus/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = taurus/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Squaaare;
@@ -689,7 +748,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.berkspar.taurus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -705,15 +764,17 @@
 		};
 		F7BE72A32BA8F612005BDEDA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47984651FCAA189BD7F8E02D /* Pods-taurus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = taurus/taurus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 30;
+				CURRENT_PROJECT_VERSION = 32;
 				DEVELOPMENT_ASSET_PATHS = "\"taurus/Preview Content\"";
 				DEVELOPMENT_TEAM = R9V648Y475;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = taurus/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Squaaare;
@@ -730,7 +791,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.0;
+				MARKETING_VERSION = 1.2.1;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.berkspar.taurus;
 				PRODUCT_NAME = "$(TARGET_NAME)";

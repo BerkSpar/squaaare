@@ -87,7 +87,7 @@ struct taurusApp: App {
                 Settings.shared.isAdvertiserIDCollectionEnabled = true
                 // Now that we are authorized we can get the IDFA
                 print(ASIdentifierManager.shared().advertisingIdentifier)
-                GADMobileAds.sharedInstance().start(completionHandler: nil)
+                GADMobileAds.sharedInstance().start()
             case .denied:
                 // Tracking authorization dialog was
                 // shown and permission is denied
