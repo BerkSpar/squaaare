@@ -18,7 +18,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     override func didMove(to view: SKView) {
         configureScene()
-        configureSwipe(view)
+//        configureSwipe(view)
         configurePoints()
         configureCharacter()
         
@@ -135,4 +135,57 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         character.move()
     }
+    
+    var lastTouch: CGPoint?
+    var lastUpdateTime: TimeInterval = 0
+    let touchUpdateInterval: TimeInterval = 0.1 // Defina o intervalo de tempo que funciona bem para você
+
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        let location = touch.location(in: self)
+
+        let currentTime = touch.timestamp
+        let timeSinceLastUpdate = currentTime - lastUpdateTime
+        
+        // Verifica se passou tempo suficiente desde a última atualização
+        if timeSinceLastUpdate > touchUpdateInterval {
+            if lastTouch == nil || distanceBetweenPoints(lastTouch!, location) > 10 { // Ajuste a margem aqui
+                lastTouch = location
+                lastUpdateTime = currentTime
+            }
+        }
+
+        if lastTouch == nil { lastTouch = location }
+
+        let node = SKShapeNode(ellipseOf: CGSize(width: 10, height: 10))
+        node.fillColor = .red
+        node.strokeColor = .red
+        node.position = location
+
+        addChild(node)
+
+        node.run(.sequence([
+            .fadeOut(withDuration: 1),
+            .removeFromParent()
+        ]))
+
+        let swipeVector = CGVector(dx: location.x - lastTouch!.x, dy: location.y - lastTouch!.y)
+        let magnitude = sqrt(swipeVector.dx * swipeVector.dx + swipeVector.dy * swipeVector.dy)
+
+        if magnitude > 0 {
+            let normalizedSwipeVector = CGVector(dx: swipeVector.dx / magnitude, dy: swipeVector.dy / magnitude)
+            let angle = atan2(normalizedSwipeVector.dy, normalizedSwipeVector.dx)
+            character.run(.rotate(toAngle: angle, duration: 0.05, shortestUnitArc: true))
+        }
+
+        lastTouch = location
+    }
+
+    func distanceBetweenPoints(_ point1: CGPoint, _ point2: CGPoint) -> CGFloat {
+        let dx = point2.x - point1.x
+        let dy = point2.y - point1.y
+        return sqrt(dx * dx + dy * dy)
+    }
+
+
 }

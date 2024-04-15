@@ -107,11 +107,16 @@ class CharacterNode: SKNode {
         node.physicsBody?.allowsRotation = false
         
         addChild(node)
+        
+        let pointer = SKShapeNode(rectOf: CGSize(width: 10, height: 10))
+        pointer.position = self.position
+        pointer.position.y += 50
+        pointer.strokeColor = .red
+        pointer.fillColor = .red
+        addChild(pointer)
     }
     
     func move() {
-        if isRotating { return }
-        
         let direction = zRotation + CGFloat.pi / 2
         
         let dx = playerSpeed * cos(direction)
