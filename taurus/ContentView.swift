@@ -8,6 +8,7 @@
 import SwiftUI
 import GoogleMobileAds
 import FirebaseAuth
+import Adjust
 
 
 enum Screen {
@@ -34,6 +35,10 @@ struct ContentView: View {
                 }
             }
         }
+        
+        let event = ADJEvent(eventToken: "lqxg2h")
+        Adjust.trackEvent(event)
+        
     }
     
     var body: some View {

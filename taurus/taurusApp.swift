@@ -13,6 +13,7 @@ import GoogleMobileAds
 import AdSupport
 import FirebaseAnalytics
 import FacebookCore
+import Adjust
 
 class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication,
@@ -39,6 +40,15 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
         )
         
         application.registerForRemoteNotifications()
+        
+        let yourAppToken = "mses35jw720w"
+        let environment = ADJEnvironmentSandbox
+        let adjustConfig = ADJConfig(
+           appToken: yourAppToken,
+           environment: environment)
+        Adjust.appDidLaunch(adjustConfig)
+        adjustConfig?.logLevel = ADJLogLevelVerbose
+        
         
         ConfigService.shared.start()
         
