@@ -11,11 +11,9 @@ import FirebaseAnalytics
 import FacebookCore
 
 class StartScene: SKScene {
-    let title = SKLabelNode(text: "SQUAAARE")
-    
     override func didMove(to view: SKView) {
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        backgroundColor = .background
+        backgroundColor = .black
                 
         draw()
     }
@@ -54,40 +52,54 @@ class StartScene: SKScene {
     }
     
     func draw() {
-        let startButton = ButtonNode(imageNamed: "play_button") {
+        let background = SKSpriteNode(imageNamed: "grid_background")
+        background.size = frame.size
+        background.zPosition = -1
+        addChild(background)
+        
+        let startButton = SquareButtonNode(name: "play") {
             self.play()
         }
         startButton.size = CGSize(width: 80, height: 80)
+        startButton.glow()
         addChild(startButton)
         
-        let shareButton = ButtonNode(imageNamed: "share_button") {
-            self.share()
-        }
-        shareButton.position.x = startButton.position.x - 80
-        shareButton.size = CGSize(width: 60, height: 60)
-        addChild(shareButton)
+        startButton.run(.repeatForever(.sequence([
+            .scale(to: 1.1, duration: 0.3),
+            .scale(by: 0.9, duration: 0.3)
+        ])))
         
-        let leaderboardButton = ButtonNode(imageNamed: "leaderboard_button") {
+        let trophyButton = SquareButtonNode(name: "trophy") {
             self.showLeaderboard()
         }
-        leaderboardButton.size = CGSize(width: 60, height: 60)
-        leaderboardButton.position.x = leaderboardButton.position.x + 80
-        addChild(leaderboardButton)
+        trophyButton.size = CGSize(width: 60, height: 60)
+        trophyButton.position = startButton.position
+        trophyButton.position.y -= 90
+        trophyButton.glow()
+        addChild(trophyButton)
         
-        title.position.y = startButton.position.y + 100
-        title.fontColor = .primary
-        title.fontName = "Modak"
-        title.fontSize = 48
+        let shopButton = SquareButtonNode(name: "shop") {
+            RouterService.shared.navigate(.store)
+        }
+        shopButton.size = CGSize(width: 60, height: 60)
+        shopButton.position = trophyButton.position
+        shopButton.position.y -= 80
+        shopButton.glow()
+        addChild(shopButton)
         
+        let title = SKSpriteNode(imageNamed: "logo")
+        title.position.y = startButton.position.y + 120
+        title.glow()
         addChild(title)
         
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         let buildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
         let version = SKLabelNode(text: "v\(appVersion)+\(buildNumber)")
-        version.position.y = -frame.height / 2 + 50
-        version.fontColor = .secondary
+        version.position.y = -frame.height / 2 + 30
+        version.fontColor = .neonBlue
         version.fontName = "Modak"
         version.fontSize = 14
+        version.alpha = 0.8
         
         addChild(version)
     }

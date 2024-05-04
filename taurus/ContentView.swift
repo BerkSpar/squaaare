@@ -15,6 +15,7 @@ enum Screen {
     case start
     case game
     case endGame
+    case store
 }
 
 struct ContentView: View {
@@ -38,7 +39,6 @@ struct ContentView: View {
         
         let event = ADJEvent(eventToken: "lqxg2h")
         Adjust.trackEvent(event)
-        
     }
     
     var body: some View {
@@ -47,6 +47,7 @@ struct ContentView: View {
             case .start: StartView()
             case .game: GameView()
             case .endGame: EndGameView()
+            case .store: StoreView()
             }
         }
         .alert(isPresented: $router.isAlertPresented) {
@@ -58,7 +59,7 @@ struct ContentView: View {
         .task {
             initializeApp()
         }
-        .preferredColorScheme(.light)
+        .preferredColorScheme(.dark)
     }
 }
 

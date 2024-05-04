@@ -15,10 +15,6 @@
 			</array>
 		</dict>
 	</array>
-	<key>FIREBASE_ANALYTICS_COLLECTION_ENABLED</key>
-	<false/>
-	<key>FacebookAdvertiserIDCollectionEnabled</key>
-	<false/>
 	<key>FacebookAppID</key>
 	<string>3215474118583375</string>
 	<key>FacebookAutoLogAppEventsEnabled</key>
@@ -31,6 +27,8 @@
 	<false/>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-2005622694052245~3194684480</string>
+	<key>NSAdvertisingAttributionReportEndpoint</key>
+	<string>https://appsflyer-skadnetwork.com/</string>
 	<key>SKAdNetworkItems</key>
 	<array>
 		<dict>

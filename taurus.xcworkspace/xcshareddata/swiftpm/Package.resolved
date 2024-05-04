@@ -1,5 +1,5 @@
 {
-  "originHash" : "d444ada832b2e07cbfed67fc787e76d7499100a1c75497df596832a2bef88ae9",
+  "originHash" : "821709dc26b92fcf134a73b010495b7ae2e3a024a4879b8c3a32dd3c9fac2f36",
   "pins" : [
     {
       "identity" : "abseil-cpp-binary",
@@ -89,6 +89,15 @@
       "state" : {
         "revision" : "2d12673670417654f08f5f90fdd62926dc3a2648",
         "version" : "100.0.0"
+      }
+    },
+    {
+      "identity" : "ios_sdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/adjust/ios_sdk",
+      "state" : {
+        "branch" : "master",
+        "revision" : "2fd82b11e329e9c8357eaa77e28799ca2d629ab5"
       }
     },
     {

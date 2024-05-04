@@ -21,6 +21,8 @@ class GameService {
     /// Represents the local player instance from GameKit, which will be used for authentication.
     let player = GKLocalPlayer.local
     
+    var data: PlayerData = PlayerData()
+    
     /// Authenticates the local player using Game Center.
     ///
     /// This function attempts to authenticate the local player with the Game Center. Upon completion, the provided

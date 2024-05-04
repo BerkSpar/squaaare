@@ -44,12 +44,11 @@ class GameController: ObservableObject {
             ])
         }
         
-        if ConfigService.shared.enableChocoOz {
-            GameService.shared.submitScore(savedPoints, ids: ["choco_oz"]) {
-                Analytics.logEvent(AnalyticsEventPostScore, parameters: [
-                    AnalyticsParameterScore: savedPoints
-                ])
-            }
+        PlayerDataManager.shared.playerData.coins += points
+        if PlayerDataManager.shared.playerData.highscore < points {
+            PlayerDataManager.shared.playerData.highscore = points
         }
+        
+        PlayerDataManager.shared.setPlayerData()
     }
 }

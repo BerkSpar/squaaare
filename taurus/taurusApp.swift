@@ -14,11 +14,17 @@ import AdSupport
 import FirebaseAnalytics
 import FacebookCore
 import Adjust
+import FirebaseAppCheck
+import AdServices
 
 class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         application.registerForRemoteNotifications()
+        
+        let providerFactory = AppCheckDebugProviderFactory()
+        AppCheck.setAppCheckProviderFactory(providerFactory)
+        
         FirebaseApp.configure()
         
         ApplicationDelegate.shared.application(
@@ -28,11 +34,13 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
         
         #if DEBUG
             Analytics.setAnalyticsCollectionEnabled(false)
+        #else
+            Analytics.setAnalyticsCollectionEnabled(true)
         #endif
         
         Messaging.messaging().delegate = self
         UNUserNotificationCenter.current().delegate = self
-        
+                
         let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
         UNUserNotificationCenter.current().requestAuthorization(
           options: authOptions,
@@ -49,13 +57,11 @@ class AppDelegate: NSObject, UIApplicationDelegate, MessagingDelegate, UNUserNot
         Adjust.appDidLaunch(adjustConfig)
         adjustConfig?.logLevel = ADJLogLevelVerbose
         
-        
         ConfigService.shared.start()
         
         return true
     }
-    
-    
+
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
     }
@@ -98,6 +104,7 @@ struct taurusApp: App {
                 // Now that we are authorized we can get the IDFA
                 print(ASIdentifierManager.shared().advertisingIdentifier)
                 GADMobileAds.sharedInstance().start()
+                
             case .denied:
                 // Tracking authorization dialog was
                 // shown and permission is denied

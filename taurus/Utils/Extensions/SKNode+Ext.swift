@@ -7,15 +7,18 @@
 
 import SpriteKit
 
-extension SKSpriteNode {
-    func addGlow(radius: Float = 30) {
+extension SKNode
+{
+    func glow(radius:CGFloat=30)
+    {
+        let view = SKView()
         let effectNode = SKEffectNode()
+        let texture = view.texture(from: self)
         effectNode.shouldRasterize = true
-        addChild(effectNode)
-        let effect = SKSpriteNode(texture: texture)
-        effect.color = self.color
-        effect.colorBlendFactor = 1
-        effectNode.addChild(effect)
         effectNode.filter = CIFilter(name: "CIGaussianBlur", parameters: ["inputRadius":radius])
+        effectNode.zPosition = self.zPosition - 1
+        addChild(effectNode)
+        effectNode.addChild(SKSpriteNode(texture: texture))
+        
     }
 }

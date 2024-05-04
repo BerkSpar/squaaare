@@ -1,0 +1,133 @@
+{
+  "identifier" : "C000442C",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "4.99",
+      "familyShareable" : false,
+      "internalID" : "6502120983",
+      "localizations" : [
+        {
+          "description" : "Start your game with a good chance to win!",
+          "displayName" : "Starter Pack",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "basic.starter_pack",
+      "referenceName" : "[basic] Starter Pack ",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6501970867",
+      "localizations" : [
+        {
+          "description" : "Receive 10 bomb powers",
+          "displayName" : "Bomb",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "powerup.bomb",
+      "referenceName" : "[powerup] Bomb",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6502120964",
+      "localizations" : [
+        {
+          "description" : "Create a portal and destroy enemies",
+          "displayName" : "Portal",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "powerup.portal",
+      "referenceName" : "[powerup] Portal",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "6502120974",
+      "localizations" : [
+        {
+          "description" : "Create a shield and defend yourself",
+          "displayName" : "Shield",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "powerup.shield",
+      "referenceName" : "[powerup] Shield",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_applicationInternalID" : "6479618727",
+    "_developerTeamID" : "R9V648Y475",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : 736377885.67822397,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : [
+      {
+        "current" : {
+          "index" : 2,
+          "type" : "generic"
+        },
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

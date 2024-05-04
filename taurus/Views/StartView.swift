@@ -15,7 +15,7 @@ struct StartView: View {
                 
         scene.size = CGSize(
             width: UIScreen.main.bounds.width,
-            height: UIScreen.main.bounds.height
+            height: UIScreen.main.bounds.height - height
         )
         
         scene.scaleMode = .aspectFit
@@ -23,7 +23,7 @@ struct StartView: View {
         return scene
     }
     
-    @State var height: CGFloat = 0 //Height of ad
+    @State var height: CGFloat = 67 //Height of ad
     @State var width: CGFloat = 0 //Width of ad
     
     func setFrame() {
@@ -37,16 +37,20 @@ struct StartView: View {
         //Set the ads frame
         self.width = adSize.size.width
         self.height = adSize.size.height
+        
+        print(height)
     }
     
     var body: some View {
-        ZStack {
+        VStack {
             SpriteView(scene: self.scene)
                 .ignoresSafeArea()
             
             if (ConfigService.shared.showStartBanner) {
-                VStack {
-                    Spacer()
+                VStack(spacing: 0) {
+                    Rectangle()
+                        .padding(.zero)
+                        .frame(maxWidth: .infinity, maxHeight: 2)
                     
                     BannerAd(adUnitId: AdService.gameView)
                         .frame(width: width, height: height, alignment: .center)
@@ -56,10 +60,12 @@ struct StartView: View {
                         .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
                             setFrame()
                         }
+                        .background(.black)
                 }
             }
             
         }
+        .background(.black)
         .onAppear {
             GameService.shared.showAccessPoint()
         }
