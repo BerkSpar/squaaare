@@ -22,6 +22,8 @@ class RouterService: ObservableObject {
     ///
     /// Changes to this property will trigger UI updates in any views observing it.
     @Published var screen: Screen = .start
+    
+    @Published var lastScreen: Screen = .start
         
     /// A flag indicating if an alert is currently being presented.
     ///
@@ -58,6 +60,11 @@ class RouterService: ObservableObject {
     ///
     /// - Parameter screen: The target `Screen` enum value representing the desired screen.
     func navigate(_ screen: Screen) {
+        self.lastScreen = self.screen
         self.screen = screen
+    }
+    
+    func back() {
+        navigate(lastScreen)
     }
 }

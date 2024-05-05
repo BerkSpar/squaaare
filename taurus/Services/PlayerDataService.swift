@@ -13,7 +13,14 @@ import Network
 struct PlayerData: Codable {
     var highscore: Int = 0
     var coins: Int = 0
+    var blueCoins: Int = 0
     var skins: [String] = ["basic"]
+    
+    var bombs: Int = 0
+    var portals: Int = 0
+    var shields: Int = 0
+    
+    var showAds: Bool = true
 }
 
 public class PlayerDataManager {

@@ -28,7 +28,8 @@ class SubscriptionService: NSObject, ObservableObject, SKPaymentTransactionObser
     }
     
     let productIDs: [String] = ["powerup.bomb", "powerup.shield", "powerup.portal", "basic.starter_pack"]
-    var purchasedProductIDs: Set<String> = []
+    
+    @Published var purchasedProductIDs: Set<String> = []
 
     @Published var products: [Product] = []
     
@@ -41,6 +42,10 @@ class SubscriptionService: NSObject, ObservableObject, SKPaymentTransactionObser
         super.init()
         self.updates = observeTransactionUpdates()
         SKPaymentQueue.default().add(self)
+        
+        Task {
+            await updatePurchasedProducts()
+        }
     }
     
     deinit {
@@ -70,6 +75,25 @@ extension SubscriptionService {
         }
     }
     
+    func updateConsumables(_ id: String) {
+        let data = PlayerDataManager.shared
+
+        switch (id) {
+        case "powerup.bomb":
+            data.playerData.bombs += 10
+            break;
+        case "powerup.shield":
+            data.playerData.shields += 10
+            break;
+        case "powerup.portal":
+            data.playerData.portals += 10
+            break;
+        default: return
+        }
+        
+        data.setPlayerData()
+    }
+    
     func buyProduct(_ product: Product) async {
         do {
             let result = try await product.purchase()
@@ -77,7 +101,14 @@ extension SubscriptionService {
             switch result {
             case let .success(.verified(transaction)):
                 // Successful purhcase
+                
                 await transaction.finish()
+                
+                // TODO: FEIO, CÓDIGO FEIO
+                if (transaction.productType == .consumable) {
+                    updateConsumables(transaction.productID)
+                }
+                
                 await self.updatePurchasedProducts()
             case let .success(.unverified(_, error)):
                 // Successful purchase but transaction/receipt can't be verified
@@ -113,7 +144,13 @@ extension SubscriptionService {
             }
         }
         
-//        self.entitlementManager?.hasPro = !self.purchasedProductIDs.isEmpty
+        let data = PlayerDataManager.shared
+        if (data.playerData.showAds) {
+            data.playerData.showAds = !purchasedProductIDs.contains("basic.starter_pack")
+            print("Show ads: \(data.playerData.showAds)")
+        }
+        
+        data.setPlayerData()
     }
     
     func restorePurchases() async {

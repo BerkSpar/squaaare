@@ -18,7 +18,7 @@ struct StartView: View {
             height: UIScreen.main.bounds.height - height
         )
         
-        scene.scaleMode = .aspectFit
+        scene.scaleMode = .fill
         
         return scene
     }
@@ -46,7 +46,7 @@ struct StartView: View {
             SpriteView(scene: self.scene)
                 .ignoresSafeArea()
             
-            if (ConfigService.shared.showStartBanner) {
+            if (ConfigService.shared.showStartBanner && PlayerDataManager.shared.playerData.showAds) {
                 VStack(spacing: 0) {
                     Rectangle()
                         .padding(.zero)

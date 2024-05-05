@@ -16,15 +16,15 @@ struct EndGameView: View {
                 
         scene.size = CGSize(
             width: UIScreen.main.bounds.width,
-            height: UIScreen.main.bounds.height
+            height: UIScreen.main.bounds.height - height
         )
         
-        scene.scaleMode = .aspectFit
+        scene.scaleMode = .fill
         
         return scene
     }
     
-    @State var height: CGFloat = 0 //Height of ad
+    @State var height: CGFloat = 67 //Height of ad
     @State var width: CGFloat = 0 //Width of ad
     
     func setFrame() {
@@ -41,15 +41,17 @@ struct EndGameView: View {
     }
     
     var body: some View {
-        ZStack {
+        VStack {
             SpriteView(scene: self.scene)
                 .ignoresSafeArea()
             
-            if (ConfigService.shared.showEndGameBanner) {
-                VStack {
-                    Spacer()
+            if (ConfigService.shared.showEndGameBanner && PlayerDataManager.shared.playerData.showAds) {
+                VStack(spacing: 0) {
+                    Rectangle()
+                        .padding(.zero)
+                        .frame(maxWidth: .infinity, maxHeight: 2)
                     
-                    BannerAd(adUnitId: AdService.gameView)
+                    BannerAd(adUnitId: AdService.endGameBannerId)
                         .frame(width: width, height: height, alignment: .center)
                         .onAppear {
                             setFrame()
@@ -57,9 +59,11 @@ struct EndGameView: View {
                         .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
                             setFrame()
                         }
+                        .background(.black)
                 }
             }
         }
+        .background(.black)
         .onAppear {
             if #available(iOS 16.0, *) {
                 ReviewService().reviewIfNeeded()

@@ -13,31 +13,44 @@ struct StoreView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            HStack {
+            ZStack {
                 HStack {
-                    Image("yellow_coin")
+                    Button {
+                        RouterService.shared.back()
+                    } label: {
+                        HStack {
+                            Image(systemName: "chevron.left")
+                                .foregroundStyle(.white)
+                            
+                            Text("back")
+                                .foregroundStyle(.white)
+                        }
+                    }
+
                     
-                    Text("1002")
-                        .foregroundStyle(.white)
+                    Spacer()
+                    
+                    HStack {
+                        Image("yellow_coin")
+                        
+                        Text(PlayerDataManager.shared.playerData.coins.formatted())
+                            .foregroundStyle(.white)
+                    }
+                    
+                    HStack {
+                        Image("blue_coin")
+                        
+                        Text(PlayerDataManager.shared.playerData.blueCoins.formatted())
+                            .foregroundStyle(.white)
+                    }
                 }
-                
-                Spacer()
+                .padding(.horizontal, 24)
+                .padding(.vertical, 16)
+                .background(Color(hex: 0x2F2F2F))
                 
                 Text("STOOORE")
                     .foregroundStyle(.white)
-                
-                Spacer()
-                
-                HStack {
-                    Image("blue_coin")
-                    
-                    Text("5")
-                        .foregroundStyle(.white)
-                }
             }
-            .padding(.horizontal, 24)
-            .padding(.vertical, 16)
-            .background(Color(hex: 0x2F2F2F))
             
             ZStack {
                 Image("grid_background")
@@ -48,7 +61,7 @@ struct StoreView: View {
                 ScrollView {
                     LazyVStack {
                         ForEach(service.products.filter({ product in
-                            product.id.contains("basic")
+                            product.id.contains("basic") && !service.purchasedProductIDs.contains(product.id)
                         })) { product in
                             Button {
                                 Task {
@@ -68,6 +81,7 @@ struct StoreView: View {
                                                     Spacer()
                                                     
                                                     Text(product.displayPrice)
+                                                        .foregroundStyle(.black)
                                                         .padding(.horizontal, 16)
                                                         .padding(.vertical, 8)
                                                         .background(.white)
@@ -133,6 +147,7 @@ struct StoreView: View {
                                         .padding(8)
                                         
                                         Text(product.displayPrice)
+                                            .foregroundStyle(.black)
                                             .padding(.bottom, 8)
                                     }
                                     .frame(height: 160)

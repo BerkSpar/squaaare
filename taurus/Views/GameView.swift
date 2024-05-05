@@ -44,7 +44,7 @@ struct GameView: View {
             SpriteView(scene: self.scene)
                 .ignoresSafeArea()
             
-            if (ConfigService.shared.showGameBanner) {
+            if (ConfigService.shared.showGameBanner && PlayerDataManager.shared.playerData.showAds) {
                 VStack {
                     Spacer()
                     

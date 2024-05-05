@@ -94,12 +94,17 @@ class StartScene: SKScene {
         
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         let buildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
-        let version = SKLabelNode(text: "v\(appVersion)+\(buildNumber)")
+        let version = SKLabelNode(
+            attributedText: NSAttributedString(
+              string: "v\(appVersion)+\(buildNumber)",
+              attributes: [
+                .font: UIFont.systemFont(ofSize: 14, weight: .black),
+                .foregroundColor : UIColor.neonBlue,
+                .strokeWidth : -5,
+              ]
+            )
+          )
         version.position.y = -frame.height / 2 + 30
-        version.fontColor = .neonBlue
-        version.fontName = "Modak"
-        version.fontSize = 14
-        version.alpha = 0.8
         
         addChild(version)
     }

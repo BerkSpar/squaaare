@@ -14,13 +14,13 @@ import StoreKit
 class EndGameScene: SKScene, GADFullScreenContentDelegate {
     override func didMove(to view: SKView) {
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        backgroundColor = .background
+        backgroundColor = .black
         
         draw()
         
         GameController.shared.submitScore()
 
-        if (ConfigService.shared.showPosGameInterstitial) {
+        if (ConfigService.shared.showPosGameInterstitial && PlayerDataManager.shared.playerData.showAds) {
             showAd()
         }
         
@@ -69,55 +69,103 @@ class EndGameScene: SKScene, GADFullScreenContentDelegate {
     }
     
     func draw() {
-        let tryAgain = ButtonNode(imageNamed: "try_again") {
+        let background = SKSpriteNode(imageNamed: "grid_background")
+        background.size = frame.size
+        background.zPosition = -1
+        addChild(background)
+        
+        let tryAgain = SquareButtonNode(name: "play_larger") {
             self.tryAgain()
         }
-        tryAgain.size = CGSize(width: 260, height: 60)
+        tryAgain.size = CGSize(width: 235, height: 56)
+        tryAgain.glow()
         addChild(tryAgain)
         
-        let menu = ButtonNode(imageNamed: "menu_button") {
+        let menu = SquareButtonNode(name: "menu_larger") {
             self.goToMenu()
         }
-        menu.size = CGSize(width: 260, height: 60)
-        menu.position.y = tryAgain.position.y - 80
+        menu.size = CGSize(width: 235, height: 56)
+        menu.position.y = tryAgain.position.y - 100
+        menu.glow()
         addChild(menu)
+        
+        let store = SquareButtonNode(name: "shop_larger") {
+            RouterService.shared.navigate(.store)
+        }
+        store.size = CGSize(width: 235, height: 56)
+        store.position.y = menu.position.y - 100
+        store.glow()
+        addChild(store)
         
         var titlePosition = tryAgain.position.y + 80
         
-        if (GameController.shared.oneMoreChance && RewardedAd.shared.rewardedAd != nil) {
-            let adButton = ButtonNode(imageNamed: "one_more_chance") {
+        if (GameController.shared.oneMoreChance && RewardedAd.shared.rewardedAd != nil && PlayerDataManager.shared.playerData.showAds) {
+            let adButton = SquareButtonNode(name: "continue_larger") {
                 self.oneMoreChange()
             }
-            adButton.position.y = tryAgain.position.y + 80
-            adButton.size = CGSize(width: 260, height: 60)
+            adButton.position.y = tryAgain.position.y + 100
+            adButton.size = CGSize(width: 235, height: 56)
+            adButton.glow()
             addChild(adButton)
             
-            let ad = SKSpriteNode(imageNamed: "ad_button")
-            ad.size = CGSize(width: 50, height: 50)
+            let ad = SKSpriteNode(imageNamed: "ad_tooltip")
+            ad.size = CGSize(width: 30, height: 30)
             ad.position = CGPoint(
                 x: adButton.size.width / 2,
                 y: adButton.size.height / 2
             )
             adButton.addChild(ad)
             
+            adButton.run(.repeat(.sequence([
+                .wait(forDuration: 1),
+                .rotate(byAngle: 0.3, duration: 0.1),
+                .rotate(byAngle: -0.6, duration: 0.1),
+                .rotate(byAngle: 0.3, duration: 0.1)
+            ]), count: 3))
+            
             titlePosition = adButton.position.y + 80
         }
         
-        let title = SKLabelNode(text: "\(GameController.shared.points.formatted()) pts")
+        if (GameController.shared.oneMoreChance && !PlayerDataManager.shared.playerData.showAds) {
+            let adButton = SquareButtonNode(name: "continue_larger") {
+                RouterService.shared.navigate(.game)
+            }
+            adButton.position.y = tryAgain.position.y + 100
+            adButton.size = CGSize(width: 235, height: 56)
+            adButton.glow()
+            addChild(adButton)
+            
+            titlePosition = adButton.position.y + 80
+        }
+        
+        let title = SKLabelNode(
+            attributedText: NSAttributedString(
+              string: "\(GameController.shared.points.formatted()) pts",
+              attributes: [
+                .font: UIFont.systemFont(ofSize: 48, weight: .black),
+                .foregroundColor : UIColor.neonBlue,
+                .strokeWidth : -5
+              ]
+            )
+          )
         title.position.y = titlePosition
-        title.fontColor = .primary
-        title.fontName = "Modak"
-        title.fontSize = 48
+        title.glow(yPosition: 16)
         
         addChild(title)
         
         let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
         let buildNumber = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
-        let version = SKLabelNode(text: "v\(appVersion)+\(buildNumber)")
-        version.position.y = -frame.height / 2 + 50
-        version.fontColor = .secondary
-        version.fontName = "Modak"
-        version.fontSize = 14
+        let version = SKLabelNode(
+            attributedText: NSAttributedString(
+              string: "v\(appVersion)+\(buildNumber)",
+              attributes: [
+                .font: UIFont.systemFont(ofSize: 14, weight: .black),
+                .foregroundColor : UIColor.neonBlue,
+                .strokeWidth : -5,
+              ]
+            )
+          )
+        version.position.y = -frame.height / 2 + 30
         
         addChild(version)
     }
