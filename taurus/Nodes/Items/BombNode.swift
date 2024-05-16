@@ -16,7 +16,6 @@ class BombNode: SKNode, Enemy {
     
     var velocity: Double
     
-    var label: SKLabelNode = SKLabelNode(text: "3")
     var time = 3
     
     init(spawnTimeRange: ClosedRange<TimeInterval>, levelRange: ClosedRange<Int>, velocityRange: ClosedRange<Double>) {
@@ -49,7 +48,6 @@ class BombNode: SKNode, Enemy {
             .repeat(.sequence([
                 .run {
                     self.time -= 1
-                    self.label.text = self.time.formatted()
                 },
                 .scale(to: 0.8, duration: 0.3),
                 .scale(to: 1.2, duration: 0.3),
@@ -74,7 +72,7 @@ class BombNode: SKNode, Enemy {
             .removeFromParent(),
             .run {
                 for _ in 1...3 {
-                    let coin = CoinNode(spawnTimeRange: 0...0, levelRange: 0...0, pointsRange: 1...5, velocityRange: 0...0)
+                    let coin = CoinNode(spawnTimeRange: 0...0, levelRange: 0...0, pointsRange: 1...1, velocityRange: 0...0)
                     coin.draw()
                     coin.configureCollision()
                     coin.position = self.position
@@ -97,18 +95,11 @@ class BombNode: SKNode, Enemy {
     func draw() -> SKNode {
         let node = SKSpriteNode(imageNamed: "bomb_enemy")
         node.size = CGSize(width: 70, height: 70)
+        node.glow()
         
         physicsBody = SKPhysicsBody(texture: node.texture!, size: node.size)
         
         addChild(node)
-        
-        label.fontColor = .primary
-        label.fontName = "Modak"
-        label.fontColor = .grape
-        label.fontSize = 24
-        label.position.y -= 7
-        
-        node.addChild(label)
         
         return node.copy() as! SKNode
     }

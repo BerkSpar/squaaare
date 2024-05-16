@@ -16,7 +16,7 @@ enum RotateType {
 
 class CharacterNode: SKNode {
     var isRotating = false
-    var playerSpeed: CGFloat = 2.0
+    var playerSpeed: CGFloat = 2.5
     
     override init() {
         super.init()
@@ -32,9 +32,11 @@ class CharacterNode: SKNode {
                 bullet.configureCollision()
                 bullet.position = self.position
                 bullet.zRotation = self.zRotation
+                
                 self.scene?.addChild(bullet)
                 
                 bullet.spawnBullet(angle, 5)
+                bullet.glow()
             },
             .wait(forDuration: 1)
         ]), count: 15))
@@ -48,7 +50,7 @@ class CharacterNode: SKNode {
             .repeat(.sequence([
                 .run {
                     let node = SKSpriteNode(imageNamed: "character")
-                    node.size = CGSize(width: 40, height: 40)
+                    node.size = CGSize(width: 25, height: 25)
                     node.position = self.position
                     scene.addChild(node)
                     
@@ -95,16 +97,35 @@ class CharacterNode: SKNode {
     
     func draw() {
         let node = SKSpriteNode(imageNamed: "character")
-        node.size = CGSize(width: 40, height: 40)
+        node.size = CGSize(width: 25, height: 25)
         node.zPosition = 10
+        node.glow()
         
-        node.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 40, height: 40))
+        node.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: 25, height: 25))
        
         node.physicsBody?.categoryBitMask = PhysicsCategory.character
         node.physicsBody?.contactTestBitMask = PhysicsCategory.coin | PhysicsCategory.enemy
         node.physicsBody?.collisionBitMask = 0;
         node.physicsBody?.affectedByGravity = false
         node.physicsBody?.allowsRotation = false
+        
+        node.run(.repeatForever(.sequence([
+            .wait(forDuration: 0.2),
+            .run {
+                if (self.playerSpeed <= 0) { return }
+                let node = SKSpriteNode(imageNamed: "character")
+                node.size = CGSize(width: 20, height: 20)
+                node.position = self.position
+                self.scene?.addChild(node)
+                
+                node.run(.sequence([
+                    .group([
+                        .scale(to: 0, duration: 1),
+                        .fadeOut(withDuration: 1),
+                    ])
+                ]))
+            }
+        ])), withKey: "char_tail")
         
         addChild(node)
     }

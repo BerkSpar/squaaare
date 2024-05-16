@@ -10,9 +10,10 @@ import FirebaseAnalytics
 
 class GameScene: SKScene, SKPhysicsContactDelegate {
     let character = CharacterNode()
-    let pointsNode = SKLabelNode()
+    var pointsNode = SKLabelNode()
     let spawner = SpawnNode()
     let abilityModal = AbilityModal()
+    let coins = SKSpriteNode(imageNamed: "yellow_coin")
     
     var isShowingModal = false
     
@@ -46,7 +47,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func configureScene() {
         physicsWorld.contactDelegate = self
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        backgroundColor = .background
+        backgroundColor = .black
+        
+        let background = SKSpriteNode(imageNamed: "grid_background")
+        background.size = frame.size
+        background.zPosition = -1
+        addChild(background)
     }
     
     func configureCharacter() {
@@ -54,11 +60,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func configurePoints() {
-        pointsNode.fontSize = 64
-        pointsNode.fontColor = .secondary
-        pointsNode.fontName = "Modak"
+        coins.size = CGSize(width: 20, height: 20)
+        coins.position = CGPoint(x: -frame.width / 2, y: frame.height / 2)
+        coins.position.x += 40
+        coins.position.y -= 80
+        addChild(coins)
+        
+        pointsNode = SKLabelNode(
+            attributedText: NSAttributedString(
+              string: "0",
+              attributes: [
+                .font: UIFont.systemFont(ofSize: 18, weight: .black),
+                .foregroundColor : UIColor.neonYellow,
+                .strokeWidth : -5,
+              ]
+            )
+          )
+        pointsNode.position = coins.position
+        pointsNode.position.x += 30
+        pointsNode.position.y -= 12
         
         addChild(pointsNode)
+        
+        coins.zPosition = 1000
+        pointsNode.zPosition = 1000
     }
     
     func configureSwipe(_ view: SKView) {
@@ -97,6 +122,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func updatePoints() {
         pointsNode.text = GameController.shared.points.formatted()
+        pointsNode.updateAttributedText(GameController.shared.points.formatted())
     }
     
     func didBegin(_ contact: SKPhysicsContact) {

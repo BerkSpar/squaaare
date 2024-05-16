@@ -13,11 +13,11 @@ class GameController: ObservableObject {
     
     @Published var points: Int = 0
     @Published var oneMoreChance: Bool = true
-    @Published var nextLevel = 50
+    @Published var nextLevel = 25
     
     func canGoNextLevel() -> Bool {
         if points >= nextLevel {
-            nextLevel += 50
+            nextLevel += 25
             return true
         }
         
@@ -26,7 +26,7 @@ class GameController: ObservableObject {
     
     func reset() {
         points = 0
-        nextLevel = 50
+        nextLevel = 25
         oneMoreChance = true
     }
     

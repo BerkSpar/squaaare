@@ -41,8 +41,12 @@ class DashNode: SKNode, Item {
     
     func draw() -> SKNode {
         let node = SKSpriteNode(imageNamed: "dash_enemy")
-        node.size = CGSize(width: 40, height: 40)
+        node.size = CGSize(width: 50, height: 50)
+        node.glow()
+        node.glow()
         
+        node.run(.repeatForever(.rotate(byAngle: .pi, duration: 0.5)))
+            
         physicsBody = SKPhysicsBody(texture: node.texture!, size: node.size)
         
         addChild(node)

@@ -54,21 +54,14 @@ class CoinNode: SKNode, Item {
     }
     
     func draw() -> SKNode {
-        let node = SKSpriteNode(imageNamed: "coin")
-        node.size = CGSize(width: 30, height: 30)
+        let node = SKSpriteNode(imageNamed: "yellow_coin")
+        node.size = CGSize(width: 20, height: 20)
+        node.glow()
+        node.glow()
         
         physicsBody = SKPhysicsBody(texture: node.texture!, size: node.size)
         
         addChild(node)
-        
-        let label = SKLabelNode(text: points.formatted())
-        label.fontColor = .primary
-        label.fontName = "Modak"
-        label.fontColor = .mostard
-        label.fontSize = 18
-        label.position.y -= 7
-        
-        node.addChild(label)
         
         return node.copy() as! SKNode
     }
@@ -82,6 +75,7 @@ class CoinNode: SKNode, Item {
         physicsBody?.collisionBitMask = 0;
     }
     
+    var didContacted = false
     func didContact(_ scene: GameScene, _ contact: SKPhysicsContact) {
         let contactNode = contact.bodyA.node is CoinNode ? contact.bodyB.node : contact.bodyA.node
                 
@@ -89,11 +83,22 @@ class CoinNode: SKNode, Item {
         if contactNode is Captalist { return }
         if contactNode is CharacterBulletNode { return }
         
-        let label = SKLabelNode(text: "+\(points)")
+        if didContacted { return }
+        
+        didContacted = true
+        
+        let label = SKLabelNode(
+            attributedText: NSAttributedString(
+              string: "+\(points)",
+              attributes: [
+                .font: UIFont.systemFont(ofSize: 22, weight: .black),
+                .foregroundColor : UIColor.neonYellow,
+                .strokeWidth : -5,
+              ]
+            )
+          )
+        label.glow()
         label.position = contact.contactPoint
-        label.fontColor = .primary
-        label.fontName = "Modak"
-        label.fontColor = .mostard
         
         scene.addChild(label)
         
@@ -106,11 +111,16 @@ class CoinNode: SKNode, Item {
         ]))
         
         GameController.shared.points += points
-        scene.updatePoints()
         
         HapticsService.shared.play(.soft)
         
-        removeFromParent()
+        run(.sequence([
+            .move(to: scene.coins.position, duration: 0.5),
+            .removeFromParent(),
+            .run {
+                scene.updatePoints()
+            }
+        ]))
     }
     
     func spawn(_ scene: GameScene) {

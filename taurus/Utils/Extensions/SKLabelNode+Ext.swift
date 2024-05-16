@@ -25,4 +25,12 @@ extension SKLabelNode {
 
         self.attributedText = attributedString
    }
+    
+    func updateAttributedText(_ text: String) {
+        if let attributedText = attributedText {
+            let mutableAttributedText = NSMutableAttributedString(attributedString: attributedText)
+            mutableAttributedText.mutableString.setString(text)
+            self.attributedText = mutableAttributedText
+        }
+    }
 }

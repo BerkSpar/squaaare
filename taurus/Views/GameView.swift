@@ -10,7 +10,7 @@ import GoogleMobileAds
 import SpriteKit
 
 struct GameView: View {
-    @State var height: CGFloat = 0 //Height of ad
+    @State var height: CGFloat = 67 //Height of ad
     @State var width: CGFloat = 0 //Width of ad
     
     func setFrame() {
@@ -31,7 +31,7 @@ struct GameView: View {
                 
         scene.size = CGSize(
             width: UIScreen.main.bounds.width,
-            height: UIScreen.main.bounds.height
+            height: UIScreen.main.bounds.height - height
         )
         
         scene.scaleMode = .aspectFit
@@ -40,13 +40,15 @@ struct GameView: View {
     }
     
     var body: some View {
-        ZStack {
+        VStack {
             SpriteView(scene: self.scene)
                 .ignoresSafeArea()
             
             if (ConfigService.shared.showGameBanner && PlayerDataManager.shared.playerData.showAds) {
-                VStack {
-                    Spacer()
+                VStack(spacing: 0) {
+                    Rectangle()
+                        .padding(.zero)
+                        .frame(maxWidth: .infinity, maxHeight: 2)
                     
                     BannerAd(adUnitId: AdService.gameView)
                         .frame(width: width, height: height, alignment: .center)
@@ -56,6 +58,7 @@ struct GameView: View {
                         .onReceive(NotificationCenter.default.publisher(for: UIDevice.orientationDidChangeNotification)) { _ in
                             setFrame()
                         }
+                        .background(.black)
                 }
             }
         }

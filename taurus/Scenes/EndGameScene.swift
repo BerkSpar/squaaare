@@ -128,6 +128,7 @@ class EndGameScene: SKScene, GADFullScreenContentDelegate {
         
         if (GameController.shared.oneMoreChance && !PlayerDataManager.shared.playerData.showAds) {
             let adButton = SquareButtonNode(name: "continue_larger") {
+                GameController.shared.oneMoreChance = false
                 RouterService.shared.navigate(.game)
             }
             adButton.position.y = tryAgain.position.y + 100

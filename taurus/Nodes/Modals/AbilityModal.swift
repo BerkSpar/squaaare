@@ -36,9 +36,10 @@ class AbilityModal: SKNode, GADFullScreenContentDelegate {
                     AnalyticsParameterContent: "shuriken_power_up"
                 ])
                 
-                scene.character.addShuriken(angle: CGFloat.pi / 2)
-                scene.character.addShuriken(angle: CGFloat.pi / 3)
-                scene.character.addShuriken(angle: 2 / 3 * CGFloat.pi)
+                let angles = [0, 1, 2, 3, 4, 5].map { $0 * Double.pi/3 }
+                for angle in angles {
+                    scene.character.addShuriken(angle:angle)
+                }
                 
                 self.hide(callback: callback)
             },
@@ -132,10 +133,18 @@ class AbilityModal: SKNode, GADFullScreenContentDelegate {
         addChild(ability2)
         
         ability1.run(.sequence([
-            .scale(to: 1, duration: 0.5)
+            .scale(to: 1, duration: 0.5),
+            .run {
+                ability1.glow()
+                ability1.glow()
+            }
         ]))
         ability2.run(.sequence([
-            .scale(to: 1, duration: 0.5)
+            .scale(to: 1, duration: 0.5),
+            .run {
+                ability2.glow()
+                ability2.glow()
+            }
         ]))
     }
     
@@ -166,14 +175,21 @@ class AbilityModal: SKNode, GADFullScreenContentDelegate {
         
         let background = SKShapeNode(rectOf: scene.frame.size)
         background.name = "background"
-        background.fillColor = .background.withAlphaComponent(0.8)
+        background.fillColor = .black.withAlphaComponent(0.8)
+        background.strokeColor = .black.withAlphaComponent(0.8)
         addChild(background)
         
-        let title = SKLabelNode(text: "NEW ABILITY")
-        title.fontName = "Modak"
-        title.fontSize = 48
-        title.fontColor = .white
-        title.addStroke(color: .primary, width: 5)
+        let title = SKLabelNode(
+            attributedText: NSAttributedString(
+              string: "NEW ABILITY",
+              attributes: [
+                .font: UIFont.systemFont(ofSize: 48, weight: .black),
+                .foregroundColor : UIColor.neonBlue,
+                .strokeWidth : -5
+              ]
+            )
+          )
+        title.glow(yPosition: 16)
         addChild(title)
         
         let rerollButton = ButtonNode(imageNamed: "reroll_button") {

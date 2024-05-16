@@ -19,9 +19,10 @@ class BulletNode: SKNode, Enemy {
     
     func draw() -> SKNode {
         let node = SKShapeNode(ellipseOf: CGSize(width: 15, height: 15))
-        node.strokeColor = .grape
-        node.fillColor = .grape
+        node.strokeColor = .neonPink
+        node.fillColor = .neonPink
         node.position = position
+        node.glow()
         
         addChild(node)
         

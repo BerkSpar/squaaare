@@ -19,8 +19,9 @@ class CharacterBulletNode: SKNode, Enemy {
     
     func draw() -> SKNode {
         let node = SKSpriteNode(imageNamed: "shuriken")
-        node.size = CGSize(width: 30, height: 30)
+        node.size = CGSize(width: 25, height: 25)
         node.position = position
+        node.glow()
         
         node.run(.repeatForever(.rotate(byAngle: .pi, duration: 0.1)))
         

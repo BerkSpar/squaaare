@@ -50,6 +50,8 @@ class EnemyNode: SKNode, Item {
     func draw() -> SKNode {
         let node = SKSpriteNode(imageNamed: "basic_enemy")
         node.size = CGSize(width: 40, height: 40)
+        node.glow()
+        node.glow()
         
         physicsBody = SKPhysicsBody(texture: node.texture!, size: node.size)
         
