@@ -87,5 +87,9 @@ Apache
 ---
 
 > [berkspar.com](https://www.berkspar.com) &nbsp;&middot;&nbsp;
-> GitHub [@berkspar](https://github.com/amitmerchant1990) &nbsp;&middot;&nbsp;
+> GitHub [@berkspar](https://github.com/berkspar) &nbsp;&middot;&nbsp;
 > LinkedIn [in/berkspar](https://www.linkedin.com/in/berkspar) &nbsp;&middot;&nbsp;
+
+> [meira.com](https://www.meira.com) &nbsp;&middot;&nbsp;
+> GitHub [@gabmeira](https://github.com/gabmeira) &nbsp;&middot;&nbsp;
+> LinkedIn [in/gabriel-meira](https://www.linkedin.com/in/gabriel-meira/) &nbsp;&middot;&nbsp;
