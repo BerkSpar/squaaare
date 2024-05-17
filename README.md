@@ -82,7 +82,7 @@ This app is created on [Apple Developer Academy](https://developeracademy.pucpr.
 
 ## License
 
-MIT
+Apache
 
 ---
 
