@@ -61,7 +61,7 @@ $ xed .
 
 ## Download
 
-You can [download](https://apps.apple.com/br/app/squaaare/id6479618727) the latest installable version of Telly for iOS on App Store.
+You can [download](https://apps.apple.com/br/app/squaaare/id6479618727) the latest installable version of this project for iOS on App Store.
 
 ## Emailware
 
