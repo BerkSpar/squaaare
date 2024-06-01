@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://github.com/BerkSpar/taurus"><img src="/logo.png" alt="Squaaare" style="border: 3px solid black;" width="200"></a>
+  <a href="https://github.com/BerkSpar/squaaare"><img src="/logo.png" alt="Squaaare" style="border: 3px solid black;" width="200"></a>
   <br>
   Squaaare
   <br>
@@ -34,10 +34,10 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [X
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/berkspar/taurus
+$ git clone https://github.com/berkspar/squaaare
 
 # Go into the repository
-$ cd taurus
+$ cd squaaare
 
 # Open the xcode
 $ xed .
