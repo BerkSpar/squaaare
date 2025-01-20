@@ -78,14 +78,14 @@ class StartScene: SKScene {
         trophyButton.glow()
         addChild(trophyButton)
         
-        let shopButton = SquareButtonNode(name: "shop") {
-            RouterService.shared.navigate(.store)
-        }
-        shopButton.size = CGSize(width: 60, height: 60)
-        shopButton.position = trophyButton.position
-        shopButton.position.y -= 80
-        shopButton.glow()
-        addChild(shopButton)
+//        let shopButton = SquareButtonNode(name: "shop") {
+//            RouterService.shared.navigate(.store)
+//        }
+//        shopButton.size = CGSize(width: 60, height: 60)
+//        shopButton.position = trophyButton.position
+//        shopButton.position.y -= 80
+//        shopButton.glow()
+//        addChild(shopButton)
         
         let title = SKSpriteNode(imageNamed: "logo")
         title.position.y = startButton.position.y + 120

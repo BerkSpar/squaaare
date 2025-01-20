@@ -89,13 +89,13 @@ class EndGameScene: SKScene, GADFullScreenContentDelegate {
         menu.glow()
         addChild(menu)
         
-        let store = SquareButtonNode(name: "shop_larger") {
-            RouterService.shared.navigate(.store)
-        }
-        store.size = CGSize(width: 235, height: 56)
-        store.position.y = menu.position.y - 100
-        store.glow()
-        addChild(store)
+//        let store = SquareButtonNode(name: "shop_larger") {
+//            RouterService.shared.navigate(.store)
+//        }
+//        store.size = CGSize(width: 235, height: 56)
+//        store.position.y = menu.position.y - 100
+//        store.glow()
+//        addChild(store)
         
         var titlePosition = tryAgain.position.y + 80
         
